@@ -1,0 +1,174 @@
+/* ACCORDION */
+.accordion {
+  width: 100rem;
+  margin: 10rem auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.item {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 2.5rem;
+  align-items: center;
+  transition: all 1s;
+}
+
+.number,
+.text {
+  font-size: 3rem;
+  font-weight: 550;
+}
+
+.number {
+  color: #ced4da;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  color: #087f5b;
+}
+
+.ibtn {
+  border: none;
+  background-color: transparent;
+}
+
+.hidden-box {
+  line-height: 1.6;
+  grid-column: 2;
+  display: none;
+}
+
+.hidden-box p {
+  margin-bottom: 2.4rem;
+}
+.hidden-box ul {
+  color: #868e96;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2ren;
+  align-items: flex-start;
+}
+
+/* OPEN STATE */
+.open .hidden-box {
+  display: block;
+}
+
+.open .number,
+.open .text {
+  color: #087f5b;
+}
+
+.open.item {
+  box-shadow: 0 1px 1rem rgb(255, 0, 0), 1px 0 1rem rgb(174, 0, 255);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+/* ABOUT CARD */
+
+.about {
+  padding: 2rem;
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  max-width: 50rem;
+  justify-self: center;
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.about--head {
+  display: flex;
+  flex-direction: column;
+}
+
+.about--head h2 {
+  font-size: 4rem;
+  margin-left: 1rem;
+}
+
+.hrs {
+  width: 70%;
+  align-self: flex-start;
+  margin: 0;
+  margin-left: 0.5rem;
+  opacity: 0.2;
+}
+
+.about--head--ele {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.about--head--ele p {
+  align-self: center;
+}
+
+.techstack h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.techstack ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.techstack ul li {
+  width: fit-content;
+  height: fit-content;
+  font-size: 1rem;
+
+  background: #ced4da;
+  color: black;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  list-style-type: none;
+}
+
+.techstack ul li:hover {
+  cursor: default;
+  background: black;
+  color: #ced4da;
+  font-weight: bolder;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-size: 3rem;
+}
+
+.socials a {
+  height: 3.5rem;
+  width: fit-content;
+}
+
+.socials--icon {
+  color: black;
+  transition: transform 0.2s;
+}
+
+.socials--icon:hover {
+  transform: scale(1.2);
+}

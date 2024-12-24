@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anti-Phishing</title>
+    <link rel="stylesheet" href="./Styles/styles.css" />
+    <link rel="stylesheet" href="./Styles/queries.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="header">
+      <h1>Anti-Phishing</h1>
+      <nav>
+        <ul class="nav">
+          <a href="#">Home</a>
+          <a href="#">Report Website</a>
+          <a href="#">Scan Report</a>
+          <a href="./about.html">About</a>
+        </ul>
+      </nav>
+      <button class="mode">
+        <ion-icon name="sunny-outline" class="mode-icon"></ion-icon>
+        <ion-icon name="moon-outline" class="mode-icon"></ion-icon>
+      </button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+      <article>
+        <h1>Anti-Phishing</h1>
+        <p>
+          Anti-Phishing is a URL detection system which scans the URL and
+          detects whether it is benign or phishing. Try our system by entering
+          any URL.
+        </p>
+      </article>
+      <div class="url">
+        <form method="get" class="url--form">
+          <input type="url" name="url" placeholder="Enter the URL" />
+          <input type="button" value="Submit" />
+        </form>
+        <div>
+          <h1 style="text-align: center">
+            Results of the URL is displayed here
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="description">
+      <article class="description--item">
+        <div>
+          <h2>What is Phishing & Anti-Phishing ?</h2>
+          <p>
+            <strong>Phishing</strong> refers to the fraudulent practice of
+            sending fake messages or creating deceptive websites that mimic
+            legitimate ones to lure users into disclosing sensitive information,
+            such as usernames, passwords, and credit card details. These attacks
+            not only compromise individuals' privacy and finances but also
+            threaten the security of organizations and societies at large.
+          </p>
+        </div>
+
+        <p>
+          <strong>Anti-Phishing</strong> refers to the measures and technologies
+          designed to detect and prevent phishing attacks, which are deceptive
+          attempts to steal sensitive information like passwords, credit card
+          details, or personal data. These measures include tools like machine
+          learning models, browser extensions, email filters, and real-time URL
+          scanners that analyze features such as domain authenticity, URL
+          structure, and email content to identify phishing attempts.
+        </p>
+      </article>
+
+      <article class="description--item">
+        <div>
+          <h2>How our system blocks this type of attack.</h2>
+          <p>
+            The primary objective of our work is to develop a Phishing Detection
+            System that leverages Machine Learning to accurately classify URLs
+            as either "Phishing" or "Benign.". The system is designed to offer a
+            reliable, proactive solution capable of identifying phishing
+            attempts based on the characteristics of a given URL, without
+            reliance on outdated blacklists or predefined rules.
+          </p>
+        </div>
+
+        <figure style="text-align: center; font-size: 1rem">
+          <img
+            src="./images/hero_template.jpg"
+            width="100%"
+            height="400px"
+            alt="architecture of our system"
+          />
+          <caption>
+            Image caption should be relatable.
+          </caption>
+        </figure>
+      </article>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features">
+      <div class="features-img">
+        <img src="./images/phishing.webp" alt="phishing" />
+      </div>
+      <div class="features--rows">
+        <div class="features--title">
+          <h1>Features</h1>
+          <p>Explain about the features.</p>
+        </div>
+        <hr class="hrs" />
+        <div class="features--content">
+          <ion-icon
+            name="construct-outline"
+            style="font-size: 6.5rem"
+            class="ion-icon"
+          ></ion-icon>
+          <div>
+            <h2>Feature Engineering:</h2>
+            <p>
+              Extract relevant features from URLs to improve model accuracy,
+              such as URL length, domain structure, presence of special
+              characters, and subdomain characteristics.
+            </p>
+          </div>
+        </div>
+
+        <div class="features--content">
+          <ion-icon
+            name="code-slash-outline"
+            style="font-size: 6.5rem"
+            class="ion-icon"
+          ></ion-icon>
+          <div>
+            <h2>Machine Learning Integration:</h2>
+            <p>
+              Utilize multiple Machine Learning algorithms, including Decision
+              Tree, Random Forest, and Extra Trees classifiers, to enhance
+              detection accuracy and robustness.
+            </p>
+          </div>
+        </div>
+
+        <div class="features--content">
+          <ion-icon
+            name="desktop-outline"
+            style="font-size: 4rem"
+            class="ion-icon"
+          ></ion-icon>
+          <div>
+            <h2>Real-Time Detection:</h2>
+            <p>
+              The system is able to process and classify URLs in real-time to
+              provide immediate feedback to users.
+            </p>
+          </div>
+        </div>
+
+        <div class="features--content">
+          <ion-icon
+            name="git-compare-outline"
+            style="font-size: 5rem"
+            class="ion-icon"
+          ></ion-icon>
+          <div>
+            <h2>API Development:</h2>
+            <p>
+              Develop a RESTful API using Flask to enable integration with other
+              applications or platforms for real-time phishing detection.
+            </p>
+          </div>
+        </div>
+        <hr class="hrs" style="margin-top: 3rem" />
+      </div>
+    </div>
+
+    <!-- DEMONSTRATION OF THE PROJECT -->
+    <div class="demo">
+      <video src=""></video>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Developed by <strong>Batch-11&#64;2024</strong>.</p>
+    </footer>
+
+    <!-- Icon Script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
+
+<!-- https://www.activestate.com/blog/phishing-url-detection-with-python-and-ml/ -->
