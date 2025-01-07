@@ -6,6 +6,8 @@
     <title>Anti-Phishing About</title>
 
     <link rel="stylesheet" href="./Styles/styles.css" />
+    <link rel="stylesheet" href="./Styles/output.css" />
+    <link rel="stylesheet" href="./Styles/input.css" />
     <link rel="stylesheet" href="./Styles/queries.css" />
     <link rel="stylesheet" href="./Styles/about.css" />
   </head>
@@ -13,51 +15,74 @@
   <body>
     <div class="overlay"></div>
     <!-- HEADER & NAVIGATION -->
-    <header class="header">
-      <h1>Anti-Phishing</h1>
+    <header class="grid grid-cols-3 items-center gap-4 m-4">
+      <h1 class="text-5xl font-bold">Anti-Phishing</h1>
       <nav>
-        <ul class="nav">
-          <a href="./home.html">Home</a>
-          <a href="#">Report Website</a>
-          <a href="#">Scan Report</a>
-          <a href="#">About</a>
+        <ul
+        class="fixed w-[50rem] left-[50%] top-[5%] -translate-x-[50%] -translate-y-[50%] self-center rounded-[10rem] justify-self-center flex flex-row justify-evenly items-center h-fit bg-[#3939395d] backdrop-blur-[0.5rem] z-[999]"
+        >
+          <a
+            href="./home.html"
+            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            >Home</a
+          >
+          <a
+            href="./report.html"
+            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            >Report Website</a
+          >
+          <a
+            href="./scanr.html"
+            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            >Scan Report</a
+          >
+          <a
+            href="#"
+            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            >About</a
+          >
         </ul>
       </nav>
       <button class="mode">
-        <ion-icon name="sunny-outline" class="mode-icon"></ion-icon>
+        <ion-icon name="sunny-outline" class="mode-icon hidden"></ion-icon>
         <ion-icon name="moon-outline" class="mode-icon"></ion-icon>
       </button>
     </header>
 
-    <div class="about">
+    <!-- About Card -->
+    <div
+      class="grid grid-flow-col grid-cols-cust max-w-[50rem] justify-self-center shadow-cust p-8 rounded-2xl"
+    >
       <div>
-        <div class="about--head">
-          <h2>Vishnu VT</h2>
+        <div class="flex flex-col">
+          <h2 class="text-7xl ml-4">Vishnu VT</h2>
           <hr class="hrs" />
-          <div class="about--head--ele">
+          <div class="flex gap-4 items-center mt-2">
             <ion-icon
               name="briefcase-outline"
               style="font-size: 2rem; color: #2f9e44"
             ></ion-icon>
-            <p>Final year CSE student</p>
+            <p class="self-center">Final year CSE student</p>
           </div>
-          <div class="about--head--ele">
+          <div class="flex gap-4 items-center mt-2">
             <ion-icon
               name="location-outline"
               style="font-size: 2rem; color: #2f9e44"
             ></ion-icon>
-            <p>Kanchipuram</p>
+            <p class="self-center">Kanchipuram</p>
           </div>
-          <div class="about--head--ele">
+          <div class="flex gap-4 items-center mt-2">
             <ion-icon
               name="book-outline"
               style="font-size: 2rem; color: #2f9e44"
             ></ion-icon>
-            <p>Dr.M.G.R.Educational and Research Institute, Chennai</p>
+            <p class="self-center">
+              Dr.M.G.R.Educational and Research Institute, Chennai
+            </p>
           </div>
         </div>
         <div class="techstack">
-          <h2>Techstack used in this project</h2>
+          <h2 class="text-[2.5rem] mb-2">Techstack used in this project</h2>
           <ul>
             <li>Python</li>
             <li>NumPy</li>
@@ -68,18 +93,24 @@
             <li>WHOIS API</li>
           </ul>
         </div>
-        <div class="socials">
+        <div
+          class="flex flex-row gap-16 justify-evenly items-center mt-6 text-[3rem]"
+        >
           <!-- <a href=""><ion-icon name="mail-outline" class="socials--icon"></ion-icon></a> -->
-          <a href="www.linkedin.com/in/vishnuvt1183"
+          <a href="www.linkedin.com/in/vishnuvt1183" class="h-[3.5rem] w-fit"
             ><ion-icon name="logo-linkedin" class="socials--icon"></ion-icon
           ></a>
-          <a href="https://github.com/Vishnu19091"
+          <a href="https://github.com/Vishnu19091" class="h-[3.5rem] w-fit"
             ><ion-icon name="logo-github" class="socials--icon"></ion-icon
           ></a>
-          <a href="https://youtube.com/@vishnusah-dq2ke?si=s3Nr2am7kT5j3GFN"
+          <a
+            href="https://youtube.com/@vishnusah-dq2ke?si=s3Nr2am7kT5j3GFN"
+            class="h-[3.5rem] w-fit"
             ><ion-icon name="logo-youtube" class="socials--icon"></ion-icon
           ></a>
-          <a href="https://leetcode.com/u/vishnusah368/"
+          <a
+            href="https://leetcode.com/u/vishnusah368/"
+            class="h-[3.5rem] w-fit"
             ><ion-icon
               name="code-slash-outline"
               class="socials--icon"
@@ -89,13 +120,13 @@
       </div>
 
       <div>
-        <img
+        <!-- <img
           src="/IMG_20241204_111731.jpg"
           style="border-radius: 2rem"
           alt="profile-pic"
           width="fit-content"
           height="250"
-        />
+        /> -->
       </div>
     </div>
 
@@ -160,14 +191,8 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <!-- Main Scripts -->
+     <script src="./scripts/script.js"></script>
   </body>
 </html>
-
-<br />
-
-<img
-  src="./images/User_profile_card_template.png"
-  width="800px"
-  height="fit-content"
-  alt="User_profile_card_template"
-/>

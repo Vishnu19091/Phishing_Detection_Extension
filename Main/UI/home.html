@@ -6,79 +6,129 @@
     <title>Anti-Phishing</title>
     <link rel="stylesheet" href="./Styles/styles.css" />
     <link rel="stylesheet" href="./Styles/queries.css" />
+    <link rel="stylesheet" href="./Styles/input.css" />
+    <link rel="stylesheet" href="./Styles/output.css" />
   </head>
   <body>
     <div class="overlay"></div>
 
     <!-- HEADER & NAVIGATION -->
-    <header class="header">
-      <h1>Anti-Phishing</h1>
+    <header class="grid grid-cols-3 items-center gap-4 m-4">
+      <h1 class="text-5xl font-bold">Anti-Phishing</h1>
       <nav>
-        <ul class="nav">
-          <a href="#">Home</a>
-          <a href="#">Report Website</a>
-          <a href="#">Scan Report</a>
-          <a href="./about.html">About</a>
+        <ul
+          class="fixed w-[50rem] left-[50%] top-[5%] -translate-x-[50%] -translate-y-[50%] self-center rounded-[10rem] justify-self-center flex flex-row justify-evenly items-center h-fit bg-[#3939395d] backdrop-blur-[0.5rem] z-[999]"
+        >
+          <a
+            href="#"
+            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            >Home</a
+          >
+          <a
+            href="./report.html"
+            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            >Report Website</a
+          >
+          <a
+            href="./scanr.html"
+            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            >Scan Report</a
+          >
+          <a
+            href="./about.html"
+            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            >About</a
+          >
         </ul>
       </nav>
       <button class="mode">
-        <ion-icon name="sunny-outline" class="mode-icon"></ion-icon>
+        <ion-icon name="sunny-outline" class="mode-icon hidden"></ion-icon>
         <ion-icon name="moon-outline" class="mode-icon"></ion-icon>
       </button>
     </header>
 
     <!-- HERO SECTION -->
-    <div class="hero">
-      <article>
-        <h1>Anti-Phishing</h1>
-        <p>
+    <div
+      class="grid grid-cols-[repeat(2,auto)] gap-[3rem] mx-auto mt-[5rem] mb-[5rem] max-w-[130rem] max-h-[100rem]"
+    >
+      <article class="p-[2rem] bg-black rounded-[1rem]">
+        <h1 class="text-[4rem] text-start text-[#EF9F9F]">Anti-Phishing</h1>
+        <p class="text-[2.2rem] text-justify text-red-200 font-light">
           Anti-Phishing is a URL detection system which scans the URL and
           detects whether it is benign or phishing. Try our system by entering
           any URL.
         </p>
       </article>
-      <div class="url">
-        <form method="get" class="url--form">
-          <input type="url" name="url" placeholder="Enter the URL" />
-          <input type="button" value="Submit" />
+
+      <div
+        class="col-[2/-1] flex flex-col justify-self-center self-center h-full justify-evenly border border-black rounded-2xl p-8"
+      >
+        <h2 class="font-bold text-[4rem] text-center text-[#730000]">
+          Try checking random URL below
+        </h2>
+        <form
+          method="get"
+          class="flex flex-col justify-center items-center w-fit mt-[5rem] mb-[5rem] gap-4"
+        >
+          <input
+            class="p-4 w-[65rem] border-[0.5px] border-red-600 rounded-lg text-[2rem]"
+            type="url"
+            name="url"
+            placeholder="Enter the URL"
+          />
+          <input
+            class="self-center w-1/2 p-4 text-[2rem] border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold transition-all"
+            type="button"
+            value="Submit"
+          />
         </form>
         <div>
-          <h1 style="text-align: center">
-            Results of the URL is displayed here
-          </h1>
+          <h1 class="text-center">Results of the URL is displayed here</h1>
         </div>
       </div>
     </div>
 
     <!-- DESCRIPTION -->
-    <div class="description">
-      <article class="description--item">
+    <div
+      class="grid grid-cols-[50rem,60rem] justify-center items-center gap-[5rem] mx-auto max-w-[130rem]"
+    >
+      <article
+        class="flex flex-col justify-center text-justify text-[1.7rem] gap-8 justify-self-start self-start"
+      >
         <div>
-          <h2>What is Phishing & Anti-Phishing ?</h2>
+          <h2 class="font-bold text-[3rem]">
+            What is Phishing & Anti-Phishing ?
+          </h2>
           <p>
-            <strong>Phishing</strong> refers to the fraudulent practice of
-            sending fake messages or creating deceptive websites that mimic
-            legitimate ones to lure users into disclosing sensitive information,
-            such as usernames, passwords, and credit card details. These attacks
-            not only compromise individuals' privacy and finances but also
-            threaten the security of organizations and societies at large.
+            <strong class="text-[2rem]">Phishing</strong> refers to the
+            fraudulent practice of sending fake messages or creating deceptive
+            websites that mimic legitimate ones to lure users into disclosing
+            sensitive information, such as usernames, passwords, and credit card
+            details. These attacks not only compromise individuals' privacy and
+            finances but also threaten the security of organizations and
+            societies at large.
           </p>
         </div>
 
         <p>
-          <strong>Anti-Phishing</strong> refers to the measures and technologies
-          designed to detect and prevent phishing attacks, which are deceptive
-          attempts to steal sensitive information like passwords, credit card
-          details, or personal data. These measures include tools like machine
-          learning models, browser extensions, email filters, and real-time URL
-          scanners that analyze features such as domain authenticity, URL
-          structure, and email content to identify phishing attempts.
+          <strong class="text-[2rem]">Anti-Phishing</strong> refers to the
+          measures and technologies designed to detect and prevent phishing
+          attacks, which are deceptive attempts to steal sensitive information
+          like passwords, credit card details, or personal data. These measures
+          include tools like machine learning models, browser extensions, email
+          filters, and real-time URL scanners that analyze features such as
+          domain authenticity, URL structure, and email content to identify
+          phishing attempts.
         </p>
       </article>
 
-      <article class="description--item">
+      <article
+        class="flex flex-col justify-center text-justify text-[1.7rem] gap-8 justify-self-start self-start"
+      >
         <div>
-          <h2>How our system blocks this type of attack.</h2>
+          <h2 class="font-bold text-[3rem]">
+            How our system blocks this type of attack.
+          </h2>
           <p>
             The primary objective of our work is to develop a Phishing Detection
             System that leverages Machine Learning to accurately classify URLs
@@ -104,25 +154,33 @@
     </div>
 
     <!-- FEATURES -->
-    <div class="features">
-      <div class="features-img">
-        <img src="./images/phishing.webp" alt="phishing" />
+    <div
+      class="grid grid-cols-[40rem,60rem] justify-center gap-[5rem] mt-[8rem] mb-[8rem] text-justify"
+    >
+      <div class="self-center">
+        <img
+          class="rounded-[1rem] max-w-full h-full"
+          src="./images/phishing.webp"
+          alt="phishing"
+        />
       </div>
-      <div class="features--rows">
-        <div class="features--title">
+      <div class="flex flex-col w-full">
+        <div class="self-center text-[2.5rem] font-bold">
           <h1>Features</h1>
           <p>Explain about the features.</p>
         </div>
-        <hr class="hrs" />
-        <div class="features--content">
+
+        <hr class="border border-black w-3/4 self-center mb-[1rem]" />
+
+        <div class="flex flex-row gap-[2rem] m-[1.5rem]">
           <ion-icon
             name="construct-outline"
             style="font-size: 6.5rem"
             class="ion-icon"
           ></ion-icon>
           <div>
-            <h2>Feature Engineering:</h2>
-            <p>
+            <h2 class="font-semibold text-[2rem]">Feature Engineering:</h2>
+            <p class="font-light text-2xl">
               Extract relevant features from URLs to improve model accuracy,
               such as URL length, domain structure, presence of special
               characters, and subdomain characteristics.
@@ -130,15 +188,17 @@
           </div>
         </div>
 
-        <div class="features--content">
+        <div class="flex flex-row gap-[2rem] m-[1.5rem]">
           <ion-icon
             name="code-slash-outline"
             style="font-size: 6.5rem"
             class="ion-icon"
           ></ion-icon>
           <div>
-            <h2>Machine Learning Integration:</h2>
-            <p>
+            <h2 class="font-semibold text-[2rem]">
+              Machine Learning Integration:
+            </h2>
+            <p class="font-light text-2xl">
               Utilize multiple Machine Learning algorithms, including Decision
               Tree, Random Forest, and Extra Trees classifiers, to enhance
               detection accuracy and robustness.
@@ -146,36 +206,37 @@
           </div>
         </div>
 
-        <div class="features--content">
+        <div class="flex flex-row gap-[2rem] m-[1.5rem]">
           <ion-icon
             name="desktop-outline"
             style="font-size: 4rem"
             class="ion-icon"
           ></ion-icon>
           <div>
-            <h2>Real-Time Detection:</h2>
-            <p>
+            <h2 class="font-semibold text-[2rem]">Real-Time Detection:</h2>
+            <p class="font-light text-2xl">
               The system is able to process and classify URLs in real-time to
               provide immediate feedback to users.
             </p>
           </div>
         </div>
 
-        <div class="features--content">
+        <div class="flex flex-row gap-[2rem] m-[1.5rem]">
           <ion-icon
             name="git-compare-outline"
             style="font-size: 5rem"
             class="ion-icon"
           ></ion-icon>
           <div>
-            <h2>API Development:</h2>
-            <p>
+            <h2 class="font-semibold text-[2rem]">API Development:</h2>
+            <p class="font-light text-2xl">
               Develop a RESTful API using Flask to enable integration with other
               applications or platforms for real-time phishing detection.
             </p>
           </div>
         </div>
-        <hr class="hrs" style="margin-top: 3rem" />
+
+        <hr class="border border-black w-3/4 self-center mt-[1rem]" />
       </div>
     </div>
 
@@ -185,8 +246,10 @@
     </div>
 
     <!-- FOOTER -->
-    <footer>
-      <p>Developed by <strong>Batch-11&#64;2024</strong>.</p>
+    <footer class="w-full text-center">
+      <p class="bg-[#17252a] text-[#c1c1ff] p-[0.5rem 0] text-[1.7rem]">
+        Developed by <strong>Batch-11&#64;2024</strong>.
+      </p>
     </footer>
 
     <!-- Icon Script -->
@@ -198,6 +261,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <!-- Main Scripts -->
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
 
