@@ -15,3 +15,32 @@
 ```bash
 pip install -r requirements.txt
 ```
+
+### Front-end languages & frameworks used
+
+---
+
+```bash
+HTML
+CSS
+TypeScript
+TailwindCSS
+```
+
+---
+
+### Back-end languages & libraries used
+
+---
+
+```bash
+Python
+Pandas
+NumPy
+Django
+FastAPI
+WhoisAPI
+TypeScript
+```
+
+---
