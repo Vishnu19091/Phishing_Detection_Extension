@@ -12,40 +12,48 @@
     <link rel="stylesheet" href="./Styles/about.css" />
   </head>
 
-  <body>
+  <body class="dark:bg-black">
     <div class="overlay"></div>
     <!-- HEADER & NAVIGATION -->
-    <header class="grid grid-cols-3 items-center gap-4 m-4">
-      <h1 class="text-5xl font-bold">Anti-Phishing</h1>
+    <header
+      class="fixed top-0 p-2 grid grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+    >
+      <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <nav>
         <ul
-        class="fixed w-[50rem] left-[50%] top-[5%] -translate-x-[50%] -translate-y-[50%] self-center rounded-[10rem] justify-self-center flex flex-row justify-evenly items-center h-fit bg-[#3939395d] backdrop-blur-[0.5rem] z-[999]"
+          class="self-center flex flex-row justify-evenly items-center h-full"
         >
           <a
             href="./home.html"
-            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
             >Home</a
           >
           <a
             href="./report.html"
-            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
             >Report Website</a
           >
           <a
             href="./scanr.html"
-            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
             >Scan Report</a
           >
           <a
             href="#"
-            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
             >About</a
           >
         </ul>
       </nav>
       <button class="mode">
-        <ion-icon name="sunny-outline" class="mode-icon hidden"></ion-icon>
-        <ion-icon name="moon-outline" class="mode-icon"></ion-icon>
+        <ion-icon
+          name="sunny-outline"
+          class="mode-icon dark:text-white hidden"
+        ></ion-icon>
+        <ion-icon
+          name="moon-outline"
+          class="mode-icon dark:text-white"
+        ></ion-icon>
       </button>
     </header>
 
@@ -193,6 +201,6 @@
     ></script>
 
     <!-- Main Scripts -->
-     <script src="./scripts/script.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

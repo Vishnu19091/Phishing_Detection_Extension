@@ -9,51 +9,63 @@
     <link rel="stylesheet" href="./Styles/input.css" />
     <link rel="stylesheet" href="./Styles/output.css" />
   </head>
-  <body>
+  <body class="dark:bg-black">
     <div class="overlay"></div>
 
     <!-- HEADER & NAVIGATION -->
-    <header class="grid grid-cols-3 items-center gap-4 m-4">
-      <h1 class="text-5xl font-bold">Anti-Phishing</h1>
+    <header
+      class="fixed top-0 p-2 grid grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+    >
+      <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <nav>
         <ul
-          class="fixed w-[50rem] left-[50%] top-[5%] -translate-x-[50%] -translate-y-[50%] self-center rounded-[10rem] justify-self-center flex flex-row justify-evenly items-center h-fit bg-[#3939395d] backdrop-blur-[0.5rem] z-[999]"
+          class="self-center flex flex-row justify-evenly items-center h-full"
         >
           <a
             href="#"
-            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
             >Home</a
           >
           <a
             href="./report.html"
-            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
             >Report Website</a
           >
           <a
             href="./scanr.html"
-            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
             >Scan Report</a
           >
           <a
             href="./about.html"
-            class="visited:no-underline text-black text-[2rem] p-2 hover:bg-black hover:text-[#ffffff]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
             >About</a
           >
         </ul>
       </nav>
       <button class="mode">
-        <ion-icon name="sunny-outline" class="mode-icon hidden"></ion-icon>
-        <ion-icon name="moon-outline" class="mode-icon"></ion-icon>
+        <ion-icon
+          name="sunny-outline"
+          class="mode-icon dark:text-white hidden"
+        ></ion-icon>
+        <ion-icon
+          name="moon-outline"
+          class="mode-icon dark:text-white"
+        ></ion-icon>
       </button>
     </header>
 
     <!-- HERO SECTION -->
     <div
-      class="grid grid-cols-[repeat(2,auto)] gap-[3rem] mx-auto mt-[5rem] mb-[5rem] max-w-[130rem] max-h-[100rem]"
+      class="grid grid-cols-[repeat(2,auto)] gap-[3rem] mx-auto mt-[8rem] mb-[5rem] max-w-[130rem] max-h-[100rem]"
     >
-      <article class="p-[2rem] bg-black rounded-[1rem]">
-        <h1 class="text-[4rem] text-start text-[#EF9F9F]">Anti-Phishing</h1>
-        <p class="text-[2.2rem] text-justify text-red-200 font-light">
+      <article class="p-[2rem] bg-black dark:bg-gray-900 rounded-[1rem]">
+        <h1 class="text-[4rem] text-start text-[#EF9F9F] dark:text-[##FF9999]">
+          Anti-Phishing
+        </h1>
+        <p
+          class="text-[2.2rem] text-justify text-red-200 dark:text-[##FF9999] font-light"
+        >
           Anti-Phishing is a URL detection system which scans the URL and
           detects whether it is benign or phishing. Try our system by entering
           any URL.
@@ -61,29 +73,33 @@
       </article>
 
       <div
-        class="col-[2/-1] flex flex-col justify-self-center self-center h-full justify-evenly border border-black rounded-2xl p-8"
+        class="col-[2/-1] flex flex-col justify-self-center self-center h-full justify-evenly border border-black dark:border-white rounded-2xl p-8"
       >
-        <h2 class="font-bold text-[4rem] text-center text-[#730000]">
-          Try checking random URL below
+        <h2
+          class="font-bold text-[4rem] text-center text-[#730000] dark:text-[#ffd3d3]"
+        >
+          Try a random URL below
         </h2>
         <form
           method="get"
-          class="flex flex-col justify-center items-center w-fit mt-[5rem] mb-[5rem] gap-4"
+          class="flex flex-col justify-center items-center w-fit mt-[3rem] mb-[3rem] gap-4"
         >
           <input
-            class="p-4 w-[65rem] border-[0.5px] border-red-600 rounded-lg text-[2rem]"
+            class="p-4 w-[65rem] outline-none border-[0.5px] border-red-900 rounded-lg text-[2rem] focus:outline-8 dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white"
             type="url"
             name="url"
             placeholder="Enter the URL"
           />
           <input
-            class="self-center w-1/2 p-4 text-[2rem] border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold transition-all"
+            class="self-center w-1/2 p-4 text-[2rem] border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#7b7bff] transition-all"
             type="button"
             value="Submit"
           />
         </form>
         <div>
-          <h1 class="text-center">Results of the URL is displayed here</h1>
+          <h1 class="text-center dark:text-[#ffd3d3]">
+            Results of the URL is displayed here
+          </h1>
         </div>
       </div>
     </div>
@@ -96,10 +112,10 @@
         class="flex flex-col justify-center text-justify text-[1.7rem] gap-8 justify-self-start self-start"
       >
         <div>
-          <h2 class="font-bold text-[3rem]">
+          <h2 class="dark:text-[#edffffda] font-bold text-[3rem]">
             What is Phishing & Anti-Phishing ?
           </h2>
-          <p>
+          <p class="dark:text-[#edffffda]">
             <strong class="text-[2rem]">Phishing</strong> refers to the
             fraudulent practice of sending fake messages or creating deceptive
             websites that mimic legitimate ones to lure users into disclosing
@@ -110,7 +126,7 @@
           </p>
         </div>
 
-        <p>
+        <p class="dark:text-[#edffffda]">
           <strong class="text-[2rem]">Anti-Phishing</strong> refers to the
           measures and technologies designed to detect and prevent phishing
           attacks, which are deceptive attempts to steal sensitive information
@@ -126,10 +142,10 @@
         class="flex flex-col justify-center text-justify text-[1.7rem] gap-8 justify-self-start self-start"
       >
         <div>
-          <h2 class="font-bold text-[3rem]">
+          <h2 class="font-bold text-[3rem] dark:text-[#edffffda]">
             How our system blocks this type of attack.
           </h2>
-          <p>
+          <p class="dark:text-[#edffffda]">
             The primary objective of our work is to develop a Phishing Detection
             System that leverages Machine Learning to accurately classify URLs
             as either "Phishing" or "Benign.". The system is designed to offer a
@@ -141,10 +157,10 @@
 
         <figure style="text-align: center; font-size: 1rem">
           <img
-            src="./images/hero_template.jpg"
+            src="/Presentation/Flowchart.png"
             width="100%"
             height="400px"
-            alt="architecture of our system"
+            alt=""
           />
           <caption>
             Image caption should be relatable.
@@ -166,11 +182,13 @@
       </div>
       <div class="flex flex-col w-full">
         <div class="self-center text-[2.5rem] font-bold">
-          <h1>Features</h1>
-          <p>Explain about the features.</p>
+          <h1 class="dark:text-[#edffffda]">Features</h1>
+          <p class="dark:text-[#edffffda]">Explain about the features.</p>
         </div>
 
-        <hr class="border border-black w-3/4 self-center mb-[1rem]" />
+        <hr
+          class="border border-black dark:border-white w-3/4 self-center mb-[1rem]"
+        />
 
         <div class="flex flex-row gap-[2rem] m-[1.5rem]">
           <ion-icon
@@ -179,8 +197,10 @@
             class="ion-icon"
           ></ion-icon>
           <div>
-            <h2 class="font-semibold text-[2rem]">Feature Engineering:</h2>
-            <p class="font-light text-2xl">
+            <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
+              Feature Engineering:
+            </h2>
+            <p class="font-light text-2xl dark:text-[#edffffda]">
               Extract relevant features from URLs to improve model accuracy,
               such as URL length, domain structure, presence of special
               characters, and subdomain characteristics.
@@ -195,10 +215,10 @@
             class="ion-icon"
           ></ion-icon>
           <div>
-            <h2 class="font-semibold text-[2rem]">
+            <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
               Machine Learning Integration:
             </h2>
-            <p class="font-light text-2xl">
+            <p class="font-light text-2xl dark:text-[#edffffda]">
               Utilize multiple Machine Learning algorithms, including Decision
               Tree, Random Forest, and Extra Trees classifiers, to enhance
               detection accuracy and robustness.
@@ -213,8 +233,10 @@
             class="ion-icon"
           ></ion-icon>
           <div>
-            <h2 class="font-semibold text-[2rem]">Real-Time Detection:</h2>
-            <p class="font-light text-2xl">
+            <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
+              Real-Time Detection:
+            </h2>
+            <p class="font-light text-2xl dark:text-[#edffffda]">
               The system is able to process and classify URLs in real-time to
               provide immediate feedback to users.
             </p>
@@ -228,15 +250,19 @@
             class="ion-icon"
           ></ion-icon>
           <div>
-            <h2 class="font-semibold text-[2rem]">API Development:</h2>
-            <p class="font-light text-2xl">
+            <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
+              API Development:
+            </h2>
+            <p class="font-light text-2xl dark:text-[#edffffda]">
               Develop a RESTful API using Flask to enable integration with other
               applications or platforms for real-time phishing detection.
             </p>
           </div>
         </div>
 
-        <hr class="border border-black w-3/4 self-center mt-[1rem]" />
+        <hr
+          class="border border-black dark:border-white w-3/4 self-center mt-[1rem]"
+        />
       </div>
     </div>
 

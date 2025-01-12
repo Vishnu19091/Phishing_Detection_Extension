@@ -19,8 +19,13 @@ body {
   font-weight: light;
   font-size: 1.3rem;
   line-height: 1.5;
+  color: black;
 
   /* height: 300vh; */
+}
+
+html.dark body {
+  color: #edffff;
 }
 
 .hrs {
@@ -45,7 +50,7 @@ body {
   align-self: center;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -60,9 +65,18 @@ body {
   z-index: 99;
 }
 
-::selection{
+html.dark .overlay {
+  border-bottom: 4rem solid rgba(255, 255, 255, 0.3);
+}
+
+::selection {
   background-color: #06090a;
   color: #dc143c;
+}
+
+html.dark ::selection {
+  background-color: #212121;
+  color: rgb(255, 0, 0);
 }
 
 ::-webkit-scrollbar {

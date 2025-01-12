@@ -58,10 +58,6 @@ p {
   background: none;
   padding: 1rem;
 }
-.mode:hover {
-  background: black;
-  color: #ffffff;
-}
 
 .mode-icon {
   font-size: 3rem;

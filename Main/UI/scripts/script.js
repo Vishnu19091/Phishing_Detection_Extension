@@ -11,13 +11,13 @@ if (modeBtn && sunIcon && moonIcon) {
     if (sunIcon.classList.contains("hidden")) {
       sunIcon.classList.remove("hidden");
       moonIcon.classList.add("hidden");
+      document.documentElement.classList.remove("dark");
       // Optional: Add logic to switch to light mode (e.g., set theme class)
-      //   document.documentElement.classList.remove("dark");
     } else {
       sunIcon.classList.add("hidden");
       moonIcon.classList.remove("hidden");
+      document.documentElement.classList.add("dark");
       // Optional: Add logic to switch to dark mode (e.g., set theme class)
-      //   document.documentElement.classList.add("dark");
     }
   });
 } else {
