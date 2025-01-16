@@ -20,20 +20,27 @@ body {
   font-size: 1.3rem;
   line-height: 1.5;
   color: black;
+  transition: 300ms ease-in-out;
 
   /* height: 300vh; */
 }
 
 html.dark body {
   color: #edffff;
+  transition: 300ms ease-in-out;
 }
 
 .hrs {
+  border: 1px solid black;
   width: 70%;
   align-self: flex-start;
   margin: 0;
   margin-left: 0.5rem;
   opacity: 0.2;
+}
+
+html.dark .hrs {
+  border: 1px solid #00fffb;
 }
 
 .socials--icon {

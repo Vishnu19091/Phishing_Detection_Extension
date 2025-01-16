@@ -23,23 +23,23 @@
         >
           <a
             href="#"
-            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
             >Home</a
           >
           <a
             href="./report.html"
-            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
             >Report Website</a
           >
           <a
             href="./scanr.html"
-            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
             >Scan Report</a
           >
           <a
-            href="./about.html"
-            class="visited:no-underline text-black dark:text-white text-[2rem] p-4 hover:text-[#ffffff] hover:underline dark:hover:text-[#000]"
-            >About</a
+            href="./docs.html"
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
+            >Docs</a
           >
         </ul>
       </nav>
@@ -85,7 +85,7 @@
           class="flex flex-col justify-center items-center w-fit mt-[3rem] mb-[3rem] gap-4"
         >
           <input
-            class="p-4 w-[65rem] outline-none border-[0.5px] border-red-900 rounded-lg text-[2rem] focus:outline-8 dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white"
+            class="p-4 w-[65rem] outline-none border-[0.5px] border-red-900 rounded-lg text-[2rem] focus:outline-8 dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white transition duration-300"
             type="url"
             name="url"
             placeholder="Enter the URL"
@@ -161,6 +161,7 @@
             width="100%"
             height="400px"
             alt=""
+            loading="lazy"
           />
           <caption>
             Image caption should be relatable.
@@ -178,6 +179,7 @@
           class="rounded-[1rem] max-w-full h-full"
           src="./images/phishing.webp"
           alt="phishing"
+          loading="lazy"
         />
       </div>
       <div class="flex flex-col w-full">
@@ -282,9 +284,11 @@
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      defer
     ></script>
     <script
       nomodule
+      defer
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
 
