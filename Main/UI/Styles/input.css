@@ -27,7 +27,7 @@ body {
 
 html.dark body {
   color: #edffff;
-  transition: 300ms ease-in-out;
+  transition: 150ms ease-in-out;
 }
 
 .hrs {

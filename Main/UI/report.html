@@ -12,7 +12,9 @@
   </head>
 
   <body class="h-[300vh] dark:bg-black">
-    <div class="overlay"></div>
+    <div
+      class="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background z-50"
+    ></div>
     <!-- HEADER & NAVIGATION -->
     <header
       class="fixed top-0 p-2 grid grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
@@ -57,7 +59,9 @@
     </header>
 
     <div class="grid w-fit h-[80vh] mx-auto my-auto">
-      <h1 class="text-center font-bold text-[4rem] self-center">
+      <h1
+        class="text-center dark:text-[#edffffda] font-bold text-[4rem] self-center"
+      >
         Still working on this feature will be available as soon as we complete.
       </h1>
     </div>

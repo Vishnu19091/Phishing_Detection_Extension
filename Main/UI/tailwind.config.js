@@ -10,6 +10,9 @@ module.exports = {
       gridTemplateColumns: {
         cust: "auto auto",
       },
+      colors: {
+        "bg-background": "hsl(var(--background)",
+      },
     },
   },
   plugins: [],

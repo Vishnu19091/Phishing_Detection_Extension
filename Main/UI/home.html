@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="./Styles/output.css" />
   </head>
   <body class="dark:bg-black">
-    <div class="overlay"></div>
+    <div
+      class="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background z-50"
+    ></div>
 
     <!-- HEADER & NAVIGATION -->
     <header
@@ -83,9 +85,10 @@
         <form
           method="get"
           class="flex flex-col justify-center items-center w-fit mt-[3rem] mb-[3rem] gap-4"
+          autocomplete="off"
         >
           <input
-            class="p-4 w-[65rem] outline-none border-[0.5px] border-red-900 rounded-lg text-[2rem] focus:outline-8 dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white transition duration-300"
+            class="p-4 w-[65rem] outline-none border-[0.5px] border-red-600 rounded-lg text-[2rem] dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white transition duration-300"
             type="url"
             name="url"
             placeholder="Enter the URL"
@@ -256,8 +259,8 @@
               API Development:
             </h2>
             <p class="font-light text-2xl dark:text-[#edffffda]">
-              Develop a RESTful API using Flask to enable integration with other
-              applications or platforms for real-time phishing detection.
+              Developing a RESTful API using Django to enable integration with
+              other applications or platforms for real-time phishing detection.
             </p>
           </div>
         </div>
@@ -275,8 +278,8 @@
 
     <!-- FOOTER -->
     <footer class="w-full text-center">
-      <p class="bg-[#17252a] text-[#c1c1ff] p-[0.5rem 0] text-[1.7rem]">
-        Developed by <strong>Batch-11&#64;2024</strong>.
+      <p class="text-[#c1c1ff] mb-4 h-full p-[0.5rem 0] text-[1.7rem]">
+        Developing by <strong>Batch-11 since 2024</strong>.
       </p>
     </footer>
 
