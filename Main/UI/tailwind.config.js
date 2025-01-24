@@ -24,8 +24,9 @@ module.exports = {
       tablet: "768px",
       lscreen: "980px",
 
-      desktop: "1024px",
-      ldesktop: "1280px",
+      sdesktop: "1024px",
+      desktop: "1280px",
+      ldesktop: "1366px",
 
       xlarge: "1440px",
       mylap: "1536px",

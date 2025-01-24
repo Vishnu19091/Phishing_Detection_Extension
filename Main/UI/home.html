@@ -35,19 +35,19 @@
 
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid xsml:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="fixed top-0 p-2 grid xsml:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <div
         class="relative xsml:justify-self-center lscreen:justify-self-center xsml:self-center lscreen:self-center"
       >
-        <button id="modal-btn" class="xsml:block mylap:hidden">
+        <button id="modal-btn" class="xsml:block mylap:hidden ldesktop:hidden">
           <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
           <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
         </button>
         <nav>
           <ul
-            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:h-full mylap:bg-transparent"
+            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:h-full mylap:bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:h-full ldesktop:bg-transparent"
           >
             <a
               href="#"
@@ -86,7 +86,7 @@
 
     <!-- HERO SECTION -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[repeat(2,auto)] gap-[3rem] mylap:mx-auto mylap:mt-[8rem] mylap:mb-[5rem] mylap:max-w-[130rem] max-h-[100rem] xsml:grid xsml:grid-rows-hero xsml:max-w-[70%] xsml:mx-4 xsml:mt-[8rem] xsml:mb-[5rem] lscreen:hidden"
+      class="grid mylap:grid mylap:grid-cols-[repeat(2,auto)] gap-[3rem] mylap:mx-auto mylap:mt-[8rem] mylap:mb-[5rem] mylap:max-w-[130rem] max-h-[100rem] ldesktop:grid ldesktop:grid-cols-[repeat(2,auto)] ldesktop:mx-auto ldesktop:mt-[8rem] ldesktop:mb-[5rem] ldesktop:max-w-[110rem] ldesktop:max-h-[100rem] xsml:grid xsml:grid-rows-hero xsml:max-w-[70%] xsml:mx-4 xsml:mt-[8rem] xsml:mb-[5rem] lscreen:hidden"
     >
       <article
         class="mylap:p-[2rem] bg-black dark:bg-gray-900 rounded-[1rem] xsml:p-[3rem]"
@@ -117,7 +117,7 @@
           autocomplete="off"
         >
           <input
-            class="p-4 mylap:w-[65rem] xsml:w-[30rem] outline-none border-[0.5px] border-red-600 rounded-lg text-[2rem] dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white transition duration-300"
+            class="p-4 mylap:w-[65rem] ldesktop:w-[55rem] xsml:w-[30rem] outline-none border-[0.5px] border-red-600 rounded-lg text-[2rem] dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white transition duration-300"
             type="url"
             name="url"
             placeholder="Enter the URL"
