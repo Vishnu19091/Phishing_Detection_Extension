@@ -40,3 +40,57 @@ modeBtn.addEventListener("click", () => {
     enableDark();
   }
 });
+
+const width: number = window.innerWidth;
+
+function showBrowserWidth(): void {
+  const height: number = window.innerHeight;
+  const res = document.querySelector(".resolution") as HTMLElement;
+  res.innerText = `Width: ${width}px, Height: ${height}px`;
+}
+window.onload = showBrowserWidth;
+window.onresize = showBrowserWidth;
+
+const modalbtn = document.getElementById("modal-btn") as HTMLButtonElement;
+
+const modalopen = document.querySelector<HTMLElement>(
+  'ion-icon[name="grid-outline"]'
+);
+
+const modalclose = document.querySelector<HTMLElement>(
+  'ion-icon[name="close-outline"]'
+);
+const navbtn = document.querySelector(".mnav") as HTMLElement;
+
+// console.log(width, height);
+
+const enablemodal = () => {
+  modalopen?.classList.add("hidden"); // Hide the open icon
+  modalclose?.classList.remove("hidden"); // Show the close icon
+  navbtn.classList.add("mobile-nav");
+  navbtn.classList.remove("hidden");
+};
+
+const disablemodal = () => {
+  modalopen?.classList.remove("hidden"); // Show the open icon
+  modalclose?.classList.add("hidden"); // Hide the close icon
+  navbtn.classList.add("hidden");
+  navbtn.classList.remove("mobile-nav");
+};
+
+// Add an event listener for toggling the modal
+
+if ((width == 360 || width == 640 || width == 768 || width == 980) && navbtn) {
+  navbtn.classList.add("hidden");
+  navbtn.classList.remove("mobile-nav");
+
+  modalbtn.addEventListener("click", () => {
+    if (modalopen?.classList.contains("hidden")) {
+      disablemodal();
+    } else {
+      enablemodal();
+    }
+  });
+} else {
+  navbtn.classList.add("hidden");
+}

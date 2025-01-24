@@ -3,51 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anti-Phishing About</title>
-
+    <title>Anti-Phishing</title>
     <link rel="stylesheet" href="./Styles/styles.css" />
-    <link rel="stylesheet" href="./Styles/output.css" />
-    <link rel="stylesheet" href="./Styles/input.css" />
     <link rel="stylesheet" href="./Styles/queries.css" />
-    <link rel="stylesheet" href="./Styles/about.css" />
+    <link rel="stylesheet" href="./Styles/input.css" />
+    <link rel="stylesheet" href="./Styles/output.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Icon Script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      defer
+      async
+    ></script>
+    <script
+      nomodule
+      defer
+      async
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Main Scripts -->
+    <script src="./scripts/script.js" defer></script>
   </head>
 
   <body class="dark:bg-black">
     <div
-      class="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background z-50"
+      class="fixed bottom-0 inset-x-0 h-[4rem] bg-opacity-80 w-full bg-white dark:bg-black to-transparent backdrop-blur-3xl [-webkit-mask-image:linear-gradient(to_top,black,transparent)] shadow-lg z-50 transition duration-300"
     ></div>
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="fixed top-0 p-2 grid xsml:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
-      <nav>
-        <ul
-          class="self-center flex flex-row justify-evenly items-center h-full"
-        >
-          <a
-            href="./home.html"
-            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-            >Home</a
+      <div
+        class="relative xsml:justify-self-center lscreen:justify-self-center xsml:self-center lscreen:self-center"
+      >
+        <button id="modal-btn" class="xsml:block mylap:hidden">
+          <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
+          <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
+        </button>
+        <nav>
+          <ul
+            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:h-full mylap:bg-transparent"
           >
-          <a
-            href="./report.html"
-            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-            >Report Website</a
-          >
-          <a
-            href="./scanr.html"
-            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-            >Scan Report</a
-          >
-          <a
-            href="#"
-            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-            >Docs</a
-          >
-        </ul>
-      </nav>
-      <button class="mode">
+            <a
+              href="./home.html"
+              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition-transform"
+              >Home</a
+            >
+            <a
+              href="./report.html"
+              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
+              >Report Website</a
+            >
+            <a
+              href="./scanr.html"
+              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
+              >Scan Report</a
+            >
+            <a
+              href="#"
+              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
+              >Docs</a
+            >
+          </ul>
+        </nav>
+      </div>
+      <button class="mode xsml:col-span-1 lscreen:col-span-1">
         <ion-icon
           name="sunny-outline"
           class="mode-icon dark:text-white hidden"
@@ -61,7 +86,7 @@
 
     <!-- About Card -->
     <div
-      class="grid grid-flow-col grid-cols-cust gap-4 mt-[8rem] max-w-[50rem] justify-self-center p-8 shadow-cust bg-white dark:bg-gray-950 shadow-black/30 dark:shadow-red-700/50 rounded-2xl"
+      class="grid grid-flow-col grid-cols-cust gap-4 mt-[8rem] mylap:max-w-[50rem] xsml:max-w-[30rem] justify-self-center p-8 shadow-cust bg-white dark:bg-gray-950 shadow-black/30 dark:shadow-red-700/50 rounded-2xl"
     >
       <div>
         <div class="flex flex-col">
@@ -70,7 +95,7 @@
           <div class="flex gap-4 items-center mt-2">
             <ion-icon
               name="briefcase-outline"
-              style="font-size: 2rem; color: #2f9e44"
+              class="mylap:text-[2rem] xsml:text-[3rem] text-[#2f9e44]"
             ></ion-icon>
             <p class="self-center dark:text-[#edffffda]">
               Final year CSE student
@@ -79,14 +104,14 @@
           <div class="flex gap-4 items-center mt-2">
             <ion-icon
               name="location-outline"
-              style="font-size: 2rem; color: #2f9e44"
+              class="mylap:text-[2rem] xsml:text-[3rem] text-[#2f9e44]"
             ></ion-icon>
             <p class="self-center dark:text-[#edffffda]">Kanchipuram</p>
           </div>
-          <div class="flex gap-4 items-center mt-2">
+          <div class="flex gap-6 items-center mt-2">
             <ion-icon
               name="book-outline"
-              style="font-size: 2rem; color: #2f9e44"
+              class="mylap:text-[2rem] xsml:text-[3.5rem] text-[#2f9e44]"
             ></ion-icon>
             <p class="self-center dark:text-[#edffffda]">
               Dr.M.G.R.Educational and Research Institute, Chennai
@@ -135,11 +160,16 @@
             </li>
           </ul>
         </div>
+        <h2 class="text-center text-4xl dark:text-[#edffff] font-extrabold m-2">
+          Socials
+        </h2>
         <div
           class="flex flex-row gap-16 justify-evenly items-center mt-6 text-[3rem]"
         >
           <!-- <a href=""><ion-icon name="mail-outline" class="socials--icon"></ion-icon></a> -->
-          <a href="www.linkedin.com/in/vishnuvt1183" class="h-[3.5rem] w-fit"
+          <a
+            href="https://www.linkedin.com/in/vishnuvt1183"
+            class="h-[3.5rem] w-fit"
             ><ion-icon
               name="logo-linkedin"
               class="socials--icon dark:text-[#edffffda]"
@@ -233,18 +263,5 @@
         });
       });
     </script>  -->
-
-    <!-- Icon Script -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-
-    <!-- Main Scripts -->
-    <script src="./scripts/script.js"></script>
   </body>
 </html>

@@ -9,10 +9,26 @@ module.exports = {
       },
       gridTemplateColumns: {
         cust: "auto auto",
+        custh: "auto 5rem 5rem",
+      },
+      gridTemplateRows: {
+        hero: "auto auto",
       },
       colors: {
         "bg-background": "hsl(var(--background)",
       },
+    },
+    screens: {
+      xsml: "360px",
+      mobile: "640px",
+      tablet: "768px",
+      lscreen: "980px",
+
+      desktop: "1024px",
+      ldesktop: "1280px",
+
+      xlarge: "1440px",
+      mylap: "1536px",
     },
   },
   plugins: [],
