@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anti-Phishing</title>
+    <meta
+      name="Anti-Phishing"
+      content="A browser extension to detect and alert phishing websites in real-time if phishing websites was detected or found."
+    />
+    <title>Scan Report</title>
+    <link rel="icon" type="image/x-icon" href="./images/internet.png" />
     <link
       rel="stylesheet"
       href="./Styles/styles.css"
@@ -45,7 +50,7 @@
 
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh sdesktop:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 desktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <div
@@ -53,14 +58,14 @@
       >
         <button
           id="modal-btn"
-          class="mobile:block mylap:hidden ldesktop:hidden"
+          class="mobile:block mylap:hidden ldesktop:hidden desktop:hidden"
         >
           <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
           <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
         </button>
         <nav>
           <ul
-            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full"
+            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full desktop:self-center desktop:flex desktop:flex-row desktop:justify-evenly desktop:items-center desktop:w-[50rem] desktop:h-full"
           >
             <a
               href="./home.html"
@@ -85,6 +90,8 @@
           </ul>
         </nav>
       </div>
+
+      <!-- Mobile Navigation Button -->
       <button class="mode mobile:col-span-1 lscreen:col-span-1">
         <ion-icon
           name="sunny-outline"

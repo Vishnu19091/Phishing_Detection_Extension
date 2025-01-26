@@ -7,11 +7,8 @@
       name="Anti-Phishing"
       content="A browser extension to detect and alert phishing websites in real-time if phishing websites was detected or found."
     />
-    <meta
-      name="description"
-      content="This is a brief description of the page content. It should be concise, informative, and contain relevant keywords."
-    />
     <title>Anti-Phishing</title>
+    <link rel="icon" type="image/x-icon" href="./images/internet.png" />
     <link
       rel="stylesheet"
       href="./Styles/styles.css"
@@ -52,7 +49,7 @@
 
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh sdesktop:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 desktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <div
@@ -60,14 +57,14 @@
       >
         <button
           id="modal-btn"
-          class="mobile:block mylap:hidden ldesktop:hidden"
+          class="mobile:block mylap:hidden ldesktop:hidden desktop:hidden"
         >
           <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
           <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
         </button>
         <nav>
           <ul
-            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full"
+            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full desktop:self-center desktop:flex desktop:flex-row desktop:justify-evenly desktop:items-center desktop:w-[50rem] desktop:h-full"
           >
             <a
               href="#"
@@ -92,6 +89,8 @@
           </ul>
         </nav>
       </div>
+
+      <!-- Mobile Navigation Button -->
       <button class="mode mobile:col-span-1 lscreen:col-span-1">
         <ion-icon
           name="sunny-outline"
@@ -106,10 +105,10 @@
 
     <!-- HERO SECTION -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[60rem,auto] gap-[3rem] mylap:mx-auto mylap:mt-[8rem] mylap:mb-[5rem] mylap:max-w-[130rem] max-h-[100rem] ldesktop:grid ldesktop:grid-cols-[repeat(2,auto)] ldesktop:mx-auto ldesktop:mt-[8rem] ldesktop:mb-[5rem] ldesktop:max-w-[110rem] ldesktop:max-h-[100rem] mobile:grid mobile:grid-rows-hero mobile:mx-auto mobile:max-w-[100%] mobile:mt-[8rem] mobile:mb-[5rem] mobile:p-4 lscreen:hidden"
+      class="grid mylap:grid mylap:grid-cols-[60rem,auto] gap-[3rem] mylap:mx-auto mylap:mt-[8rem] mylap:mb-[5rem] mylap:max-w-[130rem] max-h-[100rem] ldesktop:grid ldesktop:grid-cols-[50rem,auto] ldesktop:mx-auto ldesktop:mt-[8rem] ldesktop:mb-[5rem] ldesktop:max-w-[120rem] ldesktop:max-h-[100rem] desktop:grid desktop:grid-cols-[48rem,auto] desktop:mx-auto desktop:mt-[8rem] desktop:mb-[5rem] desktop:max-w-[110rem] desktop:max-h-[100rem] mobile:grid mobile:grid-rows-hero mobile:mx-auto mobile:max-w-[100%] mobile:mt-[8rem] mobile:mb-[5rem] mobile:p-4 lscreen:grid lscreen:grid-rows-hero lscreen:mx-auto lscreen:max-w-[90%] lscreen:mt-[8rem] lscreen:mb-[5rem] lscreen:p-0"
     >
       <article
-        class="mylap:p-[2rem] bg-black dark:bg-gray-900 rounded-[1rem] mobile:p-[3rem]"
+        class="mylap:p-[2rem] xlarge:p-[2rem] ldesktop:p-[2rem] desktop:p-[2rem] bg-black dark:bg-gray-900 rounded-[1rem] mobile:p-[3rem]"
       >
         <h1 class="text-[4rem] text-start text-[#EF9F9F] dark:text-[##FF9999]">
           Anti-Phishing
@@ -143,7 +142,7 @@
             placeholder="Enter the URL"
           />
           <input
-            class="self-center w-1/2 p-4 text-[2rem] mylap:mt-0 mobile:mt-4 border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#7b7bff] transition-all"
+            class="self-center w-1/2 p-4 text-[2rem] mylap:mt-0 xlarge:mt-0 ldesktop:mt-0 desktop:mt-0 mobile:mt-4 border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#7b7bff] transition-all"
             type="button"
             value="Submit"
           />
@@ -158,7 +157,7 @@
 
     <!-- DESCRIPTION -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[60rem,60rem] justify-center items-center gap-[5rem] mx-auto mylap:max-w-[130rem] ldesktop:grid ldesktop:grid-cols-[50rem,50rem] ldesktop:max-w-[120rem] mobile:grid-rows-hero mobile:max-w-[60rem] mobile:p-4 lscreen:hidden"
+      class="grid mylap:grid mylap:grid-cols-[65rem,65rem] justify-center items-center gap-[5rem] mx-auto mylap:max-w-[130rem] ldesktop:grid ldesktop:grid-cols-[60rem,60rem] ldesktop:max-w-[120rem] desktop:grid desktop:grid-cols-[55rem,55rem] desktop:max-w-[110rem] mobile:grid-rows-hero mobile:max-w-[60rem] mobile:p-4 lscreen:grid-rows-hero lscreen:max-w-[80rem] lscreen:p-4"
     >
       <article
         class="flex flex-col justify-center text-justify gap-8 justify-self-start self-start"
@@ -224,7 +223,7 @@
 
     <!-- FEATURES -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[50rem,60rem] mylap:w-full justify-center mylap:gap-[5rem] mt-[8rem] mb-[8rem] text-justify ldesktop:grid ldesktop:grid-cols-[50rem,50rem] ldesktop:w-full ldesktop:gap-[5rem] mobile:grid-rows-hero mobile:w-[85%] mobile:mx-auto mobile:gap-[3rem] lscreen:hidden"
+      class="grid mylap:grid mylap:grid-cols-[50rem,70rem] mylap:w-full justify-center mylap:gap-[5rem] mt-[8rem] mb-[8rem] text-justify ldesktop:grid ldesktop:grid-cols-[50rem,60rem] ldesktop:w-full ldesktop:gap-[5rem] desktop:grid desktop:grid-cols-[50rem,55rem] desktop:w-full desktop:gap-[5rem] mobile:grid-rows-hero mobile:w-[85%] mobile:mx-auto mobile:gap-[3rem] lscreen:grid-rows-hero lscreen:w-[90%] lscreen:mx-auto lscreen:gap-[4rem]"
     >
       <div class="self-center">
         <img
@@ -237,7 +236,6 @@
       <div class="flex flex-col w-full">
         <div class="self-center text-[2.5rem] font-bold mylap:mb-0 mobile:mb-4">
           <h1 class="dark:text-[#edffffda]">Features</h1>
-          <p class="dark:text-[#edffffda]">Explain about the features.</p>
         </div>
 
         <hr
@@ -245,11 +243,11 @@
         />
 
         <div
-          class="flex flex-row mylap:flex-row ldesktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
+          class="flex flex-row mylap:flex-row ldesktop:flex-row desktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
         >
           <ion-icon
             name="construct-outline"
-            class="ion-icon mylap:text-[6.5rem] ldesktop:text-[8rem] mobile:text-[4rem]"
+            class="ion-icon mylap:text-[7rem] ldesktop:text-[6.5rem] desktop:text-[6rem] mobile:text-[5rem]"
           ></ion-icon>
           <div>
             <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
@@ -264,11 +262,11 @@
         </div>
 
         <div
-          class="flex flex-row mylap:flex-row ldesktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
+          class="flex flex-row mylap:flex-row ldesktop:flex-row desktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
         >
           <ion-icon
             name="code-slash-outline"
-            class="ion-icon mylap:text-[6.5rem] ldesktop:text-[8rem] mobile:text-[4.5rem]"
+            class="ion-icon mylap:text-[7rem] ldesktop:text-[6.5rem] desktop:text-[6rem] mobile:text-[5rem]"
           ></ion-icon>
           <div>
             <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
@@ -283,11 +281,11 @@
         </div>
 
         <div
-          class="flex flex-row mylap:flex-row ldesktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
+          class="flex flex-row mylap:flex-row ldesktop:flex-row desktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
         >
           <ion-icon
             name="desktop-outline"
-            class="ion-icon mylap:text-[4rem] mobile:text-[4rem] ldesktop:text-[5rem]"
+            class="ion-icon mylap:text-[4rem] mobile:text-[4rem] ldesktop:text-[4rem] desktop:text-[4rem]"
           ></ion-icon>
           <div>
             <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
@@ -301,11 +299,11 @@
         </div>
 
         <div
-          class="flex flex-row mylap:flex-row ldesktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
+          class="flex flex-row mylap:flex-row ldesktop:flex-row desktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
         >
           <ion-icon
             name="git-compare-outline"
-            class="ion-icon mylap:text-[5rem] ldesktop:text-[7rem] mobile:text-[4rem]"
+            class="ion-icon mylap:text-[5rem] ldesktop:text-[5rem] desktop:text-[5rem] mobile:text-[4.5rem]"
           ></ion-icon>
           <div>
             <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">

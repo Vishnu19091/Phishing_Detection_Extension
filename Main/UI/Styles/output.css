@@ -633,10 +633,6 @@ video {
   grid-column: 2/-1;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .m-\[1\.5rem\] {
   margin: 1.5rem;
 }
@@ -696,6 +692,10 @@ video {
   margin-top: 1.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mt-\[1rem\] {
   margin-top: 1rem;
 }
@@ -706,6 +706,10 @@ video {
 
 .mt-\[8rem\] {
   margin-top: 8rem;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -1015,10 +1019,6 @@ video {
   font-size: 1.7rem;
 }
 
-.text-\[1rem\] {
-  font-size: 1rem;
-}
-
 .text-\[2\.2rem\] {
   font-size: 2.2rem;
 }
@@ -1084,43 +1084,27 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
-.text-red-200 {
-  --tw-text-opacity: 1;
-  color: rgb(254 202 202 / var(--tw-text-opacity, 1));
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
-}
-
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+
+.text-cyan-500 {
+  --tw-text-opacity: 1;
+  color: rgb(6 182 212 / var(--tw-text-opacity, 1));
+}
+
+.text-red-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 202 202 / var(--tw-text-opacity, 1));
 }
 
 .underline {
   text-decoration-line: underline;
 }
 
-.underline-offset-1 {
-  text-underline-offset: 1px;
-}
-
-.underline-offset-8 {
-  text-underline-offset: 8px;
-}
-
 .underline-offset-4 {
   text-underline-offset: 4px;
-}
-
-.underline-offset-\[\] {
-  text-underline-offset: ;
-}
-
-.underline-offset-\[6\] {
-  text-underline-offset: 6;
 }
 
 .underline-offset-\[6px\] {
@@ -1558,6 +1542,14 @@ html.dark .mobile-nav {
     padding: 3rem;
   }
 
+  .mobile\:text-\[2\.5rem\] {
+    font-size: 2.5rem;
+  }
+
+  .mobile\:text-\[2rem\] {
+    font-size: 2rem;
+  }
+
   .mobile\:text-\[3\.5rem\] {
     font-size: 3.5rem;
   }
@@ -1574,16 +1566,8 @@ html.dark .mobile-nav {
     font-size: 4rem;
   }
 
-  .mobile\:text-\[2rem\] {
-    font-size: 2rem;
-  }
-
-  .mobile\:text-\[2\.5rem\] {
-    font-size: 2.5rem;
-  }
-
-  .mobile\:text-\[\] {
-    color: ;
+  .mobile\:text-\[5rem\] {
+    font-size: 5rem;
   }
 }
 
@@ -1592,12 +1576,49 @@ html.dark .mobile-nav {
     grid-column: span 1 / span 1;
   }
 
-  .lscreen\:hidden {
-    display: none;
+  .lscreen\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lscreen\:mb-\[5rem\] {
+    margin-bottom: 5rem;
+  }
+
+  .lscreen\:mt-\[8rem\] {
+    margin-top: 8rem;
+  }
+
+  .lscreen\:grid {
+    display: grid;
+  }
+
+  .lscreen\:w-5\/6 {
+    width: 83.333333%;
+  }
+
+  .lscreen\:w-\[90\%\] {
+    width: 90%;
+  }
+
+  .lscreen\:max-w-\[80rem\] {
+    max-width: 80rem;
+  }
+
+  .lscreen\:max-w-\[90\%\] {
+    max-width: 90%;
   }
 
   .lscreen\:grid-cols-custh {
     grid-template-columns: auto 5rem 5rem;
+  }
+
+  .lscreen\:grid-rows-hero {
+    grid-template-rows: auto auto;
+  }
+
+  .lscreen\:gap-\[4rem\] {
+    gap: 4rem;
   }
 
   .lscreen\:self-center {
@@ -1606,6 +1627,151 @@ html.dark .mobile-nav {
 
   .lscreen\:justify-self-center {
     justify-self: center;
+  }
+
+  .lscreen\:p-0 {
+    padding: 0px;
+  }
+
+  .lscreen\:p-4 {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sdesktop\:grid-cols-custh {
+    grid-template-columns: auto 5rem 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .desktop\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .desktop\:mb-\[5rem\] {
+    margin-bottom: 5rem;
+  }
+
+  .desktop\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .desktop\:mt-\[8rem\] {
+    margin-top: 8rem;
+  }
+
+  .desktop\:flex {
+    display: flex;
+  }
+
+  .desktop\:grid {
+    display: grid;
+  }
+
+  .desktop\:hidden {
+    display: none;
+  }
+
+  .desktop\:h-full {
+    height: 100%;
+  }
+
+  .desktop\:max-h-\[100rem\] {
+    max-height: 100rem;
+  }
+
+  .desktop\:w-\[50rem\] {
+    width: 50rem;
+  }
+
+  .desktop\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .desktop\:w-full {
+    width: 100%;
+  }
+
+  .desktop\:max-w-\[110rem\] {
+    max-width: 110rem;
+  }
+
+  .desktop\:max-w-\[60rem\] {
+    max-width: 60rem;
+  }
+
+  .desktop\:max-w-\[7\] {
+    max-width: 7;
+  }
+
+  .desktop\:max-w-\[70\] {
+    max-width: 70;
+  }
+
+  .desktop\:max-w-\[70re\] {
+    max-width: 70re;
+  }
+
+  .desktop\:max-w-\[70rem\] {
+    max-width: 70rem;
+  }
+
+  .desktop\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .desktop\:grid-cols-\[48rem\2c auto\] {
+    grid-template-columns: 48rem auto;
+  }
+
+  .desktop\:grid-cols-\[50rem\2c 55rem\] {
+    grid-template-columns: 50rem 55rem;
+  }
+
+  .desktop\:grid-cols-\[55rem\2c 55rem\] {
+    grid-template-columns: 55rem 55rem;
+  }
+
+  .desktop\:flex-row {
+    flex-direction: row;
+  }
+
+  .desktop\:items-center {
+    align-items: center;
+  }
+
+  .desktop\:justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  .desktop\:gap-\[5rem\] {
+    gap: 5rem;
+  }
+
+  .desktop\:self-center {
+    align-self: center;
+  }
+
+  .desktop\:p-0 {
+    padding: 0px;
+  }
+
+  .desktop\:p-\[2rem\] {
+    padding: 2rem;
+  }
+
+  .desktop\:text-\[4rem\] {
+    font-size: 4rem;
+  }
+
+  .desktop\:text-\[5rem\] {
+    font-size: 5rem;
+  }
+
+  .desktop\:text-\[6rem\] {
+    font-size: 6rem;
   }
 }
 
@@ -1617,6 +1783,10 @@ html.dark .mobile-nav {
 
   .ldesktop\:mb-\[5rem\] {
     margin-bottom: 5rem;
+  }
+
+  .ldesktop\:mt-0 {
+    margin-top: 0px;
   }
 
   .ldesktop\:mt-\[8rem\] {
@@ -1647,28 +1817,52 @@ html.dark .mobile-nav {
     width: 50rem;
   }
 
-  .ldesktop\:w-full {
-    width: 100%;
+  .ldesktop\:w-\[70\%\] {
+    width: 70%;
   }
 
-  .ldesktop\:max-w-\[110rem\] {
-    max-width: 110rem;
+  .ldesktop\:w-full {
+    width: 100%;
   }
 
   .ldesktop\:max-w-\[120rem\] {
     max-width: 120rem;
   }
 
+  .ldesktop\:max-w-\[60rem\] {
+    max-width: 60rem;
+  }
+
+  .ldesktop\:max-w-\[7\] {
+    max-width: 7;
+  }
+
+  .ldesktop\:max-w-\[70\] {
+    max-width: 70;
+  }
+
+  .ldesktop\:max-w-\[70re\] {
+    max-width: 70re;
+  }
+
+  .ldesktop\:max-w-\[70rem\] {
+    max-width: 70rem;
+  }
+
   .ldesktop\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .ldesktop\:grid-cols-\[50rem\2c 50rem\] {
-    grid-template-columns: 50rem 50rem;
+  .ldesktop\:grid-cols-\[50rem\2c 60rem\] {
+    grid-template-columns: 50rem 60rem;
   }
 
-  .ldesktop\:grid-cols-\[repeat\(2\2c auto\)\] {
-    grid-template-columns: repeat(2,auto);
+  .ldesktop\:grid-cols-\[50rem\2c auto\] {
+    grid-template-columns: 50rem auto;
+  }
+
+  .ldesktop\:grid-cols-\[60rem\2c 60rem\] {
+    grid-template-columns: 60rem 60rem;
   }
 
   .ldesktop\:flex-row {
@@ -1691,16 +1885,50 @@ html.dark .mobile-nav {
     align-self: center;
   }
 
+  .ldesktop\:p-0 {
+    padding: 0px;
+  }
+
+  .ldesktop\:p-\[2rem\] {
+    padding: 2rem;
+  }
+
+  .ldesktop\:text-\[4rem\] {
+    font-size: 4rem;
+  }
+
   .ldesktop\:text-\[5rem\] {
     font-size: 5rem;
   }
 
-  .ldesktop\:text-\[7rem\] {
-    font-size: 7rem;
+  .ldesktop\:text-\[6\.5rem\] {
+    font-size: 6.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .xlarge\:mt-0 {
+    margin-top: 0px;
   }
 
-  .ldesktop\:text-\[8rem\] {
-    font-size: 8rem;
+  .xlarge\:max-w-\[60rem\] {
+    max-width: 60rem;
+  }
+
+  .xlarge\:max-w-\[0rem\] {
+    max-width: 0rem;
+  }
+
+  .xlarge\:max-w-\[70rem\] {
+    max-width: 70rem;
+  }
+
+  .xlarge\:p-0 {
+    padding: 0px;
+  }
+
+  .xlarge\:p-\[2rem\] {
+    padding: 2rem;
   }
 }
 
@@ -1759,24 +1987,24 @@ html.dark .mobile-nav {
     max-width: 130rem;
   }
 
-  .mylap\:max-w-\[50rem\] {
-    max-width: 50rem;
+  .mylap\:max-w-\[70rem\] {
+    max-width: 70rem;
   }
 
   .mylap\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .mylap\:grid-cols-\[50rem\2c 60rem\] {
-    grid-template-columns: 50rem 60rem;
-  }
-
-  .mylap\:grid-cols-\[60rem\2c 60rem\] {
-    grid-template-columns: 60rem 60rem;
+  .mylap\:grid-cols-\[50rem\2c 70rem\] {
+    grid-template-columns: 50rem 70rem;
   }
 
   .mylap\:grid-cols-\[60rem\2c auto\] {
     grid-template-columns: 60rem auto;
+  }
+
+  .mylap\:grid-cols-\[65rem\2c 65rem\] {
+    grid-template-columns: 65rem 65rem;
   }
 
   .mylap\:flex-row {
@@ -1811,6 +2039,10 @@ html.dark .mobile-nav {
     padding: 2rem;
   }
 
+  .mylap\:text-\[2\.5rem\] {
+    font-size: 2.5rem;
+  }
+
   .mylap\:text-\[3rem\] {
     font-size: 3rem;
   }
@@ -1823,19 +2055,7 @@ html.dark .mobile-nav {
     font-size: 5rem;
   }
 
-  .mylap\:text-\[6\.5rem\] {
-    font-size: 6.5rem;
-  }
-
-  .mylap\:text-\[2\.5rem\] {
-    font-size: 2.5rem;
-  }
-
-  .mylap\:text-\[\] {
-    color: ;
-  }
-
-  .mylap\:text-\[rem\] {
-    color: rem;
+  .mylap\:text-\[7rem\] {
+    font-size: 7rem;
   }
 }

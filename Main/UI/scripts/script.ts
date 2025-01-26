@@ -41,16 +41,6 @@ modeBtn.addEventListener("click", () => {
   }
 });
 
-const width: number = window.innerWidth;
-
-function showBrowserWidth(): void {
-  const height: number = window.innerHeight;
-  const res = document.querySelector(".resolution") as HTMLElement;
-  res.innerText = `Width: ${width}px, Height: ${height}px`;
-}
-window.onload = showBrowserWidth;
-window.onresize = showBrowserWidth;
-
 const modalbtn = document.getElementById("modal-btn") as HTMLButtonElement;
 
 const modalopen = document.querySelector<HTMLElement>(
@@ -80,7 +70,7 @@ const disablemodal = () => {
 
 // Add an event listener for toggling the modal
 
-if ((width == 360 || width == 640 || width == 768 || width == 980) && navbtn) {
+if (navbtn) {
   navbtn.classList.add("hidden");
   navbtn.classList.remove("mobile-nav");
 
@@ -95,14 +85,12 @@ if ((width == 360 || width == 640 || width == 768 || width == 980) && navbtn) {
   navbtn.classList.add("hidden");
 }
 
-window.addEventListener("pagehide", (event: PageTransitionEvent) => {
-  if (event.persisted) {
-    console.log("Page is being saved into the bfcache");
-  }
-});
+const width: number = window.innerWidth;
 
-window.addEventListener("pageshow", (event: PageTransitionEvent) => {
-  if (event.persisted) {
-    console.log("Page was restored from the bfcache");
-  }
-});
+function showBrowserWidth(): void {
+  const height: number = window.innerHeight;
+  const res = document.querySelector(".resolution") as HTMLElement;
+  res.innerText = `Width: ${width}px, Height: ${height}px`;
+}
+window.onload = showBrowserWidth;
+window.onresize = showBrowserWidth;

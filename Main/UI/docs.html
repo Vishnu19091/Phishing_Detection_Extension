@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anti-Phishing</title>
+    <meta
+      name="Anti-Phishing"
+      content="A browser extension to detect and alert phishing websites in real-time if phishing websites was detected or found."
+    />
+    <title>Documentation</title>
+    <link rel="icon" type="image/x-icon" href="./images/internet.png" />
     <link
       rel="stylesheet"
       href="./Styles/styles.css"
@@ -45,7 +50,7 @@
 
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh sdesktop:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 desktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <div
@@ -53,14 +58,14 @@
       >
         <button
           id="modal-btn"
-          class="mobile:block mylap:hidden ldesktop:hidden"
+          class="mobile:block mylap:hidden ldesktop:hidden desktop:hidden"
         >
           <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
           <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
         </button>
         <nav>
           <ul
-            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full"
+            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full desktop:self-center desktop:flex desktop:flex-row desktop:justify-evenly desktop:items-center desktop:w-[50rem] desktop:h-full"
           >
             <a
               href="./home.html"
@@ -85,6 +90,8 @@
           </ul>
         </nav>
       </div>
+
+      <!-- Mobile Navigation Button -->
       <button class="mode mobile:col-span-1 lscreen:col-span-1">
         <ion-icon
           name="sunny-outline"
@@ -99,7 +106,7 @@
 
     <!-- About the work -->
     <div
-      class="container mylap:w-[70%] text-[3rem] mylap:mx-auto mobile:w-full mobile:p-4 mylap:p-0 mt-[8rem]"
+      class="container mt-[8rem] text-[3rem] mylap:w-[70%] ldesktop:w-[70%] desktop:w-[70%] mylap:mx-auto ldesktop:mx-auto desktop:mx-auto lscreen:w-5/6 lscreen:mx-auto mobile:w-full mobile:p-4 mylap:p-0 xlarge:p-0 ldesktop:p-0 desktop:p-0 lscreen:p-0"
     >
       <div>
         <h1
@@ -138,7 +145,6 @@
             >
           </li>
         </ul>
-        <br />
       </div>
       <div>
         <h2
@@ -168,11 +174,34 @@
           id="id2"
           class="mylap:text-[4rem] mobile:text-[3rem] font-bold dark:text-[#edffffda]"
         >
-          Purpose
+          How to use?
         </h2>
-        <p
-          class="dark:text-[#edffffda] mylap:text-[2.5rem] mobile:text-[2rem] font-light"
-        ></p>
+        <li
+          class="dark:text-[#ffffff] mylap:text-[2.5rem] mobile:text-[2rem] font-light block"
+        >
+          Download the browser extension from this
+          <a
+            href="#extension"
+            class="underline underline-offset-4 text-cyan-500 hover:no-underline"
+            >link</a
+          >.
+        </li>
+        <li
+          class="dark:text-[#ffffff] mylap:text-[2.5rem] mobile:text-[2rem] font-light block"
+        >
+          Enable the extension in you browser.
+        </li>
+        <li
+          class="dark:text-[#ffffff] mylap:text-[2.5rem] mobile:text-[2rem] font-light block"
+        >
+          Sign-up an account in the extension.
+        </li>
+        <li
+          class="dark:text-[#ffffff] mylap:text-[2.5rem] mobile:text-[2rem] font-light block"
+        >
+          Now you can start searching websites the extension will monitor in the
+          background
+        </li>
         <br />
       </div>
 
@@ -186,7 +215,7 @@
         <p class="dark:text-[#edffffda] font-light"></p>
         <!-- About Card -->
         <div
-          class="grid grid-flow-col grid-cols-cust gap-4 mylap:max-w-[50rem] mobile:max-w-full mylap:justify-self-center mobile:justify-self-start p-8 shadow-cust bg-white dark:bg-gray-950 shadow-black/30 dark:shadow-red-700/50 rounded-2xl mt-4"
+          class="grid grid-flow-col grid-cols-cust gap-4 mylap:max-w-[70rem] xlarge:max-w-[70rem] ldesktop:max-w-[70rem] desktop:max-w-[70rem] mobile:max-w-full justify-self-center p-8 shadow-cust bg-white dark:bg-gray-950 shadow-black/30 dark:shadow-red-700/50 rounded-2xl mt-4"
         >
           <div>
             <div class="flex flex-col">
@@ -221,49 +250,77 @@
               </div>
             </div>
             <div>
-              <h2 class="text-[2.5rem] dark:text-[#edffffda] mb-2">
-                Techstack used in this project
-              </h2>
+              <h2 class="text-[2.5rem] dark:text-[#edffffda] mb-2">Skillset</h2>
               <ul class="flex flex-wrap gap-4">
                 <li
-                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-                >
-                  Python
-                </li>
-                <li
-                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-                >
-                  NumPy
-                </li>
-                <li
-                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-                >
-                  Pandas
-                </li>
-                <li
-                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-                >
-                  Scikit-learn
-                </li>
-                <li
-                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-                >
-                  Machine Learning
-                </li>
-                <li
-                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
                 >
                   Web Technologies
                 </li>
                 <li
-                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
                 >
-                  WHOIS API
+                  TailwindCSS
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  TypeScript
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  React
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Python
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  NumPy
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Pandas
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Scikit-learn
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  MySQL
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  NoSQL
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  GitHub
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Linux
+                </li>
+                <li
+                  class="w-fit h-fit text-[1.5rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Shell scripting
                 </li>
               </ul>
             </div>
             <h2
-              class="text-center text-4xl dark:text-[#edffff] font-extrabold m-2"
+              class="text-center text-4xl dark:text-[#edffff] font-extrabold mt-8"
             >
               Socials
             </h2>
@@ -309,17 +366,6 @@
               ></a>
             </div>
           </div>
-
-          <div>
-            <!-- <img
-        src="/IMG_20241204_111731.jpg"
-        style="border-radius: 2rem"
-        alt="profile-pic"
-        width="fit-content"
-        height="250"
-        loading="lazy"
-      /> -->
-          </div>
         </div>
         <br />
       </div>
@@ -334,9 +380,9 @@
         <p
           class="dark:text-[#edffffda] mylap:text-[2.5rem] mobile:text-[2rem] font-light"
         >
-          This project is also available as browser extension you can get the
-          link of the browser extension
+          Get the link of the extension from
           <a
+            id="extension"
             href="#link"
             class="underline underline-offset-[6px] text-blue-500 hover:no-underline"
             >here</a
@@ -356,57 +402,5 @@
       >
     </div>
     <br /><br /><br />
-
-    <!-- ACCORDION -->
-    <!-- 
-    <div class="accordion">
-      <div class="item">
-        <p class="number">01</p>
-        <p class="text">Where are these chairs assembled?</p>
-        <button class="ibtn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="icon"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m19.5 8.25-7.5 7.5-7.5-7.5"
-            />
-          </svg>
-        </button>
-        <div class="hidden-box">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-            explicabo, molestiae ullam, labore temporibus fugit iste voluptates
-            quis animi ratione itaque placeat maiores voluptatibus quod ipsum,
-            sint optio ut laudantium?
-          </p>
-        </div>
-      </div>
-    </div>
-
-     Accordion_Component
-    <script>
-      const iconBtns = document.querySelectorAll(".ibtn");
-
-      iconBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const parentItem = btn.closest(".item"); // Find the closest parent item
-
-          parentItem.classList.toggle("open");
-
-          document.querySelectorAll(".item").forEach((item) => {
-            if (item !== parentItem && item.classList.contains("open")) {
-              item.classList.remove("open");
-            }
-          });
-        });
-      });
-    </script>  -->
   </body>
 </html>

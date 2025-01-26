@@ -33,14 +33,6 @@ modeBtn.addEventListener("click", function () {
         enableDark();
     }
 });
-var width = window.innerWidth;
-function showBrowserWidth() {
-    var height = window.innerHeight;
-    var res = document.querySelector(".resolution");
-    res.innerText = "Width: ".concat(width, "px, Height: ").concat(height, "px");
-}
-window.onload = showBrowserWidth;
-window.onresize = showBrowserWidth;
 var modalbtn = document.getElementById("modal-btn");
 var modalopen = document.querySelector('ion-icon[name="grid-outline"]');
 var modalclose = document.querySelector('ion-icon[name="close-outline"]');
@@ -59,7 +51,7 @@ var disablemodal = function () {
     navbtn.classList.remove("mobile-nav");
 };
 // Add an event listener for toggling the modal
-if ((width == 360 || width == 640 || width == 768 || width == 980) && navbtn) {
+if (navbtn) {
     navbtn.classList.add("hidden");
     navbtn.classList.remove("mobile-nav");
     modalbtn.addEventListener("click", function () {
@@ -74,13 +66,11 @@ if ((width == 360 || width == 640 || width == 768 || width == 980) && navbtn) {
 else {
     navbtn.classList.add("hidden");
 }
-window.addEventListener("pagehide", function (event) {
-    if (event.persisted) {
-        console.log("Page is being saved into the bfcache");
-    }
-});
-window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
-        console.log("Page was restored from the bfcache");
-    }
-});
+var width = window.innerWidth;
+function showBrowserWidth() {
+    var height = window.innerHeight;
+    var res = document.querySelector(".resolution");
+    res.innerText = "Width: ".concat(width, "px, Height: ").concat(height, "px");
+}
+window.onload = showBrowserWidth;
+window.onresize = showBrowserWidth;
