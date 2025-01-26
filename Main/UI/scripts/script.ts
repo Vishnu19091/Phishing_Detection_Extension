@@ -94,3 +94,15 @@ if ((width == 360 || width == 640 || width == 768 || width == 980) && navbtn) {
 } else {
   navbtn.classList.add("hidden");
 }
+
+window.addEventListener("pagehide", (event: PageTransitionEvent) => {
+  if (event.persisted) {
+    console.log("Page is being saved into the bfcache");
+  }
+});
+
+window.addEventListener("pageshow", (event: PageTransitionEvent) => {
+  if (event.persisted) {
+    console.log("Page was restored from the bfcache");
+  }
+});

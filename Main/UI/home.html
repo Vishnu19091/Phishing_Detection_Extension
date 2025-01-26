@@ -3,10 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Anti-Phishing"
+      content="A browser extension to detect and alert phishing websites in real-time if phishing websites was detected or found."
+    />
+    <meta
+      name="description"
+      content="This is a brief description of the page content. It should be concise, informative, and contain relevant keywords."
+    />
     <title>Anti-Phishing</title>
-    <link rel="stylesheet" href="./Styles/styles.css" />
-    <link rel="stylesheet" href="./Styles/queries.css" />
-    <link rel="stylesheet" href="./Styles/input.css" />
+    <link
+      rel="stylesheet"
+      href="./Styles/styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="./Styles/input.css"
+      media="print"
+      onload="this.media='all'"
+    />
     <link rel="stylesheet" href="./Styles/output.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,24 +47,27 @@
   </head>
   <body class="dark:bg-black">
     <div
-      class="fixed bottom-0 inset-x-0 h-[4rem] bg-opacity-80 w-full bg-white dark:bg-black to-transparent backdrop-blur-3xl [-webkit-mask-image:linear-gradient(to_top,black,transparent)] shadow-lg z-50 transition duration-300"
+      class="fixed bottom-0 inset-x-0 h-[4rem] bg-opacity-100 w-full bg-white dark:bg-black to-transparent backdrop-blur-[500px] [-webkit-mask-image:linear-gradient(to_top,black,transparent)] z-50 transition duration-300"
     ></div>
 
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid xsml:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <div
-        class="relative xsml:justify-self-center lscreen:justify-self-center xsml:self-center lscreen:self-center"
+        class="relative mobile:justify-self-center lscreen:justify-self-center mobile:self-center lscreen:self-center"
       >
-        <button id="modal-btn" class="xsml:block mylap:hidden ldesktop:hidden">
+        <button
+          id="modal-btn"
+          class="mobile:block mylap:hidden ldesktop:hidden"
+        >
           <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
           <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
         </button>
         <nav>
           <ul
-            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:h-full mylap:bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:h-full ldesktop:bg-transparent"
+            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full"
           >
             <a
               href="#"
@@ -72,7 +92,7 @@
           </ul>
         </nav>
       </div>
-      <button class="mode xsml:col-span-1 lscreen:col-span-1">
+      <button class="mode mobile:col-span-1 lscreen:col-span-1">
         <ion-icon
           name="sunny-outline"
           class="mode-icon dark:text-white hidden"
@@ -86,10 +106,10 @@
 
     <!-- HERO SECTION -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[repeat(2,auto)] gap-[3rem] mylap:mx-auto mylap:mt-[8rem] mylap:mb-[5rem] mylap:max-w-[130rem] max-h-[100rem] ldesktop:grid ldesktop:grid-cols-[repeat(2,auto)] ldesktop:mx-auto ldesktop:mt-[8rem] ldesktop:mb-[5rem] ldesktop:max-w-[110rem] ldesktop:max-h-[100rem] xsml:grid xsml:grid-rows-hero xsml:max-w-[70%] xsml:mx-4 xsml:mt-[8rem] xsml:mb-[5rem] lscreen:hidden"
+      class="grid mylap:grid mylap:grid-cols-[60rem,auto] gap-[3rem] mylap:mx-auto mylap:mt-[8rem] mylap:mb-[5rem] mylap:max-w-[130rem] max-h-[100rem] ldesktop:grid ldesktop:grid-cols-[repeat(2,auto)] ldesktop:mx-auto ldesktop:mt-[8rem] ldesktop:mb-[5rem] ldesktop:max-w-[110rem] ldesktop:max-h-[100rem] mobile:grid mobile:grid-rows-hero mobile:mx-auto mobile:max-w-[100%] mobile:mt-[8rem] mobile:mb-[5rem] mobile:p-4 lscreen:hidden"
     >
       <article
-        class="mylap:p-[2rem] bg-black dark:bg-gray-900 rounded-[1rem] xsml:p-[3rem]"
+        class="mylap:p-[2rem] bg-black dark:bg-gray-900 rounded-[1rem] mobile:p-[3rem]"
       >
         <h1 class="text-[4rem] text-start text-[#EF9F9F] dark:text-[##FF9999]">
           Anti-Phishing
@@ -104,7 +124,7 @@
       </article>
 
       <div
-        class="col-[2/-1] flex flex-col justify-self-center self-center h-full justify-evenly border border-black dark:border-white rounded-2xl p-8"
+        class="col-[2/-1] flex flex-col justify-self-center self-center w-full h-full justify-evenly border border-black dark:border-white rounded-2xl p-8"
       >
         <h2
           class="font-bold text-[4rem] text-center text-[#730000] dark:text-[#ffd3d3]"
@@ -113,17 +133,17 @@
         </h2>
         <form
           method="get"
-          class="flex flex-col justify-center items-center w-fit mt-[3rem] mb-[3rem] gap-4"
+          class="flex flex-col justify-center items-center mt-[3rem] mb-[3rem] gap-4"
           autocomplete="off"
         >
           <input
-            class="p-4 mylap:w-[65rem] ldesktop:w-[55rem] xsml:w-[30rem] outline-none border-[0.5px] border-red-600 rounded-lg text-[2rem] dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white transition duration-300"
+            class="p-4 w-full outline-none border-[0.5px] border-red-600 rounded-lg text-[2rem] dark:bg-gray-900 focus:outline-none focus:border-red-500 focus:border-2 dark:text-white transition duration-300"
             type="url"
             name="url"
             placeholder="Enter the URL"
           />
           <input
-            class="self-center w-1/2 p-4 text-[2rem] mylap:mt-0 xsml:mt-4 border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#7b7bff] transition-all"
+            class="self-center w-1/2 p-4 text-[2rem] mylap:mt-0 mobile:mt-4 border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#7b7bff] transition-all"
             type="button"
             value="Submit"
           />
@@ -138,16 +158,16 @@
 
     <!-- DESCRIPTION -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[50rem,60rem] justify-center items-center gap-[5rem] mx-auto mylap:max-w-[130rem] xsml:grid-rows-hero xsml:max-w-[30rem] lscreen:hidden"
+      class="grid mylap:grid mylap:grid-cols-[60rem,60rem] justify-center items-center gap-[5rem] mx-auto mylap:max-w-[130rem] ldesktop:grid ldesktop:grid-cols-[50rem,50rem] ldesktop:max-w-[120rem] mobile:grid-rows-hero mobile:max-w-[60rem] mobile:p-4 lscreen:hidden"
     >
       <article
-        class="flex flex-col justify-center text-justify text-[2rem] gap-8 justify-self-start self-start"
+        class="flex flex-col justify-center text-justify gap-8 justify-self-start self-start"
       >
         <div>
           <h2 class="dark:text-[#edffffda] font-bold text-[3rem]">
             What is Phishing & Anti-Phishing ?
           </h2>
-          <p class="dark:text-[#edffffda]">
+          <p class="dark:text-[#edffffda] text-[1.5rem]">
             <strong class="text-[2rem]">Phishing</strong> refers to the
             fraudulent practice of sending fake messages or creating deceptive
             websites that mimic legitimate ones to lure users into disclosing
@@ -158,7 +178,7 @@
           </p>
         </div>
 
-        <p class="dark:text-[#edffffda]">
+        <p class="dark:text-[#edffffda] text-[1.5rem]">
           <strong class="text-[2rem]">Anti-Phishing</strong> refers to the
           measures and technologies designed to detect and prevent phishing
           attacks, which are deceptive attempts to steal sensitive information
@@ -171,13 +191,13 @@
       </article>
 
       <article
-        class="flex flex-col justify-center text-justify text-[1.7rem] gap-8 justify-self-start self-start"
+        class="flex flex-col justify-center text-justify gap-8 justify-self-start self-start"
       >
         <div>
           <h2 class="font-bold text-[3rem] dark:text-[#edffffda]">
             How our system blocks this type of attack.
           </h2>
-          <p class="dark:text-[#edffffda]">
+          <p class="dark:text-[#edffffda] text-[1.5rem]">
             The primary objective of our work is to develop a Phishing Detection
             System that leverages Machine Learning to accurately classify URLs
             as either "Phishing" or "Benign.". The system is designed to offer a
@@ -204,7 +224,7 @@
 
     <!-- FEATURES -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[40rem,60rem] mylap:w-full justify-center mylap:gap-[5rem] mt-[8rem] mb-[8rem] text-justify xsml:grid-rows-hero xsml:w-[85%] xsml:mx-auto xsml:gap-[3rem] lscreen:hidden"
+      class="grid mylap:grid mylap:grid-cols-[50rem,60rem] mylap:w-full justify-center mylap:gap-[5rem] mt-[8rem] mb-[8rem] text-justify ldesktop:grid ldesktop:grid-cols-[50rem,50rem] ldesktop:w-full ldesktop:gap-[5rem] mobile:grid-rows-hero mobile:w-[85%] mobile:mx-auto mobile:gap-[3rem] lscreen:hidden"
     >
       <div class="self-center">
         <img
@@ -215,7 +235,7 @@
         />
       </div>
       <div class="flex flex-col w-full">
-        <div class="self-center text-[2.5rem] font-bold mylap:mb-0 xsml:mb-4">
+        <div class="self-center text-[2.5rem] font-bold mylap:mb-0 mobile:mb-4">
           <h1 class="dark:text-[#edffffda]">Features</h1>
           <p class="dark:text-[#edffffda]">Explain about the features.</p>
         </div>
@@ -225,11 +245,11 @@
         />
 
         <div
-          class="flex flex-row mylap:flex-row xsml:flex-col gap-[2rem] m-[1.5rem]"
+          class="flex flex-row mylap:flex-row ldesktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
         >
           <ion-icon
             name="construct-outline"
-            class="ion-icon mylap:text-[6.5rem] xsml:text-[4rem]"
+            class="ion-icon mylap:text-[6.5rem] ldesktop:text-[8rem] mobile:text-[4rem]"
           ></ion-icon>
           <div>
             <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
@@ -244,11 +264,11 @@
         </div>
 
         <div
-          class="flex flex-row mylap:flex-row xsml:flex-col gap-[2rem] m-[1.5rem]"
+          class="flex flex-row mylap:flex-row ldesktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
         >
           <ion-icon
             name="code-slash-outline"
-            class="ion-icon mylap:text-[6.5rem] xsml:text-[4.5rem]"
+            class="ion-icon mylap:text-[6.5rem] ldesktop:text-[8rem] mobile:text-[4.5rem]"
           ></ion-icon>
           <div>
             <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
@@ -263,11 +283,11 @@
         </div>
 
         <div
-          class="flex flex-row mylap:flex-row xsml:flex-col gap-[2rem] m-[1.5rem]"
+          class="flex flex-row mylap:flex-row ldesktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
         >
           <ion-icon
             name="desktop-outline"
-            class="ion-icon text-[4rem]"
+            class="ion-icon mylap:text-[4rem] mobile:text-[4rem] ldesktop:text-[5rem]"
           ></ion-icon>
           <div>
             <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
@@ -281,11 +301,11 @@
         </div>
 
         <div
-          class="flex flex-row mylap:flex-row xsml:flex-col gap-[2rem] m-[1.5rem]"
+          class="flex flex-row mylap:flex-row ldesktop:flex-row mobile:flex-col gap-[2rem] m-[1.5rem]"
         >
           <ion-icon
             name="git-compare-outline"
-            class="ion-icon mylap:text-[5rem] xsml:text-[3.5rem]"
+            class="ion-icon mylap:text-[5rem] ldesktop:text-[7rem] mobile:text-[4rem]"
           ></ion-icon>
           <div>
             <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">

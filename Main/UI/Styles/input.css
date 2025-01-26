@@ -103,18 +103,16 @@ html.dark ::selection {
 
 .mobile-nav {
   position: absolute;
-  background: #e8fffdef;
+  background: #8dfcf3aa;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  width: 30rem;
-  height: 100vh;
+  width: 20rem;
   height: fit-content;
   border-radius: 10px;
-  left: -50%;
-  top: 0;
-  transform: translate(-50%, 50%);
+  left: -300%;
+  top: 180%;
 }
 
 html.dark .mobile-nav {

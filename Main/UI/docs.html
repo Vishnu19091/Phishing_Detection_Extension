@@ -4,9 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anti-Phishing</title>
-    <link rel="stylesheet" href="./Styles/styles.css" />
-    <link rel="stylesheet" href="./Styles/queries.css" />
-    <link rel="stylesheet" href="./Styles/input.css" />
+    <link
+      rel="stylesheet"
+      href="./Styles/styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="./Styles/input.css"
+      media="print"
+      onload="this.media='all'"
+    />
     <link rel="stylesheet" href="./Styles/output.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,23 +40,27 @@
 
   <body class="dark:bg-black">
     <div
-      class="fixed bottom-0 inset-x-0 h-[4rem] bg-opacity-80 w-full bg-white dark:bg-black to-transparent backdrop-blur-3xl [-webkit-mask-image:linear-gradient(to_top,black,transparent)] shadow-lg z-50 transition duration-300"
+      class="fixed bottom-0 inset-x-0 h-[4rem] bg-opacity-100 w-full bg-white dark:bg-black to-transparent backdrop-blur-[500px] [-webkit-mask-image:linear-gradient(to_top,black,transparent)] z-50 transition duration-300"
     ></div>
+
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid xsml:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <div
-        class="relative xsml:justify-self-center lscreen:justify-self-center xsml:self-center lscreen:self-center"
+        class="relative mobile:justify-self-center lscreen:justify-self-center mobile:self-center lscreen:self-center"
       >
-        <button id="modal-btn" class="xsml:block mylap:hidden">
+        <button
+          id="modal-btn"
+          class="mobile:block mylap:hidden ldesktop:hidden"
+        >
           <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
           <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
         </button>
         <nav>
           <ul
-            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:h-full mylap:bg-transparent"
+            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full"
           >
             <a
               href="./home.html"
@@ -72,7 +85,7 @@
           </ul>
         </nav>
       </div>
-      <button class="mode xsml:col-span-1 lscreen:col-span-1">
+      <button class="mode mobile:col-span-1 lscreen:col-span-1">
         <ion-icon
           name="sunny-outline"
           class="mode-icon dark:text-white hidden"
@@ -84,133 +97,265 @@
       </button>
     </header>
 
-    <!-- About Card -->
+    <!-- About the work -->
     <div
-      class="grid grid-flow-col grid-cols-cust gap-4 mt-[8rem] mylap:max-w-[50rem] xsml:max-w-[30rem] justify-self-center p-8 shadow-cust bg-white dark:bg-gray-950 shadow-black/30 dark:shadow-red-700/50 rounded-2xl"
+      class="container mylap:w-[70%] text-[3rem] mylap:mx-auto mobile:w-full mobile:p-4 mylap:p-0 mt-[8rem]"
     >
       <div>
-        <div class="flex flex-col">
-          <h2 class="text-7xl ml-4 dark:text-[#edffffda]">Vishnu VT</h2>
-          <hr class="hrs" />
-          <div class="flex gap-4 items-center mt-2">
-            <ion-icon
-              name="briefcase-outline"
-              class="mylap:text-[2rem] xsml:text-[3rem] text-[#2f9e44]"
-            ></ion-icon>
-            <p class="self-center dark:text-[#edffffda]">
-              Final year CSE student
-            </p>
-          </div>
-          <div class="flex gap-4 items-center mt-2">
-            <ion-icon
-              name="location-outline"
-              class="mylap:text-[2rem] xsml:text-[3rem] text-[#2f9e44]"
-            ></ion-icon>
-            <p class="self-center dark:text-[#edffffda]">Kanchipuram</p>
-          </div>
-          <div class="flex gap-6 items-center mt-2">
-            <ion-icon
-              name="book-outline"
-              class="mylap:text-[2rem] xsml:text-[3.5rem] text-[#2f9e44]"
-            ></ion-icon>
-            <p class="self-center dark:text-[#edffffda]">
-              Dr.M.G.R.Educational and Research Institute, Chennai
-            </p>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-[2.5rem] dark:text-[#edffffda] mb-2">
-            Techstack used in this project
-          </h2>
-          <ul class="flex flex-wrap gap-4">
-            <li
-              class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-            >
-              Python
-            </li>
-            <li
-              class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-            >
-              NumPy
-            </li>
-            <li
-              class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-            >
-              Pandas
-            </li>
-            <li
-              class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-            >
-              Scikit-learn
-            </li>
-            <li
-              class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-            >
-              Machine Learning
-            </li>
-            <li
-              class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-            >
-              Web Technologies
-            </li>
-            <li
-              class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
-            >
-              WHOIS API
-            </li>
-          </ul>
-        </div>
-        <h2 class="text-center text-4xl dark:text-[#edffff] font-extrabold m-2">
-          Socials
-        </h2>
-        <div
-          class="flex flex-row gap-16 justify-evenly items-center mt-6 text-[3rem]"
+        <h1
+          class="font-semibold text-center mylap:text-[5rem] mobile:text-[4rem] dark:text-[#ffffff]"
         >
-          <!-- <a href=""><ion-icon name="mail-outline" class="socials--icon"></ion-icon></a> -->
-          <a
-            href="https://www.linkedin.com/in/vishnuvt1183"
-            class="h-[3.5rem] w-fit"
-            ><ion-icon
-              name="logo-linkedin"
-              class="socials--icon dark:text-[#edffffda]"
-            ></ion-icon
-          ></a>
-          <a href="https://github.com/Vishnu19091" class="h-[3.5rem] w-fit"
-            ><ion-icon
-              name="logo-github"
-              class="socials--icon dark:text-[#edffffda]"
-            ></ion-icon
-          ></a>
-          <a
-            href="https://youtube.com/@vishnusah-dq2ke?si=s3Nr2am7kT5j3GFN"
-            class="h-[3.5rem] w-fit"
-            ><ion-icon
-              name="logo-youtube"
-              class="socials--icon dark:text-[#edffffda]"
-            ></ion-icon
-          ></a>
-          <a
-            href="https://leetcode.com/u/vishnusah368/"
-            class="h-[3.5rem] w-fit"
-            ><ion-icon
-              name="code-slash-outline"
-              class="socials--icon dark:text-[#edffffda]"
-            ></ion-icon
-          ></a>
-        </div>
+          Documentation
+        </h1>
+        <h2 class="dark:text-[#edffffda]">Table of contents</h2>
+        <ul class="list-disc ml-52">
+          <li>
+            <a
+              class="font-light mylap:text-[3rem] mobile:text-[2.5rem]"
+              href="#id1"
+              >Intro</a
+            >
+          </li>
+          <li>
+            <a
+              class="font-light mylap:text-[3rem] mobile:text-[2.5rem]"
+              href="#id2"
+              >Purpose</a
+            >
+          </li>
+          <li>
+            <a
+              class="font-light mylap:text-[3rem] mobile:text-[2.5rem]"
+              href="#id3"
+              >About Author</a
+            >
+          </li>
+          <li>
+            <a
+              class="font-light mylap:text-[3rem] mobile:text-[2.5rem]"
+              href="#id4"
+              >About browser extension</a
+            >
+          </li>
+        </ul>
+        <br />
+      </div>
+      <div>
+        <h2
+          id="id1"
+          class="mylap:text-[4rem] mobile:text-[3rem] font-bold dark:text-[#edffffda]"
+        >
+          Intro
+        </h2>
+        <p
+          class="dark:text-[#edffffda] mylap:text-[2.5rem] mobile:text-[2rem] font-light"
+        >
+          This work presents a real-time phishing detection system that
+          integrates machine learning models to effectively identify and prevent
+          phishing attacks, spam, and defaced websites. The system is designed
+          to analyze various key URL features such as length, domain, subdomain,
+          numeric characters, special characters, and the presence of HTTPS,
+          providing a comprehensive approach to phishing detection. The system
+          also used as browser extension with some features like: total no.of
+          scan, no.of phishing websites detected and authenticated users will
+          allowed to report spam websites manually.
+        </p>
+        <br />
       </div>
 
       <div>
-        <!-- <img
-          src="/IMG_20241204_111731.jpg"
-          style="border-radius: 2rem"
-          alt="profile-pic"
-          width="fit-content"
-          height="250"
-          loading="lazy"
-        /> -->
+        <h2
+          id="id2"
+          class="mylap:text-[4rem] mobile:text-[3rem] font-bold dark:text-[#edffffda]"
+        >
+          Purpose
+        </h2>
+        <p
+          class="dark:text-[#edffffda] mylap:text-[2.5rem] mobile:text-[2rem] font-light"
+        ></p>
+        <br />
+      </div>
+
+      <div>
+        <h2
+          id="id3"
+          class="mylap:text-[4rem] mobile:text-[3rem] font-bold dark:text-[#edffffda]"
+        >
+          About Author
+        </h2>
+        <p class="dark:text-[#edffffda] font-light"></p>
+        <!-- About Card -->
+        <div
+          class="grid grid-flow-col grid-cols-cust gap-4 mylap:max-w-[50rem] mobile:max-w-full mylap:justify-self-center mobile:justify-self-start p-8 shadow-cust bg-white dark:bg-gray-950 shadow-black/30 dark:shadow-red-700/50 rounded-2xl mt-4"
+        >
+          <div>
+            <div class="flex flex-col">
+              <h2 class="text-7xl ml-4 dark:text-[#edffffda]">Vishnu VT</h2>
+              <hr class="hrs" />
+              <div class="flex gap-4 items-center mt-2">
+                <ion-icon
+                  name="briefcase-outline"
+                  class="mylap:text-[3rem] mobile:text-[3rem] text-[#2f9e44]"
+                ></ion-icon>
+                <p class="self-center dark:text-[#edffffda] text-[2rem]">
+                  Final year CSE student
+                </p>
+              </div>
+              <div class="flex gap-4 items-center mt-2">
+                <ion-icon
+                  name="location-outline"
+                  class="mylap:text-[3rem] mobile:text-[3rem] text-[#2f9e44]"
+                ></ion-icon>
+                <p class="self-center dark:text-[#edffffda] text-[2rem]">
+                  Kanchipuram
+                </p>
+              </div>
+              <div class="flex gap-4 items-center mt-2">
+                <ion-icon
+                  name="book-outline"
+                  class="mylap:text-[3rem] mobile:text-[3.5rem] text-[#2f9e44]"
+                ></ion-icon>
+                <p class="self-center dark:text-[#edffffda] text-[2rem]">
+                  Dr.MGR University, Chennai
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 class="text-[2.5rem] dark:text-[#edffffda] mb-2">
+                Techstack used in this project
+              </h2>
+              <ul class="flex flex-wrap gap-4">
+                <li
+                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Python
+                </li>
+                <li
+                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  NumPy
+                </li>
+                <li
+                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Pandas
+                </li>
+                <li
+                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Scikit-learn
+                </li>
+                <li
+                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Machine Learning
+                </li>
+                <li
+                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  Web Technologies
+                </li>
+                <li
+                  class="w-fit h-fit text-[1rem] bg-[#ced4da] text-black rounded-lg px-[0.8rem] py-[1rem] list-none hover:cursor-default hover:bg-black hover:text-[#ced4da] hover:font-extrabold dark:shadow dark:shadow-red-900"
+                >
+                  WHOIS API
+                </li>
+              </ul>
+            </div>
+            <h2
+              class="text-center text-4xl dark:text-[#edffff] font-extrabold m-2"
+            >
+              Socials
+            </h2>
+            <div
+              class="flex flex-row gap-16 justify-evenly items-center mt-6 text-[3rem]"
+            >
+              <!-- <a href=""><ion-icon name="mail-outline" class="socials--icon"></ion-icon></a> -->
+              <a
+                aria-label="linkedin"
+                href="https://www.linkedin.com/in/vishnuvt1183"
+                class="h-[3.5rem] w-fit"
+                ><ion-icon
+                  name="logo-linkedin"
+                  class="socials--icon dark:text-[#edffffda]"
+                ></ion-icon
+              ></a>
+              <a
+                href="https://github.com/Vishnu19091"
+                aria-label="github"
+                class="h-[3.5rem] w-fit"
+                ><ion-icon
+                  name="logo-github"
+                  class="socials--icon dark:text-[#edffffda]"
+                ></ion-icon
+              ></a>
+              <a
+                href="https://youtube.com/@vishnusah-dq2ke?si=s3Nr2am7kT5j3GFN"
+                class="h-[3.5rem] w-fit"
+                aria-label="youtube"
+                ><ion-icon
+                  name="logo-youtube"
+                  class="socials--icon dark:text-[#edffffda]"
+                ></ion-icon
+              ></a>
+              <a
+                href="https://leetcode.com/u/vishnusah368/"
+                class="h-[3.5rem] w-fit"
+                aria-label="leetcode"
+                ><ion-icon
+                  name="code-slash-outline"
+                  class="socials--icon dark:text-[#edffffda]"
+                ></ion-icon
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <!-- <img
+        src="/IMG_20241204_111731.jpg"
+        style="border-radius: 2rem"
+        alt="profile-pic"
+        width="fit-content"
+        height="250"
+        loading="lazy"
+      /> -->
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <div>
+        <h2
+          id="id4"
+          class="mylap:text-[4rem] mobile:text-[3rem] font-bold dark:text-[#edffffda]"
+        >
+          Browser Extension
+        </h2>
+        <p
+          class="dark:text-[#edffffda] mylap:text-[2.5rem] mobile:text-[2rem] font-light"
+        >
+          This project is also available as browser extension you can get the
+          link of the browser extension
+          <a
+            href="#link"
+            class="underline underline-offset-[6px] text-blue-500 hover:no-underline"
+            >here</a
+          >.
+        </p>
+        <br />
       </div>
     </div>
+
+    <br />
+    <!-- Project Repo -->
+    <div class="mx-auto w-fit my-8">
+      <a
+        class="text-[2rem] px-8 py-4 border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-lg transition-all duration-300"
+        href="https://github.com/Vishnu19091/Phishing_Detection_using_ML"
+        >Project Repository</a
+      >
+    </div>
+    <br /><br /><br />
 
     <!-- ACCORDION -->
     <!-- 

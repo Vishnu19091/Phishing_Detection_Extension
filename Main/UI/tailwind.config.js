@@ -19,15 +19,12 @@ module.exports = {
       },
     },
     screens: {
-      xsml: "360px",
-      mobile: "640px",
-      tablet: "768px",
+      mobile: "360px",
       lscreen: "980px",
-
       sdesktop: "1024px",
+
       desktop: "1280px",
       ldesktop: "1366px",
-
       xlarge: "1440px",
       mylap: "1536px",
     },

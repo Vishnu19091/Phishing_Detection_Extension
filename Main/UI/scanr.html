@@ -4,9 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anti-Phishing</title>
-    <link rel="stylesheet" href="./Styles/styles.css" />
-    <link rel="stylesheet" href="./Styles/queries.css" />
-    <link rel="stylesheet" href="./Styles/input.css" />
+    <link
+      rel="stylesheet"
+      href="./Styles/styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="./Styles/input.css"
+      media="print"
+      onload="this.media='all'"
+    />
     <link rel="stylesheet" href="./Styles/output.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,23 +40,27 @@
 
   <body class="h-[300vh] dark:bg-black">
     <div
-      class="fixed bottom-0 inset-x-0 h-[4rem] bg-opacity-80 w-full bg-white dark:bg-black to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] shadow-lg z-50 transition duration-300"
+      class="fixed bottom-0 inset-x-0 h-[4rem] bg-opacity-100 w-full bg-white dark:bg-black to-transparent backdrop-blur-[500px] [-webkit-mask-image:linear-gradient(to_top,black,transparent)] z-50 transition duration-300"
     ></div>
+
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid xsml:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <div
-        class="relative xsml:justify-self-center lscreen:justify-self-center xsml:self-center lscreen:self-center"
+        class="relative mobile:justify-self-center lscreen:justify-self-center mobile:self-center lscreen:self-center"
       >
-        <button id="modal-btn" class="xsml:block mylap:hidden">
+        <button
+          id="modal-btn"
+          class="mobile:block mylap:hidden ldesktop:hidden"
+        >
           <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
           <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
         </button>
         <nav>
           <ul
-            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:h-full mylap:bg-transparent"
+            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full"
           >
             <a
               href="./home.html"
@@ -72,7 +85,7 @@
           </ul>
         </nav>
       </div>
-      <button class="mode xsml:col-span-1 lscreen:col-span-1">
+      <button class="mode mobile:col-span-1 lscreen:col-span-1">
         <ion-icon
           name="sunny-outline"
           class="mode-icon dark:text-white hidden"
