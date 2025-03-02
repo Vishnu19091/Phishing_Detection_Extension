@@ -49,7 +49,7 @@
 
     <!-- HEADER & NAVIGATION -->
     <header
-      class="fixed top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh sdesktop:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 desktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+      class="sticky top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh sdesktop:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 desktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
     >
       <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
       <div
@@ -105,7 +105,7 @@
 
     <!-- HERO SECTION -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[60rem,auto] gap-[3rem] mylap:mx-auto mylap:mt-[8rem] mylap:mb-[5rem] mylap:max-w-[130rem] max-h-[100rem] ldesktop:grid ldesktop:grid-cols-[50rem,auto] ldesktop:mx-auto ldesktop:mt-[8rem] ldesktop:mb-[5rem] ldesktop:max-w-[120rem] ldesktop:max-h-[100rem] desktop:grid desktop:grid-cols-[48rem,auto] desktop:mx-auto desktop:mt-[8rem] desktop:mb-[5rem] desktop:max-w-[110rem] desktop:max-h-[100rem] mobile:grid mobile:grid-rows-hero mobile:mx-auto mobile:max-w-[100%] mobile:mt-[8rem] mobile:mb-[5rem] mobile:p-4 lscreen:grid lscreen:grid-rows-hero lscreen:mx-auto lscreen:max-w-[90%] lscreen:mt-[8rem] lscreen:mb-[5rem] lscreen:p-0"
+      class="grid mylap:grid mylap:grid-cols-[60rem,auto] gap-[3rem] mylap:mx-auto mylap:mt-[2.5rem] mylap:mb-[5rem] mylap:max-w-[130rem] max-h-[100rem] ldesktop:grid ldesktop:grid-cols-[50rem,auto] ldesktop:mx-auto ldesktop:mt-[2.5rem] ldesktop:mb-[5rem] ldesktop:max-w-[120rem] ldesktop:max-h-[100rem] desktop:grid desktop:grid-cols-[48rem,auto] desktop:mx-auto desktop:mt-[2.5rem] desktop:mb-[5rem] desktop:max-w-[110rem] desktop:max-h-[100rem] mobile:grid mobile:grid-rows-hero mobile:mx-auto mobile:max-w-[100%] mobile:mt-[2rem] mobile:mb-[5rem] mobile:p-4 lscreen:grid lscreen:grid-rows-hero lscreen:mx-auto lscreen:max-w-[90%] lscreen:mt-[2.5rem] lscreen:mb-[5rem] lscreen:p-0"
     >
       <article
         class="mylap:p-[2rem] xlarge:p-[2rem] ldesktop:p-[2rem] desktop:p-[2rem] bg-black dark:bg-gray-900 rounded-[1rem] mobile:p-[3rem]"
@@ -126,7 +126,7 @@
         class="col-[2/-1] flex flex-col justify-self-center self-center w-full h-full justify-evenly border border-black dark:border-white rounded-2xl p-8"
       >
         <h2
-          class="font-bold text-[4rem] text-center text-[#730000] dark:text-[#ffd3d3]"
+          class="font-semibold text-[4rem] text-center text-[#730000] dark:text-[#ffd3d3]"
         >
           Try a random URL below
         </h2>
@@ -143,12 +143,13 @@
           />
           <input
             class="self-center w-1/2 p-4 text-[2rem] mylap:mt-0 xlarge:mt-0 ldesktop:mt-0 desktop:mt-0 mobile:mt-4 border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#7b7bff] transition-all"
-            type="button"
+            type="submit"
+            onsubmit="return fetch_results()"
             value="Submit"
           />
         </form>
         <div>
-          <h1 class="text-center dark:text-[#ffd3d3]">
+          <h1 id="scan_result" class="text-center dark:text-[#ffd3d3]">
             Results of the URL is displayed here
           </h1>
         </div>
@@ -157,35 +158,37 @@
 
     <!-- DESCRIPTION -->
     <div
-      class="grid mylap:grid mylap:grid-cols-[65rem,65rem] justify-center items-center gap-[5rem] mx-auto mylap:max-w-[130rem] ldesktop:grid ldesktop:grid-cols-[60rem,60rem] ldesktop:max-w-[120rem] desktop:grid desktop:grid-cols-[55rem,55rem] desktop:max-w-[110rem] mobile:grid-rows-hero mobile:max-w-[60rem] mobile:p-4 lscreen:grid-rows-hero lscreen:max-w-[80rem] lscreen:p-4"
+      class="grid mylap:grid mylap:grid-cols-[65rem,65rem] justify-center items-center gap-[5rem] mx-auto mylap:max-w-fit mylap:p-0 ldesktop:grid ldesktop:grid-cols-[60rem,60rem] ldesktop:max-w-[120rem] ldesktop:p-0 desktop:grid desktop:grid-cols-[55rem,55rem] desktop:max-w-[110rem] desktop:p-0 mobile:grid-rows-hero mobile:max-w-[60rem] mobile:p-4 lscreen:grid-rows-hero lscreen:max-w-[80rem] lscreen:p-4"
     >
       <article
         class="flex flex-col justify-center text-justify gap-8 justify-self-start self-start"
       >
         <div>
-          <h2 class="dark:text-[#edffffda] font-bold text-[3rem]">
+          <h2
+            class="dark:text-[#edffffda] font-bold mylap:text-[4.3rem] xlarge:text-[4.3rem] ldesktop:text-[4.3rem] desktop:text-[4.3rem] sdesktop:text-[3.3rem] lscreen:text-[3.3rem] mobile:text-[3.3rem] leading-tight"
+          >
             What is Phishing & Anti-Phishing ?
           </h2>
-          <p class="dark:text-[#edffffda] text-[1.5rem]">
-            <strong class="text-[2rem]">Phishing</strong> refers to the
-            fraudulent practice of sending fake messages or creating deceptive
-            websites that mimic legitimate ones to lure users into disclosing
-            sensitive information, such as usernames, passwords, and credit card
-            details. These attacks not only compromise individuals' privacy and
-            finances but also threaten the security of organizations and
-            societies at large.
+          <p class="dark:text-[#edffffda] text-[2rem] font-light">
+            <strong class="text-[2.5rem] font-semibold">Phishing</strong> refers
+            to the fraudulent practice of sending fake messages or creating
+            deceptive websites that mimic legitimate ones to lure users into
+            disclosing sensitive information, such as usernames, passwords, and
+            credit card details. These attacks not only compromise individuals'
+            privacy and finances but also threaten the security of organizations
+            and societies at large.
           </p>
         </div>
 
-        <p class="dark:text-[#edffffda] text-[1.5rem]">
-          <strong class="text-[2rem]">Anti-Phishing</strong> refers to the
-          measures and technologies designed to detect and prevent phishing
-          attacks, which are deceptive attempts to steal sensitive information
-          like passwords, credit card details, or personal data. These measures
-          include tools like machine learning models, browser extensions, email
-          filters, and real-time URL scanners that analyze features such as
-          domain authenticity, URL structure, and email content to identify
-          phishing attempts.
+        <p class="dark:text-[#edffffda] text-[2rem] font-light">
+          <strong class="text-[2.5rem] font-semibold">Anti-Phishing</strong>
+          refers to the measures and technologies designed to detect and prevent
+          phishing attacks, which are deceptive attempts to steal sensitive
+          information like passwords, credit card details, or personal data.
+          These measures include tools like machine learning models, browser
+          extensions, email filters, and real-time URL scanners that analyze
+          features such as domain authenticity, URL structure, and email content
+          to identify phishing attempts.
         </p>
       </article>
 
@@ -193,10 +196,12 @@
         class="flex flex-col justify-center text-justify gap-8 justify-self-start self-start"
       >
         <div>
-          <h2 class="font-bold text-[3rem] dark:text-[#edffffda]">
+          <h2
+            class="font-bold mylap:text-[4.3rem] xlarge:text-[4.3rem] ldesktop:text-[4.3rem] desktop:text-[4.3rem] sdesktop:text-[3.3rem] lscreen:text-[3.3rem] mobile:text-[3.3rem] dark:text-[#edffffda] leading-tight"
+          >
             How our system blocks this type of attack.
           </h2>
-          <p class="dark:text-[#edffffda] text-[1.5rem]">
+          <p class="dark:text-[#edffffda] text-[2rem] font-light">
             The primary objective of our work is to develop a Phishing Detection
             System that leverages Machine Learning to accurately classify URLs
             as either "Phishing" or "Benign.". The system is designed to offer a
@@ -227,14 +232,16 @@
     >
       <div class="self-center">
         <img
-          class="rounded-[1rem] max-w-full h-full"
+          class="rounded-[1rem]"
+          width="full"
+          height="full"
           src="./images/phishing.webp"
           alt="phishing"
           loading="lazy"
         />
       </div>
       <div class="flex flex-col w-full">
-        <div class="self-center text-[2.5rem] font-bold mylap:mb-0 mobile:mb-4">
+        <div class="self-center text-[3.5rem] font-bold mylap:mb-0 mobile:mb-4">
           <h1 class="dark:text-[#edffffda]">Features</h1>
         </div>
 
@@ -250,10 +257,10 @@
             class="ion-icon mylap:text-[7rem] ldesktop:text-[6.5rem] desktop:text-[6rem] mobile:text-[5rem]"
           ></ion-icon>
           <div>
-            <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
+            <h2 class="font-semibold text-[2.8rem] dark:text-[#edffffda]">
               Feature Engineering:
             </h2>
-            <p class="font-light text-2xl dark:text-[#edffffda]">
+            <p class="font-light text-[1.5rem] dark:text-[#edffffda]">
               Extract relevant features from URLs to improve model accuracy,
               such as URL length, domain structure, presence of special
               characters, and subdomain characteristics.
@@ -269,10 +276,10 @@
             class="ion-icon mylap:text-[7rem] ldesktop:text-[6.5rem] desktop:text-[6rem] mobile:text-[5rem]"
           ></ion-icon>
           <div>
-            <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
+            <h2 class="font-semibold text-[2.8rem] dark:text-[#edffffda]">
               Machine Learning Integration:
             </h2>
-            <p class="font-light text-2xl dark:text-[#edffffda]">
+            <p class="font-light text-[1.5rem] dark:text-[#edffffda]">
               Utilize multiple Machine Learning algorithms, including Decision
               Tree, Random Forest, and Extra Trees classifiers, to enhance
               detection accuracy and robustness.
@@ -288,10 +295,10 @@
             class="ion-icon mylap:text-[4rem] mobile:text-[4rem] ldesktop:text-[4rem] desktop:text-[4rem]"
           ></ion-icon>
           <div>
-            <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
+            <h2 class="font-semibold text-[2.8rem] dark:text-[#edffffda]">
               Real-Time Detection:
             </h2>
-            <p class="font-light text-2xl dark:text-[#edffffda]">
+            <p class="font-light text-[1.5rem] dark:text-[#edffffda]">
               The system is able to process and classify URLs in real-time to
               provide immediate feedback to users.
             </p>
@@ -306,10 +313,10 @@
             class="ion-icon mylap:text-[5rem] ldesktop:text-[5rem] desktop:text-[5rem] mobile:text-[4.5rem]"
           ></ion-icon>
           <div>
-            <h2 class="font-semibold text-[2rem] dark:text-[#edffffda]">
+            <h2 class="font-semibold text-[2.8rem] dark:text-[#edffffda]">
               API Development:
             </h2>
-            <p class="font-light text-2xl dark:text-[#edffffda]">
+            <p class="font-light text-[1.5rem] dark:text-[#edffffda]">
               Developing a RESTful API using Django to enable integration with
               other applications or platforms for real-time phishing detection.
             </p>
@@ -327,17 +334,12 @@
       <video src=""></video>
     </div>
 
-    <div>
-      <h1 class="resolution dark:text-[#edffffda] text-center text-8xl"></h1>
-    </div>
-
     <!-- FOOTER -->
-    <footer class="w-full text-center">
+    <footer class="w-full text-center bottom-0">
       <p class="text-[#0000FF] mb-4 h-full p-[0.5rem 0] text-[1.7rem]">
         Developing by <strong>Batch-11 since 2024</strong>.
       </p>
     </footer>
+    <br /><br />
   </body>
 </html>
-
-<!-- https://www.activestate.com/blog/phishing-url-detection-with-python-and-ml/ -->

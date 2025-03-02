@@ -48,7 +48,7 @@ def classify_url(url):
     features = extract_features_single(url)
     predictions = []
     for model_name, model in models.items():
-        pred = model.predict([features])[0]
+        pred = (model_name, model.predict([features])[0])
         predictions.append(pred)
     
     # Majority voting

@@ -85,12 +85,38 @@ if (navbtn) {
   navbtn.classList.add("hidden");
 }
 
-const width: number = window.innerWidth;
+// Result API
+let result_text = document.getElementById("scan_result");
+const url: string = "";
 
-function showBrowserWidth(): void {
-  const height: number = window.innerHeight;
-  const res = document.querySelector(".resolution") as HTMLElement;
-  res.innerText = `Width: ${width}px, Height: ${height}px`;
-}
-window.onload = showBrowserWidth;
-window.onresize = showBrowserWidth;
+fetch(`http://127.0.0.1:8000/`).then(response=> {
+  console.log(response.json());
+});
+
+// Scroll adjustment
+document.addEventListener("DOMContentLoaded", () => {
+  const targetIds: string[] = ["#id1", "#id2", "#id3", "#id4"];
+
+  document.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((anchor) => {
+    const targetId = anchor.getAttribute("href");
+
+    if (targetId && targetIds.indexOf(targetId) !== -1) {
+      // Replacing includes() with indexOf()
+      anchor.addEventListener("click", (event: Event) => {
+        event.preventDefault();
+        const targetElement = document.querySelector<HTMLElement>(targetId);
+
+        if (targetElement) {
+          const offset = 65;
+          const elementPosition =
+            targetElement.getBoundingClientRect().top + window.scrollY;
+
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: "smooth",
+          });
+        }
+      });
+    }
+  });
+});

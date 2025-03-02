@@ -1,10 +1,10 @@
 {
   "name": "website_home_ui",
   "version": "1.0.0",
-  "description": "Front-end development is covered here.",
+  "description": "Browser extension's UI.",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "tailwindcss -i ./Styles/input.css -o ./Styles/output.css -w"
+    "build": "tailwindcss -i ./input.css -o ./output.css -w"
   },
   "author": "Vishnu sah VT",
   "license": "ISC",
