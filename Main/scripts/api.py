@@ -1,23 +1,22 @@
-from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+
 from typing import Optional
-from pydantic import BaseModel,Field
-from uuid import UUID, uuid4
+from fastapi import FastAPI, HTTPException, Depends
+from pydantic import BaseModel, Field
+
+from urllib.parse import urlparse
+
 from page_content_extractor import *
+from main import *
 
 import joblib
 import sys
-from urllib.parse import urlparse
 import tldextract
 import re
 import numpy as np
-import sqlite3
 
 app=FastAPI()
 
-def create_connection():
-    connection = sqlite3.connect("D:/clg/Project Phase 1/Project/Main/database/books.db")
-    return connection
 
 origins = [
     "http://127.0.0.1:5500",  # Your frontend's origin
@@ -33,7 +32,7 @@ app.add_middleware(
 
 
 # Loading multiple models
-models = {
+models_dict = {
     "DecisionTree": joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\modelphishing_detection_model_DecisionTreeClassifier.pkl"),
     "RandomForest": joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\modelphishing_detection_model_RandomForestClassifier.pkl"),
     "ExtraTrees": joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\modelphishing_detection_model_ExtraTreesClassifier.pkl"),
@@ -72,7 +71,7 @@ def extract_features_single(url):
 def classify_url(url):
     features = extract_features_single(url)
     predictions = []
-    for model_name, model in models.items():
+    for model_name, model in models_dict.items():
         pred = model.predict([features])[0]
         predictions.append(pred)
     
@@ -94,11 +93,8 @@ def classify_url(url):
         return
 
 @app.get("/")
-async def index(request:Request):
-    if request:
+async def index():
         return {"Welcome-Message":"Welcome to the Phishing Detection API"}
-    else:
-        raise TimeoutError
 
 Link:str=None
 
@@ -132,72 +128,62 @@ async def display_merged_links(url:str):
     mergedlinks= ltohtml(url)
     return {"Links merged":mergedlinks}
 
-#BaseModel for Users
-class User(BaseModel):
-    ID: UUID=Field(default_factory=uuid4)
-    Name: str=Field(min_length=1, max_length=30)
-    Date_Joined: str=Field(min_length=1, max_length=10)
-    Country: str
+#Display all users :::: modify this later should visible only to admin or display total no.of users
+@app.get("/users/")
+async def read_all(db: Session = Depends(get_db)):
+    return db.query(models.Users).all()
 
-    model_config={
-        "json_schema_extra":{
-            "example":{
-                "ID":"f918d73c-287f-43fe-b99b-6dcb750594b4",
-                "Name":"admin",
-                "Date_Joined":"27/02/2025",
-                "Country":"India"
-            }
-        },
-        "from_attributes": True
-    }
-
-
-@app.get("/users/all/")
-async def get_all_users():
-    def get_users():
-        connection=create_connection()
-        cursor=connection.cursor()
-        cursor.execute("SELECT * FROM Users")
-        books=cursor.fetchall()
-        res=[]
-        for book in books:
-            res.append(book)
-        connection.close()
-        return res
-    return get_users()
-
-# Add user
-@app.post("/")
-async def create_user(user:User):  
-    return user
-
-"""
-#Display particular authenticated users only to admin
+# Search user by Name, Displays only authenticated users
 @app.get("/users/{user_name}")
-async def get_users(user_name:str):
-    for user in user_db:
-        if user.Name == user_name:
-            return {
-                f"{user.Name} Found": "Details",
-                "ID": user.ID,
-                "Country": user.Country,
-                "Date Joined": user.ID
-                }
-    else:
-        return f"{user_name} NOT FOUND, try another name😔"
+async def get_user_by_name(user_name: str, db: Session= Depends(get_db)):
+    user_model= db.query(models.Users).filter(models.Users.user_name==user_name).first()
+    if user_model is not None:
+        return user_model
+    return f"{user_name} NOT FOUND, try another name😔"
 
-#Display authenticated user's database to user
-@app.get("/users/{user_name}/phish_db/")
-async def display_users_phish_db(user_name:str):
-    for user in user_db:
-        if user.Name == user_name:
-            return {
-                f"Details of {user.Name}'s Database": {
-                "ID": user.ID,
-                "Date Joined": user.ID,
-                "DataBase's Logs": "Log" # Display first 10 database's logs of the user
-            }}
+#Create user
+@app.post("/")
+async def create_user(user: User, db: Session=Depends(get_db)):
+    user_model=models.Users()
+    if user_model:
+        user_model.user_name=user.user_name
+        user_model.user_mail=user.user_mail
+        user_model.country=user.country
+        user_model.is_active=user.is_active
+        
+        db.add(user_model)
+        db.commit()
+        return successful_response(200)
     else:
-        return f"{user_name} was NOT FOUND!"
+        raise http_exception()
 
-"""
+#Modify user's DataBase
+@app.put("/{user_name}")
+async def update_user(user_name: str, user:User, db:Session=Depends(get_db)):
+    user_model=db.query(models.Users).filter(models.Users.user_name==user_name).first()
+    
+    if user_model is None:
+        raise http_exception()
+    
+    user_model.user_name=user.user_name
+    user_model.user_mail=user.user_mail
+    user_model.country=user.country
+    user_model.is_active=True
+
+    db.add(user_model)
+    db.commit()
+    
+    return successful_response(200)
+
+#Delete user by name
+@app.delete("/{user_name}")
+async def delete_user_by_name(user_name: str, db: Session=Depends(get_db)):
+    user_model=db.query(models.Users).filter(models.Users.user_name == user_name).first()
+    
+    if user_model is None:
+        return f"{user_name} NOT FOUND 😔"
+    
+    db.query(models.Users).filter(models.Users.user_name == user_name).delete()
+    db.commit()
+
+    return successful_response(200)
