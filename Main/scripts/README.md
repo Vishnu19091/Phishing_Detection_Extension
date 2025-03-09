@@ -10,10 +10,9 @@
 Python
 Pandas
 NumPy
-Django
 FastAPI
-WhoisAPI
 TypeScript
+JavaScript
 ```
 
 ---
