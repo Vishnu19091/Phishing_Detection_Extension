@@ -1,5 +1,5 @@
 # Define the path to the package.json directory
-$projectPath = "D:\clg\Project Phase 1\Project\Main\UI\"
+$projectPath = "YOUR_PATH_TO_THE_PROJECT"
 
 # Navigate to the directory
 if (Test-Path $projectPath) {
