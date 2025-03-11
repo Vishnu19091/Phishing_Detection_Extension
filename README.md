@@ -90,10 +90,29 @@ This is a standard Markdown paragraph.
 <!-- As we used **TailwindCSS**, it requires you to run npm commands to host it locally.
 > To **initialize TailwindCSS** run the below line of command-->
 
-> To **install python dependencies** navigate to the **requirements.txt** location, then run the below line in the terminal.
+> To **install python dependencies** navigate to the **requirements.txt** location, then run the below line in the terminal. Before create venv
+
+```bash
+python -m venv venv-name
+```
+
+> Then activate the venv and install the requirements in the venv.
 
 ```bash
 pip install -r requirements.txt
+```
+
+- Navigate to **/Main/scripts/** then execute the below line to run the server.
+
+```bash
+uvicorn api:app
+```
+
+- This will run in the default localhost port 8000.
+- If you need to run in different port then,
+
+```bash
+uvicorn api:app --port [port_number]
 ```
 
 <br/>
@@ -104,4 +123,4 @@ pip install -r requirements.txt
 
 This system offers a sophisticated approach to mitigating the risks associated with phishing attacks. That's all
 
-<h1 style="text-align:center;color:lightgreen;">Thank you</h1>
+<h1 style="text-align:center;">Thank you</h1>
