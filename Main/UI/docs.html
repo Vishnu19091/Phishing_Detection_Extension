@@ -25,22 +25,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Icon Script -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-      defer
-      async
-    ></script>
-    <script
-      nomodule
-      defer
-      async
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-
-    <!-- Main Scripts -->
-    <script src="./scripts/script.js" defer></script>
   </head>
 
   <body class="dark:bg-black">
@@ -75,33 +59,44 @@
             <a
               href="./report.html"
               class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-              >Report Website</a
+              >Report URL</a
             >
             <a
-              href="./scanr.html"
+              href="./dashboard.html"
               class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-              >Scan Report</a
+              >DashBoard</a
             >
             <a
               href="#"
               class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
               >Docs</a
             >
+            <a
+              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300 cursor-pointer"
+              id="login-btn"
+              >Login</a
+            >
           </ul>
         </nav>
       </div>
 
       <!-- Mobile Navigation Button -->
-      <button class="mode mobile:col-span-1 lscreen:col-span-1">
-        <ion-icon
-          name="sunny-outline"
-          class="mode-icon dark:text-white hidden"
-        ></ion-icon>
-        <ion-icon
-          name="moon-outline"
-          class="mode-icon dark:text-white"
-        ></ion-icon>
-      </button>
+
+      <div class="flex justify-end items-center">
+        <div class="w-fit" id="user-info" style="display: block">
+          <p id="user-name" class="dark:text-white">Welcome Guest!</p>
+        </div>
+        <button class="mode mobile:col-span-1 lscreen:col-span-1">
+          <ion-icon
+            name="sunny-outline"
+            class="mode-icon dark:text-white hidden"
+          ></ion-icon>
+          <ion-icon
+            name="moon-outline"
+            class="mode-icon dark:text-white"
+          ></ion-icon>
+        </button>
+      </div>
     </header>
 
     <!-- About the work -->
@@ -410,5 +405,11 @@
       </p>
     </footer>
     <br /><br />
+    <!-- Icon Script -->
+    <script type="module" src="./scripts/ionicons.esm.js" async></script>
+    <script nomodule async src="./scripts/ionicons.js"></script>
+
+    <!-- Main Scripts -->
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

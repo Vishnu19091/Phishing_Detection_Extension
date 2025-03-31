@@ -25,22 +25,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Icon Script -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-      defer
-      async
-    ></script>
-    <script
-      nomodule
-      defer
-      async
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-
-    <!-- Main Scripts -->
-    <script src="./scripts/script.js" defer></script>
+    
   </head>
 
   <body class="h-[300vh] dark:bg-black">
@@ -75,48 +60,91 @@
             <a
               href="#"
               class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-              >Report Website</a
+              >Report URL</a
             >
             <a
-              href="./scanr.html"
+              href="./dashboard.html"
               class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-              >Scan Report</a
+              >DashBoard</a
             >
             <a
               href="./docs.html"
               class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
               >Docs</a
             >
+            <a
+              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300 cursor-pointer"
+              id="login-btn"
+              >Login</a
+            >
           </ul>
         </nav>
       </div>
 
       <!-- Mobile Navigation Button -->
-      <button class="mode mobile:col-span-1 lscreen:col-span-1">
-        <ion-icon
-          name="sunny-outline"
-          class="mode-icon dark:text-white hidden"
-        ></ion-icon>
-        <ion-icon
-          name="moon-outline"
-          class="mode-icon dark:text-white"
-        ></ion-icon>
-      </button>
+
+      <div class="flex justify-end items-center">
+        <div class="w-fit" id="user-info" style="display: block">
+          <p id="user-name" class="dark:text-white">Welcome Guest!</p>
+        </div>
+        <button class="mode mobile:col-span-1 lscreen:col-span-1">
+          <ion-icon
+            name="sunny-outline"
+            class="mode-icon dark:text-white hidden"
+          ></ion-icon>
+          <ion-icon
+            name="moon-outline"
+            class="mode-icon dark:text-white"
+          ></ion-icon>
+        </button>
+      </div>
     </header>
 
-    <div class="grid w-fit h-[80vh] mx-auto my-auto">
-      <h1
-        class="text-center dark:text-[#edffffda] font-bold text-[4rem] self-center"
-      >
-        Still working on this feature will be available as soon as we complete.
-      </h1>
-    </div>
+  <div class="container mx-auto my-10">
+    <p class="text-[5rem] font-bold text-center dark:text-white mb-6">Report Phishing Website</p> <!-- Added mb-6 -->
 
+    <form id="report-form" class="mt-6 flex flex-col items-center">
+      <label for="url" class="block text-[2rem] font-semibold dark:text-white text-center w-full">
+        Enter the suspicious URL
+      </label>
+      <input
+        type="url"
+        id="url"
+        name="url"
+        required
+        placeholder="https://example.com"
+        class="w-1/2 p-3 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+      />
+      
+      <button
+        type="submit"
+        class="mt-4 w-1/5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
+      >
+        Submit Report
+      </button>
+    </form>
+
+    <p class="mt-4 text-center dark:text-white text-[2rem]">
+      <strong>NOTE :</strong> Please enter the suspect URL only. It will be verified by our programmers and reported.
+    </p>
+
+    <p id="message" class="mt-4 text-center font-semibold dark:text-white"></p>
+  </div>
+</div>
+
+    
     <!-- FOOTER -->
     <footer class="w-full text-center bottom-0">
       <p class="text-[#0000FF] mb-4 h-full p-[0.5rem 0] text-[1.7rem]">
         Developing by <strong>Batch-11 since 2024</strong>.
       </p>
     </footer>
+
+    <!-- Icon Script -->
+    <script type="module" src="./scripts/ionicons.esm.js" async></script>
+    <script nomodule async src="./scripts/ionicons.js"></script>
+
+    <!-- Main Scripts -->
+    <script src="./scripts/script.js" ></script>
   </body>
 </html>
