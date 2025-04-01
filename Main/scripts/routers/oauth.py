@@ -91,10 +91,12 @@ async def auth_callback(request: Request, db: Session = Depends(get_db)):
         decoded_token = jwt.decode(id_token, options={"verify_signature": False})
         email = decoded_token.get("email")
         name = decoded_token.get("name")
+        profile_picture=decoded_token.get("picture")
 
         # Store user info in session
         request.session["user_name"] = name
         request.session["user_email"] = email
+        request.session["user_profile"]=profile_picture
 
         # Store in database if new user
         existing_user = db.query(Users).filter(Users.user_mail == email).first()
@@ -102,8 +104,9 @@ async def auth_callback(request: Request, db: Session = Depends(get_db)):
             new_user = Users(user_name=name, user_mail=email, is_active=True)
             db.add(new_user)
             db.commit()
+            logging.info("New_User authenticated and stored: %s", name)
 
-        logging.info("New_User authenticated and stored: %s", name)
+        logging.info("Existing User: %s", name)
 
         return RedirectResponse(url="http://localhost:5500/UI/home.html")
 
@@ -115,12 +118,16 @@ async def auth_callback(request: Request, db: Session = Depends(get_db)):
 async def get_user(request: Request, db: Session = Depends(get_db)):
     """Fetches the authenticated user's details"""
     user_email = request.session.get("user_email")
+    user_profile=request.session.get("user_profile")
 
     if not user_email:
         return JSONResponse({"error": "User not authenticated"}, status_code=401)
 
     user = db.query(Users).filter(Users.user_mail == user_email).first()
     if user:
-        return {"name": user.user_name, "email": user.user_mail}
+        return {
+            "name": user.user_name,
+            "email": user.user_mail,
+            "Profile_picture":user_profile}
     else:
         return JSONResponse({"error": "User not found"}, status_code=404)

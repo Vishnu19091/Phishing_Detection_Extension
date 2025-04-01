@@ -85,10 +85,10 @@ if (navbtn) {
 } else {
   navbtn.classList.add("hidden");
 }
-// Result API
+//////////////////////////////////
+
+////// Predict URL API \\\\\\
 var result_text = document.getElementById("scan_result");
-var url = "http://127.0.0.1:8000/predict/?predict_url=";
-let response = "";
 
 const result_obj = {
   URL_Status: undefined,
@@ -97,7 +97,7 @@ const result_obj = {
 };
 
 const fetch_results = function (url) {
-  fetch(`http://127.0.0.1:8000/predict/?predict_url=${url}`)
+  fetch(`http://127.0.0.1:8000/predict-api/url/?predict_url=${url}`)
     .then(function (response) {
       return response.json();
     })
@@ -106,11 +106,14 @@ const fetch_results = function (url) {
       result_obj.Message = data["Message"];
       result_obj.Results = data["Results"];
       console.log(result_obj);
-      result_text.innerText = result_obj.Message;
+      result_text.innerText = `${result_obj.Message} ${result_obj.Results}`;
+      result_text.style.outline = "2px solid green";
+      result_text.style.padding = "10px";
+      result_text.style.borderRadius = "5px";
+      result_text.style.maxWidth = "auto";
     });
 };
-
-// fetch_results(url);
+//////////////////////////////////
 
 // Scroll adjustment
 document.addEventListener("DOMContentLoaded", function () {
@@ -176,55 +179,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fetchUserInfo(); // Fetch user info on page load
 });
-
-////// Report URL using API \\\\\\
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("report-form");
-  const messageBox = document.getElementById("message");
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent page refresh
-
-    const url = document.getElementById("url").value.trim();
-    if (!url) {
-      messageBox.textContent = "Please enter a valid URL!";
-      messageBox.style.color = "red";
-      return;
-    }
-
-    try {
-      const response = await fetch("http://localhost:8000/report/api/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        credentials: "include",
-        body: new URLSearchParams({ url }), // Sending in form-urlencoded format
-      });
-
-      const data = await response.json();
-      messageBox.textContent =
-        data.message || "Phishing website reported successfully!";
-      messageBox.style.color = response.ok ? "green" : "red";
-    } catch (error) {
-      console.error("Error:", error);
-      messageBox.textContent = "Failed to report URL.";
-      messageBox.style.color = "red";
-    }
-
-    // Show message and fade out after 3 seconds
-    messageBox.style.opacity = "1";
-    messageBox.style.transition = "opacity 1s";
-    setTimeout(() => {
-      messageBox.style.opacity = "0";
-    }, 2000); // Wait 2 sec, then fade out in 1 sec
-
-    // Reset message after fade-out completes
-    setTimeout(() => {
-      messageBox.textContent = "";
-      messageBox.style.opacity = "1"; // Reset opacity for next submit
-    }, 3000);
-  });
-});
-
 //////////////////////////////////

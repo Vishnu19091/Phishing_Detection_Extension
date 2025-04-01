@@ -27,7 +27,7 @@ class User(BaseModel):
     user_mail: str = Field(min_length=1, description="someone@gmail.com")
     is_active: bool
 
-#Display all users :::: modify this later should visible only to admin or display total no.of users
+# :::::::::::::::: Should controlable only to admin ::::::::::::::::
 @router.get("/users")
 async def read_all_us(db: Session = Depends(get_db)):
     return db.query(models.Users).all()
@@ -55,6 +55,7 @@ async def create_user(user: User, db: Session=Depends(get_db)):
     else:
         raise http_exception()
 
+# :::::::::::::::: Authenticated User can modify name later ::::::::::::::::
 #Modify user's DataBase
 @router.put("/{user_name}")
 async def update_user(user_name: str, user:User, db:Session=Depends(get_db)):
@@ -71,6 +72,7 @@ async def update_user(user_name: str, user:User, db:Session=Depends(get_db)):
     db.commit()
     
     return successful_response(200)
+# :::::::::::::::: Authenticated User can modify name later ::::::::::::::::
 
 #Delete user by name
 @router.delete("/{user_name}")
@@ -84,3 +86,5 @@ async def delete_user_by_name(user_name: str, db: Session=Depends(get_db)):
     db.commit()
 
     return successful_response(200)
+
+# :::::::::::::::: Should controlable only to admin ::::::::::::::::

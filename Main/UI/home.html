@@ -139,7 +139,7 @@
           <input
             class="self-center w-1/2 p-4 text-[2rem] mylap:mt-0 xlarge:mt-0 ldesktop:mt-0 desktop:mt-0 mobile:mt-4 border border-black rounded-2xl cursor-pointer font-normal hover:bg-black hover:text-[#c1c1ff] hover:font-bold dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-[#7b7bff] transition-all"
             type="submit"
-            onsubmit="return fetch_results()"
+            onclick="fetch_results(); return false;"
             value="Submit"
           />
         </form>
@@ -339,7 +339,13 @@
     <script src="./scripts/script.js"></script>
 
     <!-- Icon Script -->
-    <script type="module" src="./scripts/ionicons.esm.js" async></script>
-    <script nomodule async src="./scripts/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

@@ -83,8 +83,8 @@ Link:str=None
 
 # Prediction using query parameter
 @router.get("/url/")
-async def predicturl(predict_url:str=None):
-    if not predict_url:
+async def predicturl(predict_url:str):
+    if predict_url is None :
         return url_http_exception()
 
     result = classify_url(predict_url)
@@ -99,12 +99,12 @@ async def predicturl(predict_url:str=None):
     return {
         "URL Status": result != "Uncertain",
         "Results": f"The URL '{predict_url}' is classified as {result}",
-        "Message": message
+        "Message": message,
     }
     
 @router.get("/merged_links/")
-async def display_merged_links(url:str=None):
-    if not url:
+async def display_merged_links(url:str):
+    if url is None:
         return url_http_exception()
     
     mergedlinks= ltohtml(url)
