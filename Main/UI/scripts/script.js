@@ -146,9 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchUserInfo() {
     try {
-      const response = await fetch("http://localhost:8000/oauth/api/user", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://samp-fast-api.onrender.com/oauth/api/user",
+        {
+          credentials: "include",
+        }
+      );
 
       if (!response.ok) {
         throw new Error("User not logged in");
