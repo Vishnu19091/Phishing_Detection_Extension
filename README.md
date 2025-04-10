@@ -107,7 +107,7 @@ pip install -r requirements.txt
 uvicorn api:app --port 8000
 ```
 
-**Remeber the server only runs on localhostport:8000**
+**Remember the server only runs on localhostport:8000**
 
 > If DataBase issues arise at initial stage, create dir name **'Database'**. Then try again running the server.
 
