@@ -12,6 +12,7 @@ import joblib
 import sys
 import tldextract
 import re
+import os
 
 router=APIRouter(prefix="/predict-api",tags=["predict-api"])
 
@@ -23,16 +24,21 @@ def get_db():
     finally:
         db.close()
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "..", "model"))
+
+def load_model(name):
+    return joblib.load(os.path.join(MODEL_DIR, name))
 
 # Loading multiple models
 models_dict = {
-    "AdaBoostClassifier":joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\AdaBoostClassifier_model.pkl"),
-    "DecisionTree": joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\DecisionTreeClassifier_model.pkl"),
-    "ExtraTrees": joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\ExtraTreesClassifier_model.pkl"),
-    "GaussianNB":joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\GaussianNB_model.pkl"),
-    "KNeighborsClassifier":joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\KNeighborsClassifier_model.pkl"),
-    "RandomForest": joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\RandomForestClassifier_model.pkl"),
-    "SGDClassifier":joblib.load(r"D:\clg\Project Phase 1\Project\Main\model\SGDClassifier_model.pkl")
+    "AdaBoostClassifier": load_model("AdaBoostClassifier_model.pkl"),
+    "DecisionTree": load_model("DecisionTreeClassifier_model.pkl"),
+    "ExtraTrees": load_model("ExtraTreesClassifier_model.pkl"),
+    "GaussianNB": load_model("GaussianNB_model.pkl"),
+    "KNeighborsClassifier": load_model("KNeighborsClassifier_model.pkl"),
+    "RandomForest": load_model("RandomForestClassifier_model.pkl"),
+    "SGDClassifier": load_model("SGDClassifier_model.pkl")
 }
 
 

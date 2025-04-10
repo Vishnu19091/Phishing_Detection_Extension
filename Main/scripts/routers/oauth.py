@@ -57,7 +57,7 @@ async def logout(request: Request):
     """Logs out the user by clearing session data"""
     request.session.clear()
     logging.debug("Logged Out Successfully")
-    return RedirectResponse(url="http://localhost:5500/UI/home.html")
+    return RedirectResponse(url="https://anti-phish.netlify.app/")
 
 @router.get("/auth/callback")
 async def auth_callback(request: Request, db: Session = Depends(get_db)):
@@ -108,7 +108,7 @@ async def auth_callback(request: Request, db: Session = Depends(get_db)):
 
         logging.info("Existing User: %s", name)
 
-        return RedirectResponse(url="http://localhost:5500/UI/home.html")
+        return RedirectResponse(url="https://anti-phish.netlify.app/home")
 
     except Exception as e:
         logging.error("Error in auth_callback: %s", traceback.format_exc())
