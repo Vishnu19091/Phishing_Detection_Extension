@@ -795,10 +795,6 @@ video {
   cursor: pointer;
 }
 
-.cursor-auto {
-  cursor: auto;
-}
-
 .list-disc {
   list-style-type: disc;
 }
@@ -1173,8 +1169,8 @@ video {
   outline-offset: 2px;
 }
 
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+.outline {
+  outline-style: solid;
 }
 
 .backdrop-blur-\[0\.5rem\] {
