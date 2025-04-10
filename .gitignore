@@ -1,2 +1,3 @@
 .env
+Main/UI/node_modules/
 Main/scripts/oauth_details.json
