@@ -170,9 +170,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Attach event listener based on updated button text
     logButton.addEventListener("click", function () {
       if (logButton.textContent === "Login") {
-        window.location.href = "http://localhost:8000/oauth/login";
+        window.location.href = "https://samp-fast-api.onrender.com/oauth/login";
       } else {
-        window.location.href = "http://localhost:8000/oauth/logout";
+        window.location.href =
+          "https://samp-fast-api.onrender.com/oauth/logout";
       }
     });
   }
