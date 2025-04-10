@@ -4,7 +4,8 @@
   "description": "Front-end development is covered here.",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "tailwindcss -i ./Styles/input.css -o ./Styles/output.css"
+    "build": "tailwindcss -i ./Styles/input.css -o ./Styles/output.css",
+    "postinstall": "npx tailwindcss init"
   },
   "author": "Vishnu sah VT",
   "license": "ISC",
