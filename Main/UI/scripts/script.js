@@ -97,7 +97,7 @@ const result_obj = {
 };
 
 const fetch_results = function (url) {
-  fetch(`http://127.0.0.1:8000/predict-api/url/?predict_url=${url}`)
+  fetch(`https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${url}`)
     .then(function (response) {
       return response.json();
     })
