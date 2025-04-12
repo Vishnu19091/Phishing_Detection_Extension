@@ -152,11 +152,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "https://samp-fast-api.onrender.com/oauth/api/user",
         {
           method: "GET",
+          credentials: "include",
         }
       );
 
       if (!response.ok) {
-        throw new Error("User not logged in");
+        throw new Error("Something went wrong on the server!😔");
       }
 
       const data = await response.json();
@@ -168,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Update button text
       logButton.textContent = "Logout";
     } catch (error) {
-      console.error("Error fetching user info:", error);
+      console.error("User not logged in, Please Log-in");
       logButton.textContent = "Login";
     }
 
