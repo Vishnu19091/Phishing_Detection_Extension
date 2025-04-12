@@ -97,7 +97,9 @@ const result_obj = {
 };
 
 const fetch_results = function (url) {
-  fetch(`https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${url}`)
+  fetch(
+    `https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${url}`
+  )
     .then(function (response) {
       return response.json();
     })
@@ -149,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const response = await fetch(
         "https://samp-fast-api.onrender.com/oauth/api/user",
         {
-          credentials: "include",
+          method: "GET",
         }
       );
 
