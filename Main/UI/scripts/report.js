@@ -14,14 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/report/api/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        credentials: "include",
-        body: new URLSearchParams({ url }), // Sending in form-urlencoded format
-      });
+      const response = await fetch(
+        "https://samp-fast-api.onrender.com/report/api/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          credentials: "include",
+          body: new URLSearchParams({ url }), // Sending in form-urlencoded format
+        }
+      );
 
       const data = await response.json();
       messageBox.textContent =

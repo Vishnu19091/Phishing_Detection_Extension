@@ -90,29 +90,35 @@ if (navbtn) {
 ////// Predict URL API \\\\\\
 var result_text = document.getElementById("scan_result");
 
-const result_obj = {
-  URL_Status: undefined,
-  Results: undefined,
-  Message: undefined,
-};
-
 const fetch_results = function (url) {
   fetch(
-    `https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${url}`
+    `https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${encodeURIComponent(
+      url
+    )}`
   )
-    .then(function (response) {
-      return response.json();
-    })
+    .then((res) => res.json())
     .then((data) => {
-      result_obj.URL_Status = data["URL Status"];
-      result_obj.Message = data["Message"];
-      result_obj.Results = data["Results"];
-      console.log(result_obj);
+      let result_obj = {
+        URL_Status: data["URL Status"],
+        Results: data["Message"],
+        Message: data["Results"],
+      };
+      console.log(data);
       result_text.innerText = `${result_obj.Message} ${result_obj.Results}`;
-      result_text.style.outline = "2px solid green";
+      if (result_obj.Message === "The URL is trustable, you can visit.") {
+        result_text.style.outline = "2px solid green";
+      } else if (
+        result_obj.Message ===
+        "!The given URL might be Phishing or Defacement, proceed with caution!"
+      ) {
+        result_text.style.outline = "2px solid green";
+      } else {
+        result_text.style.outline = "2px solid red";
+      }
       result_text.style.padding = "10px";
       result_text.style.borderRadius = "5px";
       result_text.style.maxWidth = "auto";
+      result_text.style.color = "violet";
     });
 };
 //////////////////////////////////
