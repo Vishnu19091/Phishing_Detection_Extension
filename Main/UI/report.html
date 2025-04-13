@@ -35,70 +35,80 @@
 
     <!-- HEADER & NAVIGATION -->
     <header
-      class="sticky top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh sdesktop:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 desktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+    class="sticky top-0 p-2 grid mobile:grid-cols-custh lscreen:grid-cols-custh sdesktop:grid-cols-custh mylap:grid-cols-3 ldesktop:grid-cols-3 desktop:grid-cols-3 items-center gap-4 w-full z-[999] bg-black/30 dark:bg-white/15 backdrop-blur-[0.5rem]"
+  >
+    <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
+    <div
+      class="relative mobile:justify-self-center lscreen:justify-self-center mobile:self-center lscreen:self-center"
     >
-      <h1 class="text-5xl font-bold dark:text-white">Anti-Phish Guard</h1>
-      <div
-        class="relative mobile:justify-self-center lscreen:justify-self-center mobile:self-center lscreen:self-center"
+      <button
+        id="modal-btn"
+        class="mobile:block mylap:hidden ldesktop:hidden desktop:hidden"
       >
-        <button
-          id="modal-btn"
-          class="mobile:block mylap:hidden ldesktop:hidden desktop:hidden"
+        <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
+        <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
+      </button>
+      <nav>
+        <ul
+          class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full desktop:self-center desktop:flex desktop:flex-row desktop:justify-evenly desktop:items-center desktop:w-[50rem] desktop:h-full"
         >
-          <ion-icon name="grid-outline" class="text-5xl"></ion-icon>
-          <ion-icon name="close-outline" class="text-6xl hidden"></ion-icon>
-        </button>
-        <nav>
-          <ul
-            class="mnav mylap:self-center mylap:flex mylap:flex-row gap-4 mylap:justify-evenly mylap:items-center mylap:w-fit mylap:h-full bg-transparent ldesktop:self-center ldesktop:flex ldesktop:flex-row ldesktop:justify-evenly ldesktop:items-center ldesktop:w-[50rem] ldesktop:h-full desktop:self-center desktop:flex desktop:flex-row desktop:justify-evenly desktop:items-center desktop:w-[50rem] desktop:h-full"
+          <a
+            href="./home.html"
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition-transform"
+            >Home</a
           >
-            <a
-              href="./home.html"
-              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition-transform"
-              >Home</a
-            >
-            <a
-              href="#"
-              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-              >Report URL</a
-            >
-            <a
-              href="./dashboard.html"
-              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-              >DashBoard</a
-            >
-            <a
-              href="./docs.html"
-              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
-              >Docs</a
-            >
-            <a
-              class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300 cursor-pointer"
-              id="login-btn"
-              >Login</a
-            >
-          </ul>
-        </nav>
-      </div>
+          <a
+            href="#"
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
+            >Report URL</a
+          >
+          <a
+            href="./dashboard.html"
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
+            >DashBoard</a
+          >
+          <a
+            href="./docs.html"
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300"
+            >Docs</a
+          >
+          <a
+            class="visited:no-underline text-black dark:text-white text-[2rem] px-4 py-1 rounded hover:text-[#ffffff] hover:bg-blue-500/40 dark:hover:bg-white/40 dark:hover:text-[#000] transition duration-300 cursor-pointer"
+            id="login-btn"
+            >Login</a
+          >
+        </ul>
+      </nav>
+    </div>
 
-      <!-- Mobile Navigation Button -->
+    <!-- Mobile Navigation Button -->
 
-      <div class="flex justify-end items-center">
-        <div class="w-fit" id="user-info" style="display: block">
-          <p id="user-name" class="dark:text-white">Welcome Guest!</p>
-        </div>
-        <button class="mode mobile:col-span-1 lscreen:col-span-1">
-          <ion-icon
-            name="sunny-outline"
-            class="mode-icon dark:text-white hidden"
-          ></ion-icon>
-          <ion-icon
-            name="moon-outline"
-            class="mode-icon dark:text-white"
-          ></ion-icon>
-        </button>
+    <div class="flex justify-end items-center gap-6 w-full">
+      <div
+        class="w-fit flex flex-row gap-4 items-center"
+        id="user-info"
+        style="display: flex"
+      >
+        <p id="user-name" class="dark:text-white">Welcome Guest!</p>
+        <img
+          src="./images/user.svg"
+          alt="user-profile-picture"
+          id="user_profile"
+          class="rounded-full border-2 border-white w-20 h-20"
+        />
       </div>
-    </header>
+      <button class="mode mobile:col-span-1 lscreen:col-span-1">
+        <ion-icon
+          name="sunny-outline"
+          class="mode-icon dark:text-white hidden"
+        ></ion-icon>
+        <ion-icon
+          name="moon-outline"
+          class="mode-icon dark:text-white"
+        ></ion-icon>
+      </button>
+    </div>
+  </header>
 
   <div class="container mx-auto my-10">
     <p class="text-[5rem] font-bold text-center dark:text-white mb-6">Report Phishing Website</p> <!-- Added mb-6 -->

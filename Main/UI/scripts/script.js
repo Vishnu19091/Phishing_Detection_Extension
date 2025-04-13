@@ -97,9 +97,7 @@ const result_obj = {
 };
 
 const fetch_results = function (url) {
-  fetch(
-    `https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${url}`
-  )
+  fetch(`http://127.0.0.1:8000/predict-api/url/?predict_url=${url}`)
     .then(function (response) {
       return response.json();
     })
@@ -143,43 +141,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ////// Login button \\\\\\
 
+const token = new URLSearchParams(window.location.search).get("token");
+if (token) {
+  localStorage.setItem("access_token", token);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const logButton = document.getElementById("login-btn");
 
   async function fetchUserInfo() {
     try {
-      const response = await fetch(
-        "https://samp-fast-api.onrender.com/oauth/api/user",
-        {
-          method: "GET",
-          credentials: "include",
-        }
-      );
+      const response = await fetch("http://localhost:8000/oauth/api/user", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
 
       if (!response.ok) {
-        throw new Error("Something went wrong on the server!😔");
+        throw new Error("User not logged in");
       }
 
       const data = await response.json();
 
-      // Show user info
-      document.getElementById("user-info").style.display = "block";
-      document.getElementById("user-name").textContent = data.name;
+      const user_name = data.name;
+      const user_profile = data.Profile_picture;
+
+      document.getElementById("user-name").textContent = user_name;
+      document.getElementById("user_profile").src = user_profile;
 
       // Update button text
       logButton.textContent = "Logout";
     } catch (error) {
-      console.error("User not logged in, Please Log-in");
+      console.error("Error fetching user info:", error);
       logButton.textContent = "Login";
     }
 
     // Attach event listener based on updated button text
     logButton.addEventListener("click", function () {
       if (logButton.textContent === "Login") {
-        window.location.href = "https://samp-fast-api.onrender.com/oauth/login";
+        window.location.href = "http://localhost:8000/oauth/login";
       } else {
-        window.location.href =
-          "https://samp-fast-api.onrender.com/oauth/logout";
+        ////// logout \\\\\\
+        localStorage.removeItem("access_token");
+        window.location.href = "http://localhost:8000/oauth/logout";
       }
     });
   }

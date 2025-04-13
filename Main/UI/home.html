@@ -81,9 +81,19 @@
 
       <!-- Mobile Navigation Button -->
 
-      <div class="flex justify-end items-center">
-        <div class="w-fit" id="user-info" style="display: block">
+      <div class="flex justify-end items-center gap-6 w-full">
+        <div
+          class="w-fit flex flex-row gap-4 items-center"
+          id="user-info"
+          style="display: flex"
+        >
           <p id="user-name" class="dark:text-white">Welcome Guest!</p>
+          <img
+            src="./images/user.svg"
+            alt="user-profile-picture"
+            id="user_profile"
+            class="rounded-full border-2 border-white w-20 h-20"
+          />
         </div>
         <button class="mode mobile:col-span-1 lscreen:col-span-1">
           <ion-icon
