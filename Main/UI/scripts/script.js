@@ -97,7 +97,9 @@ const result_obj = {
 };
 
 const fetch_results = function (url) {
-  fetch(`http://127.0.0.1:8000/predict-api/url/?predict_url=${url}`)
+  fetch(
+    `https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${url}`
+  )
     .then(function (response) {
       return response.json();
     })
@@ -151,11 +153,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function fetchUserInfo() {
     try {
-      const response = await fetch("http://localhost:8000/oauth/api/user", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-        },
-      });
+      const response = await fetch(
+        "https://samp-fast-api.onrender.com/oauth/api/user",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("User not logged in");
@@ -179,11 +184,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Attach event listener based on updated button text
     logButton.addEventListener("click", function () {
       if (logButton.textContent === "Login") {
-        window.location.href = "http://localhost:8000/oauth/login";
+        window.location.href = "https://samp-fast-api.onrender.com/oauth/login";
       } else {
         ////// logout \\\\\\
         localStorage.removeItem("access_token");
-        window.location.href = "http://localhost:8000/oauth/logout";
+        window.location.href =
+          "https://samp-fast-api.onrender.com/oauth/logout";
       }
     });
   }
