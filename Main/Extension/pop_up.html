@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Threat Found</title>
-    <script src="./script.js" defer></script>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anti-Phishing Extension</title>
+    <script src="./scripts/content.js" defer></script>
+    <script src="./scripts/pop_up.js" defer></script>
+    <link rel="stylesheet" href="./styles/pop_up(out).css" />
+    <link rel="stylesheet" href="./styles/pop_up(inp).css" />
+  </head>
+  <body id="body" class="bg-zinc-900 w-[45rem] h-fit p-4">
+    <header class="flex items-center mt-4 mb-4 justify-between">
+      <div class="flex gap-2 items-center w-fit">
+        <img src="./icons/icon128.png" alt="Logo" width="10%" height="10%" />
+        <h1 class="text-4xl font-semibold text-[#edffffda]">Anti-Phishing</h1>
+      </div>
+      <!-- user profile icon fetch from API-->
+      <div class="justify-end">
+        <img
+          src="./icons/user.svg"
+          alt="user-profile-picture"
+          id="user_profile"
+          class="rounded-[999rem] border-2 border-red-600"
+          width="50"
+          height="50"
+        />
+      </div>
+    </header>
+
+    <div
+      id="user-status"
+      class="flex flex-col items-center w-[70%] mx-auto p-2 gap-4"
+    >
+      <p class="text-[#edffffda] text-2xl">
+        Authenticate to use this extension.
+      </p>
+      <p
+        id="auth-btn"
+        class="font-normal justify-center border border-white rounded-lg hover:bg-white hover:text-violet-800 hover:font-bold px-8 py-8 text-[#edffffda] cursor-pointer transition-all"
+      >
+        Login
+      </p>
+    </div>
+
+    <div class="flex gap-4 justify-center mt-4 mb-4">
+      <svg
+        id="docs-btn"
+        title="Documentation"
+        xmlns="http://www.w3.org/2000/svg"
+        class="ionicon w-14 h-14 hover:size-16 text-white hover:text-orange-600 transition-all"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linejoin="round"
+          stroke-width="32"
+        />
+        <path
+          d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="32"
+        />
+      </svg>
+
+      <svg
+        id="report-btn"
+        title="Report Website"
+        xmlns="http://www.w3.org/2000/svg"
+        class="ionicon w-14 h-14 hover:size-16 text-white hover:text-orange-600 transition-all"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M380.93 57.37A32 32 0 00358.3 48H94.22A46.21 46.21 0 0048 94.22v323.56A46.21 46.21 0 0094.22 464h323.56A46.36 46.36 0 00464 417.78V153.7a32 32 0 00-9.37-22.63zM256 416a64 64 0 1164-64 63.92 63.92 0 01-64 64zm48-224H112a16 16 0 01-16-16v-64a16 16 0 0116-16h192a16 16 0 0116 16v64a16 16 0 01-16 16z"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="32"
+        />
+      </svg>
+
+      <svg
+        id="dashboard-btn"
+        xmlns="http://www.w3.org/2000/svg"
+        class="ionicon w-14 h-14 hover:size-16 text-white hover:text-orange-600 transition-all"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M384 80H128c-26 0-43 14-48 40L48 272v112a48.14 48.14 0 0048 48h320a48.14 48.14 0 0048-48V272l-32-152c-5-27-23-40-48-40z"
+          title="Dashboard"
+          fill="none"
+          stroke="currentColor"
+          stroke-linejoin="round"
+          stroke-width="32"
+        />
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="32"
+          d="M48 272h144M320 272h144M192 272a64 64 0 00128 0M144 144h224M128 208h256"
+        />
+      </svg>
+    </div>
+
+    <footer class="text-lg text-center text-gray-500 mt-4">
+      &copy; 2025 Anti-Phishing Project
+    </footer>
+  </body>
 </html>
+
+<!--
+EXTENSION SHOULD WORK ONLY WHEN USER WAS AUTHENTICATED
+on the top right corner display the current user profile icon
+-->
+
+<!-- 
+CURRENT STATUS OF WEBSITE
+that is if user can trust the website or not.
+/predict/ endpoint can be used to figure it out
+ -->
+
+<!-- 
+NO.OF LINKED URLS INSIDE A WEBPAGE
+display the links integrated in a webpage
+this should have a button to check
+/predict/merged-links/ endpoint can be used to figure it out
+-->
+
+<!-- 
+LINKS
+Report, home, docs
+-->

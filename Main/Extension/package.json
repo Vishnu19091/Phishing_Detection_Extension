@@ -4,7 +4,7 @@
   "description": "Browser extension's UI.",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "tailwindcss -i ./input.css -o ./output.css -w"
+    "build": "tailwindcss -i ./styles/pop_up(inp).css -o ./styles/pop_up(out).css -w"
   },
   "author": "Vishnu sah VT",
   "license": "ISC",

@@ -203,3 +203,15 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchUserInfo(); // Fetch user info on page load
 });
 //////////////////////////////////
+
+////// Authorizing the Extension \\\\\\
+
+window.postMessage(
+  {
+    type: "AUTH_TOKEN",
+    token: `${localStorage.getItem("access_token")}`,
+    profile: `${document.getElementById("user_profile").src}`,
+  },
+  "*"
+);
+//////////////////////////////////

@@ -4,7 +4,31 @@
   "version": "1.0.0",
   "description": "Anti-Phishing extension to detect phishing and alert users.",
   "icons": {
-    "48": "/Main/UI/images/internet.png",
-    "128": "/Main/Extension/favicon.png"
-  }
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "pop_up.html",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": ["https://anti-phish.netlify.app/*"],
+  "background": {
+    "service_worker": "./scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://anti-phish.netlify.app/*"],
+      "js": ["./scripts/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
