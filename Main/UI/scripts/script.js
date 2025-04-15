@@ -92,9 +92,7 @@ var result_text = document.getElementById("scan_result");
 
 const fetch_results = function (url) {
   fetch(
-    `https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${encodeURIComponent(
-      url
-    )}`
+    `https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${url}`
   )
     .then((res) => res.json())
     .then((data) => {

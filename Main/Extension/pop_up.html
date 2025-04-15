@@ -24,13 +24,15 @@
           class="rounded-[999rem] border-2 border-red-600"
           width="50"
           height="50"
+          title="Don't panic sometimes your profile will be displayed here even after you were logged out🌚."
         />
       </div>
     </header>
 
     <div
+      style="display: flex"
       id="user-status"
-      class="flex flex-col items-center w-[70%] mx-auto p-2 gap-4"
+      class="flex-col items-center w-[70%] mx-auto p-2 gap-4"
     >
       <p class="text-[#edffffda] text-2xl">
         Authenticate to use this extension.
@@ -40,6 +42,18 @@
         class="font-normal justify-center border border-white rounded-lg hover:bg-white hover:text-violet-800 hover:font-bold px-8 py-8 text-[#edffffda] cursor-pointer transition-all"
       >
         Login
+      </p>
+    </div>
+
+    <div
+      class="flex flex-col items-center max-w-[55%] mx-auto p-2 gap-4 border border-white rounded-lg"
+    >
+      <p class="text-white text-2xl">Status of current webpage</p>
+      <p
+        id="url-status"
+        class="text-blue-500 text-xl h-auto w-fit justify-self-center"
+      >
+        Current Webpage URL
       </p>
     </div>
 
