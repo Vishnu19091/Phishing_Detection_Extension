@@ -6,31 +6,19 @@
 
 1. [Introduction](#introduction)
 
-2. [Project Demo](#project-demo)
+2. [📼 Project Screenshots](#project-screenshots)
 
-3. [Goal of the system](#goal-of-the-system)
+3. [💫 Features of the system](#features-of-the-system)
 
-4. [Features of the system](#features-of-the-system)
+4. [⚙️ Tools and Frameworks](#tools-and-frameworks)
 
-5. [Tools and Frameworks](#tools-and-frameworks)
+5. [🧑🏻‍💻 Installation on local machine](#installation-on-local-machine)
 
-6. [Installation on local machine](#installation-on-local-machine)
-
-7. [Conclusion](#conclusion)
+6. [Conclusion](#conclusion)
 
 # Introduction
 
 ---
-
-### **What is Phishing & Anti-Phishing ?**
-
-<div style="width:85%;">
-
-- **Phishing** refers to the fraudulent practice of sending fake messages or creating deceptive websites that mimic legitimate ones to lure users into disclosing sensitive information, such as usernames, passwords, and credit card details.
-
-- **Anti-Phishing** refers to the measures and technologies designed to detect and prevent phishing attacks, which are deceptive attempts to steal sensitive information like passwords, credit card details, or personal data.
-
-</div>
 
 <div >
 
@@ -40,27 +28,32 @@ Also the system will be used as browser extension with some features like: **tot
 
 </div>
 
-# Project Demo
+# Project Screenshots
 
-Will be added soon.
-
-[![Project demonstration](https://raw.githubusercontent.com/Vishnu19091/yourrepository/main/assets/thumbnail.jpg)](https://raw.githubusercontent.com/Vishnu19091/yourrepository/main/assets/video.mp4)
+![ScreenShot-1](Presentation/Screenshot_2.png)
 
 <br/>
 
-# Goal of the system
+![ScreenShot-2](Presentation/Screenshot_1.png)
 
-- Detect & alert the phishing website.
-- Update reported websites to the database as well as ML model training data.
+<br/>
 
-Will be added soon.
+![ScreenShot-3](Presentation/Screenshot_3.png)
 
-# Features of the system
+<br/>
 
-Will be added soon.
+# 💫 Features of the system
 
-<div id="tools-and-frameworks">
-<h1 style="margin-bottom: 0;">Tools and Frameworks</h1>
+- All Phishing Detection is done via API (FastAPI).
+
+- Authenticated Users can report Malicious website URL in the extension.
+
+- Reported URLs are then used in model to train and enhance prediction.
+
+- Authenticated Users can track their activity in dashboard.
+
+# ⚙️ Tools and Frameworks
+
 <h3  style="margin-top: 0;margin-bottom: 1rem;">Front-end languages & frameworks used</h3>
 
 - HTML
@@ -77,14 +70,15 @@ Will be added soon.
 
 <h3 style="margin-top: 0;margin-bottom: 1rem;">DataBase used</h3>
 
-- SQLite3
+- SQLite3 (local)
+- PostgreSQL(production)
 </div>
 
-## Installation on local machine
+## 🧑🏻‍💻 Installation on local machine
 
 ### Initializing Backend Server
 
-Backend requires several Python Dependencies.
+Backend server runs on Python so we need to install the libraries to run.
 
 - Before installing libraries create venv
 
@@ -93,9 +87,10 @@ python -m venv venv-name
 ```
 
 - After executing the above line.
+
 - Activate the venv and install requirements.
 
-- To **install python dependencies**, find the **requirements.txt** file, then run the below line in the terminal.
+- To **install python dependencies**, find the **requirements.txt** file, then go to directory where the file is located run the below line in the terminal.
 
 ```bash
 pip install -r requirements.txt
@@ -104,14 +99,15 @@ pip install -r requirements.txt
 - Navigate to **/Main/scripts/** then execute the below line to run the server.
 
 ```bash
-uvicorn api:app --port 8000
+uvicorn main:app --port 8000
 ```
 
 **Remember the server only runs on localhostport:8000**
 
 > If DataBase issues arise at initial stage, create dir name **'Database'**. Then try again running the server.
 
-<br/>
+> If Google authentication issue arises. Add the Oauth credentials (Client ID & Secret) **which is created by you from Google Cloud Account**🙂. To those who don't know how to setup Oauth Credentials [watch here](https://youtu.be/TjMhPr59qn4?si=fF22b_77npApIcur). Then store the creadentials in '.env' file.
+> <br/>
 
 # Conclusion
 
