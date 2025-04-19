@@ -1,6 +1,7 @@
 ////// fetch user info \\\\\\\
 
-const statusblock = document.getElementById("url-status");
+const urlstatus = document.getElementById("url-status");
+const statusblock = document.getElementById("status-block");
 
 const fetch_results = function (url) {
   fetch(
@@ -13,24 +14,29 @@ const fetch_results = function (url) {
         Results: data["Message"],
         Message: data["Results"],
       };
-      statusblock.textContent = `${result_obj.Message}`;
-      statusblock.style.color = "#3b82f6 ";
+      statusblock.style.display = "flex";
+      urlstatus.textContent = `${result_obj.Message}`;
+      urlstatus.style.color = "#3b82f6 ";
     });
 };
 
-chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-  const currentTab = tabs[0];
-  const currentURL = currentTab.url;
-
-  fetch_results(currentURL);
-});
-
 const req = chrome.storage.local.get(["profile"], (data) => {
   const user_profile = data.profile;
-  document.getElementById("user_profile").src = user_profile;
   if (user_profile) {
+    document.getElementById("user_profile").src = user_profile;
     document.getElementById("user-status").style.display = "none";
-  } else document.getElementById("user-status").style.display = "flex";
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      const currentTab = tabs[0];
+      const currentURL = currentTab.url;
+
+      fetch_results(currentURL);
+    });
+  } else {
+    document.getElementById("user-status").style.display = "flex";
+    document.getElementById("user_profile").src = "./icons/user.svg";
+    statusblock.style.display = "none";
+  }
 });
 //////////////////////////////////
 

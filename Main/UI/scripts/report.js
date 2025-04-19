@@ -15,16 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
       const response = await fetch(
-        "https://samp-fast-api.onrender.com/report/api/",
+        `https://samp-fast-api.onrender.com/report/api/?url=${url}`,
         {
           method: "POST",
           headers: {
-            // Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjc2VkMXJuNzNAZ21haWwuY29tIiwibmFtZSI6IlZpc2hudSBzYWggViBUIiwicHJvZmlsZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0puQm5haGk5MHFzLTlVaWtEbHFPV1JrSENDZ2xkTFhKSURQNmlTenpIQy0wSTBMR2c9czk2LWMiLCJleHAiOjE3NDQ3MTM5NzV9.ebsJlxXwF1Fb6qG9yd1VGqbo-_ATkWnz946uQBInC_c`,
-            "Content-Type": "application/x-www-form-urlencoded",
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
           credentials: "include",
-          body: new URLSearchParams({ url }), // Sending in form-urlencoded format
         }
       );
 

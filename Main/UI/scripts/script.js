@@ -172,6 +172,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = await response.json();
 
+      ////// Authorizing the Extension \\\\\\
+      // const navEntries = performance.getEntriesByType("navigation");
+      // if (navEntries.length > 0 && navEntries[0].type === "reload") {
+      //   console.log("Page was refreshed!");
+      // }
+      window.postMessage(
+        {
+          type: "AUTH_TOKEN",
+          token: `${localStorage.getItem("access_token")}`,
+          profile: `${document.getElementById("user_profile").src}`,
+        },
+        "*"
+      );
+      //////////////////////////////////
+
       const user_name = data.name;
       const user_profile = data.Profile_picture;
 
@@ -200,16 +215,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fetchUserInfo(); // Fetch user info on page load
 });
-//////////////////////////////////
-
-////// Authorizing the Extension \\\\\\
-
-window.postMessage(
-  {
-    type: "AUTH_TOKEN",
-    token: `${localStorage.getItem("access_token")}`,
-    profile: `${document.getElementById("user_profile").src}`,
-  },
-  "*"
-);
 //////////////////////////////////

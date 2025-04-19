@@ -2,33 +2,26 @@
 
 ### This is a browser extension based project which detects phishing websites in real-time and alerts the user.
 
-### Table of Contents:
-
-1. [Introduction](#introduction)
-
-2. [📼 Project Screenshots](#project-screenshots)
-
-3. [💫 Features of the system](#features-of-the-system)
-
-4. [⚙️ Tools and Frameworks](#tools-and-frameworks)
-
-5. [🧑🏻‍💻 Installation on local machine](#installation-on-local-machine)
-
-6. [Conclusion](#conclusion)
-
 # Introduction
 
 ---
 
-<div >
+This work presents a **real-time phishing detection system** that integrates machine learning models to effectively identify and prevent phishing attacks, spam, and defaced websites. The system is **designed to analyze key URL features** such as:
 
-This work presents a **real-time phishing detection system** that integrates machine learning models to effectively identify and prevent phishing attacks, spam, and defaced websites. The system is **designed to analyze various key URL features such as length, domain, subdomain, numeric characters, special characters, and the presence of HTTPS, providing a comprehensive approach to phishing detection.**
+- URL length
+- Domain and subdomain structure
+- Numeric and special characters
+- HTTPS presence
 
-Also the system will be used as browser extension with some features like: **total no.of scan, no.of phishing websites detected and authenticated users are allowed to report spam websites manually.**
+The system is implemented as a **browser extension** with features like:
 
-</div>
+- Total number of scans
+- Number of phishing websites detected
+- Ability for authenticated users to manually report spam websites
 
-# Project Screenshots
+# 📼Project DEMO
+
+---
 
 ![ScreenShot-1](Presentation/Screenshot_2.png)
 
@@ -44,15 +37,19 @@ Also the system will be used as browser extension with some features like: **tot
 
 # 💫 Features of the system
 
-- All Phishing Detection is done via API (FastAPI).
+---
 
-- Authenticated Users can report Malicious website URL in the extension.
+- All Phishing Detection is done via a **FastAPi** backend.
 
-- Reported URLs are then used in model to train and enhance prediction.
+- **Authenticated Users** can report Malicious URL in the extension.
 
-- Authenticated Users can track their activity in dashboard.
+- Reported URLs are then used in model to **retrain and enhance prediction**.
+
+- Authenticated Users can **track their activity via a dashboard**.
 
 # ⚙️ Tools and Frameworks
+
+---
 
 <h3  style="margin-top: 0;margin-bottom: 1rem;">Front-end languages & frameworks used</h3>
 
@@ -74,7 +71,9 @@ Also the system will be used as browser extension with some features like: **tot
 - PostgreSQL(production)
 </div>
 
-## 🧑🏻‍💻 Installation on local machine
+# 🧑🏻‍💻 Installation on local machine
+
+---
 
 ### Initializing Backend Server
 
@@ -102,14 +101,18 @@ pip install -r requirements.txt
 uvicorn main:app --port 8000
 ```
 
-**Remember the server only runs on localhostport:8000**
+> 📌**Remember the server only runs on localhostport:8000**
 
-> If DataBase issues arise at initial stage, create dir name **'Database'**. Then try again running the server.
+#### ⚠️ Issues
 
-> If Google authentication issue arises. Add the Oauth credentials (Client ID & Secret) **which is created by you from Google Cloud Account**🙂. To those who don't know how to setup Oauth Credentials [watch here](https://youtu.be/TjMhPr59qn4?si=fF22b_77npApIcur). Then store the creadentials in '.env' file.
+- If DataBase issues arise at initial stage, create dir name **'Database'**. Then try again running the server.
+
+> For Oauth issues. Add the Oauth credentials **(Client ID & Secret) which is created by you from [Google Cloud Account](https://console.cloud.google.com/)🙂.** Then store the creadentials in '.env' file. To those who don't know how to setup Oauth Credentials [click here](https://youtu.be/TjMhPr59qn4?si=fF22b_77npApIcur).
 > <br/>
 
 # Conclusion
+
+---
 
 This system offers a sophisticated approach to mitigating the risks associated with phishing attacks. That's all
 
