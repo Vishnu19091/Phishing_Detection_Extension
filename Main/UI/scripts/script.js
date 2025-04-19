@@ -172,11 +172,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = await response.json();
 
+      const user_name = data.name;
+      const user_profile = data.Profile_picture;
+
+      document.getElementById("user-name").textContent = user_name;
+      document.getElementById("user_profile").src = user_profile;
+
+      // Update button text
+      logButton.textContent = "Logout";
+
       ////// Authorizing the Extension \\\\\\
-      // const navEntries = performance.getEntriesByType("navigation");
-      // if (navEntries.length > 0 && navEntries[0].type === "reload") {
-      //   console.log("Page was refreshed!");
-      // }
       window.postMessage(
         {
           type: "AUTH_TOKEN",
@@ -186,15 +191,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "*"
       );
       //////////////////////////////////
-
-      const user_name = data.name;
-      const user_profile = data.Profile_picture;
-
-      document.getElementById("user-name").textContent = user_name;
-      document.getElementById("user_profile").src = user_profile;
-
-      // Update button text
-      logButton.textContent = "Logout";
     } catch (error) {
       console.error("Error fetching user info:", error);
       logButton.textContent = "Login";
