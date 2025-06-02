@@ -1,6 +1,6 @@
-# Phishing Detection with Machine Learning integration
+# Phishing Detection with Machine Learning Integration
 
-### This is a browser extension based project which detects phishing websites in real-time and alerts the user.
+### This is a browser extension-based project that detects phishing websites in real-time and alerts the user.
 
 # Introduction
 
@@ -39,11 +39,11 @@ The system is implemented as a **browser extension** with features like:
 
 ---
 
-- All Phishing Detection is done via a **FastAPi** backend.
+- All Phishing Detection is done via a **FastAPI** backend.
 
-- **Authenticated Users** can report Malicious URL in the extension.
+- **Authenticated Users** can report a Malicious URL in the extension.
 
-- Reported URLs are then used in model to **retrain and enhance prediction**.
+- Reported URLs are then used in the model to **retrain and enhance prediction**.
 
 - Authenticated Users can **track their activity via a dashboard**.
 
@@ -77,9 +77,9 @@ The system is implemented as a **browser extension** with features like:
 
 ### Initializing Backend Server
 
-Backend server runs on Python so we need to install the libraries to run.
+The backend server runs on Python, so we must install the libraries.
 
-- Before installing libraries create venv
+- Before installing libraries, create a venv.
 
 ```bash
 python -m venv venv-name
@@ -89,13 +89,13 @@ python -m venv venv-name
 
 - Activate the venv and install requirements.
 
-- To **install python dependencies**, find the **requirements.txt** file, then go to directory where the file is located run the below line in the terminal.
+- To **install Python dependencies**, find the **requirements.txt** file, then go to the directory where the file is located run the below line in the terminal.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-- Navigate to **/Main/scripts/** then execute the below line to run the server.
+- Navigate to **/Main/scripts/** then execute below line to run the server.
 
 ```bash
 uvicorn main:app --port 8000
@@ -105,9 +105,9 @@ uvicorn main:app --port 8000
 
 #### ⚠️ Issues
 
-- If DataBase issues arise at initial stage, create dir name **'Database'**. Then try again running the server.
+- If Database issues arise at the initial stage, create a directory named **'Database'**. Then try to run the server.
 
-> For Oauth issues. Add the Oauth credentials **(Client ID & Secret) which is created by you from [Google Cloud Account](https://console.cloud.google.com/)🙂.** Then store the creadentials in '.env' file. To those who don't know how to setup Oauth Credentials [click here](https://youtu.be/TjMhPr59qn4?si=fF22b_77npApIcur).
+> For OAuth issues. Add the Oauth credentials **(Client ID & Secret) which is created by you from [Google Cloud Account](https://console.cloud.google.com/)🙂.** Then store the credentials in the '.env' file. To those who don't know how to set up Oauth Credentials [click here](https://youtu.be/TjMhPr59qn4?si=fF22b_77npApIcur).
 > <br/>
 
 # Conclusion
