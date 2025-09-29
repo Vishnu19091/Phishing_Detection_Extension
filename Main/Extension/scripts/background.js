@@ -33,7 +33,7 @@ the request else don't load it.
 */
 
 /* 
-curl -s -X POST "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyB9gx6RcLfV1_cBRlgVthDnt_b2mzbeNks" \
+curl -s -X POST "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=<KEY>" \
   -H "Content-Type: application/json" \
   -d '{
     "client": {"clientId":"demo-app","clientVersion":"1.0"},
