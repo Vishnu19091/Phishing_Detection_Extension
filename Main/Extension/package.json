@@ -1,7 +1,7 @@
 {
-  "name": "website_home_ui",
-  "version": "1.0.0",
-  "description": "Browser extension's UI.",
+  "name": "anti-phishing",
+  "version": "1.0.3",
+  "description": "Anti-Phishing extension's UI.",
   "main": "tailwind.config.js",
   "scripts": {
     "build": "tailwindcss -i ./styles/pop_up(inp).css -o ./styles/pop_up(out).css -w"
@@ -11,6 +11,6 @@
   "Socials": {
     "GitHub": "https://github.com/Vishnu19091",
     "LinkedIn": "http://www.linkedin.com/in/vishnuvt1183",
-    "LeetCode": "https://leetcode.com/u/vishnusah368/"
+    "LeetCode": "https://leetcode.com/u/vishnuvt1183/"
   }
 }

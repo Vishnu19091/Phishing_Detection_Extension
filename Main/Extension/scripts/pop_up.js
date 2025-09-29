@@ -1,8 +1,19 @@
-////// fetch user info \\\\\\\
+"use strict";
 
 const urlstatus = document.getElementById("url-status");
 const statusblock = document.getElementById("status-block");
 
+// <------- display year in footer span ------->
+const footer = document.getElementById("footer");
+
+const now = new Date();
+const year = now.getFullYear();
+
+footer.textContent = year;
+
+/*
+<------- fetch user info ------->
+*/
 const fetch_results = function (url) {
   fetch(
     `https://samp-fast-api.onrender.com/predict-api/url/?predict_url=${url}`
@@ -20,6 +31,7 @@ const fetch_results = function (url) {
     });
 };
 
+// <------- verify user ------->
 const req = chrome.storage.local.get(["profile"], (data) => {
   const user_profile = data.profile;
   if (user_profile) {
@@ -38,8 +50,8 @@ const req = chrome.storage.local.get(["profile"], (data) => {
     statusblock.style.display = "none";
   }
 });
-//////////////////////////////////
 
+// <------- Navigation links ------->
 document.addEventListener("DOMContentLoaded", () => {
   const docsBtn = document.getElementById("docs-btn");
   const reportBtn = document.getElementById("report-btn");

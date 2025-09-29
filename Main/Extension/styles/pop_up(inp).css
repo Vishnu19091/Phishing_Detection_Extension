@@ -12,6 +12,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  height: fit-content;
 }
 body {
   font-family: "Kanit", sans-serif;

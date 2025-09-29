@@ -1,3 +1,4 @@
+<!-- Popup window -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anti-Phishing Extension</title>
     <script src="./scripts/content.js" defer></script>
-    <script src="./scripts/pop_up.js" defer></script>
+    <script src="./scripts/pop_up.js"></script>
+    <!-- <script src="./scripts/background.js" defer></script> -->
     <link rel="stylesheet" href="./styles/pop_up(out).css" />
     <link rel="stylesheet" href="./styles/pop_up(inp).css" />
   </head>
+
   <body id="body" class="bg-zinc-900 w-[45rem] h-fit p-4">
     <header class="flex items-center mt-4 mb-4 justify-between">
       <div class="flex gap-2 items-center w-fit">
         <img src="./icons/icon128.png" alt="Logo" width="10%" height="10%" />
         <h1 class="text-4xl font-semibold text-[#edffffda]">Anti-Phishing</h1>
       </div>
+
       <!-- user profile icon fetch from API-->
       <div class="justify-end">
         <img
@@ -125,7 +129,7 @@
     </div>
 
     <footer class="text-lg text-center text-gray-500 mt-4">
-      &copy; 2025 Anti-Phishing Project
+      <p>&copy;<span id="footer">2</span> Anti-Phishing project</p>
     </footer>
   </body>
 </html>
