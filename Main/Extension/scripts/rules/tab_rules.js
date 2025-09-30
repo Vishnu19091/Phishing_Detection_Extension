@@ -1,3 +1,4 @@
+import { isPhish } from "../background.js";
 import { countSpecialCharacters } from "./url_rules.js";
 
 /*
@@ -23,7 +24,7 @@ let checkResult = {
   "Suspicious: ": suspicious,
 };
 
-export function updateActiveTabURL() {
+export function TabChange() {
   browser.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (tabs.length > 0 && tabs[0].url) {
       activeTabURL = tabs[0].url;
@@ -43,9 +44,12 @@ export function updateActiveTabURL() {
 }
 
 // When active tab Updates and when the tab's URL changes (e.g., navigation)
+// determines tab reloads
 browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (tab.active && changeInfo.url) {
     activeTabURL = changeInfo.url;
+    isPhish(activeTabURL);
+
     // console.log("Active Tab URL updated:", activeTabURL);
   }
 });

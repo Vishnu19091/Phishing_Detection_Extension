@@ -1,0 +1,36 @@
+<-------- Content scripts -------->
+RUNS IN A WEB PAGE
+
+A content script is a part of your extension that
+runs in the context of a web page. It can read and
+modify page content using the standard Web APIs.
+Content script behavior is similar to scripts that
+are part of a website, such as those loaded using the
+<script> element). However, content scripts can only
+access page content when host permissions for the web
+page's origin are granted.
+
+Content scripts can access a small subset of the
+WebExtension APIs, but they can communicate with
+background scripts using a messaging system and
+thereby indirectly access the WebExtension APIs.
+Background scripts can access all the WebExtension
+JavaScript APIs but can't directly access the content of web pages.
+
+<-------- Background Scripts -------->
+Background scripts or a background page enable
+you to monitor and react to events in the browser,
+such as navigating to a new page, removing a bookmark,
+or closing a tab.
+
+Background scripts or a page are:
+
+    Persistent – loaded when the extension starts and
+        unloaded when the extension is disabled or uninstalled.
+
+    Non-persistent (which are also known as event pages) –
+    loaded only when needed to respond to an event and unloaded
+    when they become idle. However, a background page does not
+    unload until all visible views and message ports are closed.
+    Opening a view does not cause the background page to load
+    but does prevent it from closing.

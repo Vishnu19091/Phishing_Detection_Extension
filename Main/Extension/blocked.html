@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Site Blocked</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+        background: #ff0000;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        color: azure;
+      }
+      h1 {
+        font-size: 4rem;
+        font-weight: bolder;
+      }
+      a {
+        color: azure;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>⚠️ Suspicious Site Blocked</h1>
+    <p id="site"></p>
+    <p>
+      This site was flagged as dangerous by
+      <span><a href="#">Anti-Phishing Extension</a></span
+      >.
+    </p>
+    <button id="close">Go Back</button>
+
+    <script src="./scripts/blocked.js" defer></script>
+  </body>
+</html>
