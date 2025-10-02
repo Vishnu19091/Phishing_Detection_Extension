@@ -1,0 +1,21 @@
+{
+  "name": "anti-phish-server",
+  "version": "1.0.0",
+  "description": "backend server of Anti-Phishing extension",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Vishnu VT",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
