@@ -25,7 +25,7 @@
     ],
     "background": {
       "type": "module",
-      "scripts": ["scripts/background.js"],
+      "scripts": ["scripts/background.js", "scripts/rules/tab_rules.js", "scripts/rules/url_rules.js"],
       "persistent": false
     },
     "content_scripts": [
@@ -41,8 +41,7 @@
     ],
     "browser_specific_settings": {
       "gecko": {
-        "id": "anti-phishing@example.com"
+        "id": "anti-phishing@gmail.com"
       }
     }
   }
-  

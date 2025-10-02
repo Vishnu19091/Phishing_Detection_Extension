@@ -5,15 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anti-Phishing Extension</title>
+
+    <!-- Scripts -->
     <script src="./scripts/content.js" defer></script>
-    <script src="./scripts/pop_up.js"></script>
-    <!-- <script src="./scripts/background.js" defer></script> -->
-    <link rel="stylesheet" href="./styles/pop_up(out).css" />
-    <link rel="stylesheet" href="./styles/pop_up(inp).css" />
+    <script src="./scripts/pop_up.js" defer></script>
+    <script src="./scripts/background.js" defer></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/pop_up_inp.css" />
+    <link rel="stylesheet" href="./styles/pop_up_out.css" />
   </head>
 
-  <body id="body" class="bg-zinc-900 w-[45rem] h-fit p-4">
-    <header class="flex items-center mt-4 mb-4 justify-between">
+  <body id="body">
+    <!-- Header -->
+    <header>
       <div class="flex gap-2 items-center w-fit">
         <img src="./icons/icon128.png" alt="Logo" width="10%" height="10%" />
         <h1 class="text-4xl font-semibold text-[#edffffda]">Anti-Phishing</h1>
@@ -32,6 +37,7 @@
       </div>
     </header>
 
+    <!-- Authenticate the extension -->
     <div
       style="display: flex"
       id="user-status"
@@ -42,26 +48,33 @@
       </p>
       <p
         id="auth-btn"
-        class="font-normal justify-center border border-white rounded-lg hover:bg-white hover:text-violet-800 hover:font-bold px-8 py-8 text-[#edffffda] cursor-pointer transition-all"
+        class="justify-center text-2xl font-bold border border-white rounded-lg hover:bg-white hover:text-violet-800 hover:font-bold px-6 py-2 text-[#edffffda] cursor-pointer transition-all"
       >
         Login
       </p>
     </div>
 
-    <div
-      id="status-block"
-      class="flex flex-col items-center max-w-[55%] h-auto mx-auto p-2 gap-4 border border-white rounded-lg"
-    >
-      <p class="text-white text-2xl">Status of current webpage</p>
-      <p
-        id="url-status"
-        class="text-blue-500 text-xl w-1/2 justify-self-center overflow-hidden"
-      >
-        Current Webpage URL
-      </p>
+    <!-- Status block for Current URL -->
+    <div id="status-block">
+      <p>Status of current webpage <span id="url-status">Loading...</span></p>
     </div>
 
-    <div class="flex gap-4 justify-center mt-4 mb-4">
+    <!-- WebRequests Logs -->
+    <div class="network-log">
+      <h3 id="nlog-btn" title="Shows Recent 200 requests of your browser">
+        Monitor Network Requests
+      </h3>
+
+      <div
+        id="list"
+        class="list hidden transition-all duration-300 ease-in-out"
+      >
+        <p>moz-extension://0fbcff58-c4a7-481f-b9c7-cd9a1df437d2/pop_up.html</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <!-- <div class="flex gap-4 justify-center mt-4 mb-4">
       <svg
         id="docs-btn"
         title="Documentation"
@@ -126,10 +139,11 @@
           d="M48 272h144M320 272h144M192 272a64 64 0 00128 0M144 144h224M128 208h256"
         />
       </svg>
-    </div>
+    </div> -->
 
-    <footer class="text-lg text-center text-gray-500 mt-4">
-      <p>&copy;<span id="footer">2</span> Anti-Phishing project</p>
+    <!-- Footer -->
+    <footer class="text-lg text-center text-gray-500">
+      <p>&copy;<span id="footer">2</span> Anti-Phishing Extension.</p>
     </footer>
   </body>
 </html>
@@ -137,22 +151,16 @@
 <!--
 EXTENSION SHOULD WORK ONLY WHEN USER WAS AUTHENTICATED
 on the top right corner display the current user profile icon
--->
 
-<!-- 
-CURRENT STATUS OF WEBSITE
-that is if user can trust the website or not.
-/predict/ endpoint can be used to figure it out
- -->
+  CURRENT STATUS OF WEBSITE
+  that is if user can trust the website or not.
+  /predict/ endpoint can be used to figure it out
 
-<!-- 
-NO.OF LINKED URLS INSIDE A WEBPAGE
-display the links integrated in a webpage
-this should have a button to check
-/predict/merged-links/ endpoint can be used to figure it out
--->
+  NO.OF LINKED URLS INSIDE A WEBPAGE
+  display the links integrated in a webpage
+  this should have a button to check
+  /predict/merged-links/ endpoint can be used to figure it out
 
-<!-- 
-LINKS
-Report, home, docs
+  LINKS
+  Report, home, docs
 -->

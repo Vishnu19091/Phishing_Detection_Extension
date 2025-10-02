@@ -4,7 +4,7 @@
   "description": "Anti-Phishing extension's UI.",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "tailwindcss -i ./styles/pop_up(inp).css -o ./styles/pop_up(out).css -w"
+    "build": "tailwindcss -i ./styles/pop_up_inp.css -o ./styles/pop_up_out.css -w"
   },
   "author": "Vishnu sah VT",
   "license": "ISC",

@@ -38,7 +38,9 @@ export function TabChange() {
         "Special Characters Length: ": specialCharlength,
         "Suspicious: ": suspicious,
       };
-      //   console.log(checkResult);
+      // console.log(checkResult);
+
+      return checkResult;
     }
   });
 }

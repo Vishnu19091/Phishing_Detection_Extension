@@ -53,18 +53,29 @@ export async function isPhish(url) {
 }
 
 let cache = {};
-let blockedUrl = ``;
 
 async function updateCacheForTab(tabId, changeInfo, tab) {
   if (tab.active && tab.url && /^https?:/i.test(tab.url)) {
     const hostname = new URL(tab.url).hostname;
     const status = await isPhish(tab.url);
     cache[hostname] = status;
-    // blockedUrl = `${cache[hostname]}`;
-    // console.log(blockedUrl);
     // console.log(`Cached ${hostname} → ${status}`);
   }
 }
+
+// message listener to send status to pop_up html
+browser.runtime.onMessage.addListener((message, sender, sendReponse) => {
+  if (message.type === "GET_STATUS") {
+    const host = message.hostname;
+
+    // Add extension to avoid status conflict
+    const status = cache[host] || "unknown";
+
+    sendReponse({ status });
+  }
+
+  return true;
+});
 
 // fired when tab is switched
 // browser.tabs.onActivated.addListener((activeInfo) => {
@@ -87,11 +98,11 @@ function blockRequest(requestDetails) {
 
   if (cache[host] === "danger") {
     const redirectURL = browser.runtime.getURL(
-      `blocked.html?site=${encodeURIComponent(requestDetails.url)}`
+      `blocked.html?site=${requestDetails.url}`
     );
 
-    console.log(`Redirecting to ${redirectURL}`);
-    // console.log(`Current request to \'${url}\' is blocked`);
+    // console.log(`Redirecting to ${redirectURL}`);
+    console.log(`Current request to \'${url}\' is blocked`);
 
     // blocks loading the phish url and loads the blocked html page
     browser.tabs.update(requestDetails.tabId, { url: redirectURL });
@@ -122,3 +133,78 @@ browser.webRequest.onBeforeRequest.addListener(
 
 // Detects new tab
 browser.tabs.onActivated.addListener(TabChange);
+
+/* <----------- Network Requests Log ----------->
+ */
+
+const MAX_HISTORY = 200;
+const STORAGE_KEY = "network_history";
+
+// Request to Storage to keep track of recent History of the requests made
+async function appendRequest(record) {
+  try {
+    const { [STORAGE_KEY]: existing } = await browser.storage.local.get(
+      STORAGE_KEY
+    );
+
+    const arr = Array.isArray(existing) ? existing : [];
+
+    arr.unshift(record);
+
+    if (arr.length > MAX_HISTORY) arr.length = MAX_HISTORY;
+
+    await browser.storage.local.set({ [STORAGE_KEY]: arr });
+  } catch (err) {
+    console.error("Error appending request: ", err);
+  }
+}
+
+// Concise record from the webrequest details
+function buildRecord(details) {
+  return {
+    id: details.requestId,
+    url: details.url,
+    method: details.method,
+    statusCode: details.statusCode || null,
+    timeStamp: new Date(details.timeStamp).toISOString(),
+    tabId: details.tabId,
+    type: details.type,
+    ip: details.ip,
+    fromCache: details.fromCache || false,
+    initiator: details.initiator || details.originUrl || null,
+  };
+}
+
+// On completion of each request those request
+// are sent to extension storage in a structured Object
+browser.webRequest.onCompleted.addListener(
+  async (details) => {
+    try {
+      const rec = buildRecord(details);
+      // console.log(rec);
+      await appendRequest(rec);
+      // Notify any open popup(s). If popup is closed, it's okay — data is in storage.
+      chrome.runtime.sendMessage({ type: "network_new", payload: rec });
+    } catch (e) {
+      console.error("webRequest handler error:", e);
+    }
+  },
+  { urls: ["<all_urls>"] }
+  // no extraInfoSpec needed for onCompleted; include["responseHeaders"] if you want headers
+);
+
+// Optional: allow popup to request the current history explicitly
+// This sends data to pop_up via message event to store the request in extension storage
+browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg && msg.type === "get_history") {
+    browser.storage.local
+      .get(STORAGE_KEY)
+      .then((data) => {
+        sendResponse({ history: data[STORAGE_KEY] || [] });
+      })
+      .catch((err) => {
+        sendResponse({ history: [] });
+      });
+    return true; // will respond asynchronously
+  }
+});
