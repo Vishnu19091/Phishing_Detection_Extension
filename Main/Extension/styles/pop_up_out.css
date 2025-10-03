@@ -3,14 +3,6 @@
   margin-right: auto;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .block {
   display: block;
 }
@@ -19,12 +11,16 @@
   display: flex;
 }
 
-.hidden {
-  display: none;
-}
-
 .h-14 {
   height: 3.5rem;
+}
+
+.max-h-0 {
+  max-height: 0px;
+}
+
+.max-h-96 {
+  max-height: 24rem;
 }
 
 .w-14 {
@@ -66,6 +62,10 @@
 
 .gap-4 {
   gap: 1rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded-\[999rem\] {
@@ -147,6 +147,14 @@
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .transition-all {
@@ -728,6 +736,8 @@ video {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 /* pop_up_out.css */
@@ -735,6 +745,8 @@ html {
 body {
   background: #000;
   width: 70rem;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -814,10 +826,10 @@ header h1 {
   padding: 0.75rem;
   border: 1px solid white;
   border-radius: 0.8rem;
-  max-height: 300px;
+  /* max-height: 300px; */
   overflow-y: auto;
   font-size: 0.9rem;
-  transition: hidden 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 #nlog-btn {
@@ -849,7 +861,6 @@ footer {
   font-size: 0.9rem;
   text-align: center;
   color: #888;
-  padding-top: 1rem;
 }
 
 ::-moz-selection {

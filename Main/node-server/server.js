@@ -56,9 +56,14 @@ async function checkUrlSafety(urlToCheck, timeoutMs = 8000) {
   const body = {
     client: { clientId: "anti-phish-server", clientVersion: "1.0" },
     threatInfo: {
-      threatTypes: ["MALWARE", "SOCIAL_ENGINEERING", "UNWANTED_SOFTWARE"],
+      threatTypes: [
+        "MALWARE",
+        "SOCIAL_ENGINEERING",
+        "UNWANTED_SOFTWARE",
+        "POTENTIALLY_HARMFUL_APPLICATION",
+      ],
       platformTypes: ["ANY_PLATFORM"],
-      threatEntryTypes: ["URL"],
+      threatEntryTypes: ["URL", "EXECUTABLE"],
       threatEntries: [{ url: parsed.href }],
     },
   };

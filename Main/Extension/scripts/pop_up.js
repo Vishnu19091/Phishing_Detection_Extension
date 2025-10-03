@@ -9,9 +9,15 @@ const nlog_btn = document.getElementById("nlog-btn");
 
 // Toggle Network Request Logs Visibility
 nlog_btn.addEventListener("click", () => {
-  networkloglist.classList.toggle("hidden");
+  if (list.classList.contains("max-h-0")) {
+    list.classList.remove("max-h-0", "opacity-0");
+    list.classList.add("max-h-96", "opacity-100"); // expands smoothly
+  } else {
+    list.classList.add("max-h-0", "opacity-0");
+    list.classList.remove("max-h-96", "opacity-100");
+  }
 
-  if (networkloglist.classList.contains("hidden")) {
+  if (networkloglist.classList.contains("max-h-0")) {
     nlog_btn.textContent = "Monitor Network Requests";
   } else {
     nlog_btn.textContent = "Hide Network Requests";
@@ -26,7 +32,7 @@ function updateStatus() {
     if (!tabs.length) return;
     const hostname = new URL(tabs[0].url).hostname;
 
-    console.log(hostname);
+    // console.log(hostname);
 
     browser.runtime
       .sendMessage({ type: "GET_STATUS", hostname })
@@ -146,14 +152,24 @@ async function loadHistory() {
   }
 }
 
-// append a single new record to the top
+/* Appends a single new record to the top
+
+that is each time this function is called
+
+it creates a node in the list block of the html page
+
+so that we can see the webRequests made from our browser
+*/
 function appendRecord(record) {
-  // insert at top
+  // inserts at top
   const node = renderItem(record);
   listEl.insertBefore(node, listEl.firstChild);
 }
 
-// Listen for messages (sent from background service worker)
+/* Listen for messages(sent from background service worker)
+
+and calls the appendRecord() to update the WebRequests History
+*/
 browser.runtime.onMessage.addListener((msg, sender) => {
   if (msg && msg.type === "network_new" && msg.payload) {
     appendRecord(msg.payload);

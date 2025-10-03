@@ -12,6 +12,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  height: fit-content;
 }
 
 /* pop_up_out.css */
@@ -19,6 +20,7 @@ html {
 body {
   background: #000;
   width: 70rem;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 2.5rem; /* gap-10 */
@@ -93,10 +95,10 @@ header h1 {
   padding: 0.75rem;
   border: 1px solid white;
   border-radius: 0.8rem;
-  max-height: 300px;
+  /* max-height: 300px; */
   overflow-y: auto;
   font-size: 0.9rem;
-  transition: hidden 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 #nlog-btn {
@@ -126,7 +128,6 @@ footer {
   font-size: 0.9rem;
   text-align: center;
   color: #888;
-  padding-top: 1rem;
 }
 
 ::selection {

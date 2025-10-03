@@ -31,7 +31,13 @@ if not malicious then allow loading
 the request else don't load it.
 */
 
-// should done inside a nodejs server
+/** Makes a request to a nodejs server
+
+ * to fetch the result a webRequest
+ * @param {*} url 
+
+ * @returns Safe / Danger
+ */
 export async function isPhish(url) {
   if (!url) return null;
 
@@ -54,6 +60,14 @@ export async function isPhish(url) {
 
 let cache = {};
 
+/** Updates Cache for tab
+ * that is the fetched result from the nodejs server is stored
+ * in a variable because the we want to block the requests made
+ * from the browser based on the status
+ * @param {*} tabId
+ * @param {*} changeInfo
+ * @param {*} tab
+ */
 async function updateCacheForTab(tabId, changeInfo, tab) {
   if (tab.active && tab.url && /^https?:/i.test(tab.url)) {
     const hostname = new URL(tab.url).hostname;
@@ -96,6 +110,8 @@ function blockRequest(requestDetails) {
   const url = requestDetails.url;
   const host = new URL(url).hostname;
 
+  // Fix when the extension detects the phishing url it captures
+  // extension id as its hostname
   if (cache[host] === "danger") {
     const redirectURL = browser.runtime.getURL(
       `blocked.html?site=${requestDetails.url}`
@@ -141,6 +157,17 @@ const MAX_HISTORY = 200;
 const STORAGE_KEY = "network_history";
 
 // Request to Storage to keep track of recent History of the requests made
+/**
+ * This Async Func() has an array that stores the recent
+ 
+ * records of the webrequests made from our browser
+
+ * it has max history limit
+
+ * and then it's stored into the extension storage not browser's!
+
+ * @param {*} record
+ */
 async function appendRequest(record) {
   try {
     const { [STORAGE_KEY]: existing } = await browser.storage.local.get(
@@ -160,6 +187,11 @@ async function appendRequest(record) {
 }
 
 // Concise record from the webrequest details
+/**
+ * Takes a plain webRequest of a our browser
+ * @param {*} details
+ * @returns Structured & valuable details of a webRequest
+ */
 function buildRecord(details) {
   return {
     id: details.requestId,
@@ -208,3 +240,11 @@ browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     return true; // will respond asynchronously
   }
 });
+
+/* TODOS -->
+1. Check for IP addresses in a URL, if so then
+  send it to pop_up and display it in the pop_up
+  window.
+
+2. Check URL contains valid Domain name.
+*/
