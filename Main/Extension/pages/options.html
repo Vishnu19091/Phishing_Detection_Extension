@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blocked Domains</title>
+    <link rel="stylesheet" href="./inp.css" />
+    <link rel="stylesheet" href="./out.css" />
+    <script src="./pages.js" defer></script>
+  </head>
+  <body
+    class="bg-[#0f0f0f] text-white flex flex-col items-center p-6 gap-4 relative"
+  >
+    <div class="absolute left-1">
+      <h1 class="text-4xl text-red-600">Anti-Phishing</h1>
+    </div>
+
+    <!-- Add new domain -->
+    <div class="flex gap-2 w-full max-w-md mt-20">
+      <input
+        type="text"
+        id="domainInput"
+        placeholder="Enter URL (e.g., https://example.com/)"
+        class="flex-1 p-2 rounded-md text-black"
+      />
+      <button
+        id="addBtn"
+        class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md font-bold text-2xl"
+      >
+        Block
+      </button>
+    </div>
+
+    <!-- Domain list -->
+    <h1 class="text-4xl font-semibold my-4">🔒 Blocked Domains</h1>
+    <ul id="domainList" class="w-full max-w-md space-y-2"></ul>
+  </body>
+</html>

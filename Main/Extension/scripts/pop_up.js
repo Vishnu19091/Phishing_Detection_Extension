@@ -38,8 +38,17 @@ function updateStatus() {
       .sendMessage({ type: "GET_STATUS", hostname })
       .then((response) => {
         const statusEl = document.getElementById("url-status");
-        statusEl.textContent = `Current site is: ${response.status}`;
-        statusEl.style.color = response.status === "danger" ? "red" : "green";
+        let resStatus = response.status;
+
+        statusEl.textContent = `Current site is: ${resStatus}`;
+
+        if (resStatus === "unknown") {
+          statusEl.style.color = "purple";
+        } else if (resStatus === "danger") {
+          statusEl.style.color = "red";
+        } else {
+          statusEl.style.color = "green";
+        }
       });
   });
 }
@@ -127,13 +136,12 @@ function renderItem(item) {
   const el = document.createElement("div");
   el.className = "item";
 
-  el.innerHTML = `    <div class="url">${
-    item.url
-  }</div>    <div class="meta">[${item.type}] ${item.method} ${
+  el.innerHTML = `<div class="url">${item.url}</div>
+  <div class="meta">[${item.type}] ${item.method} ${
     item.statusCode || ""
   } • ${new Date(item.timeStamp).toLocaleTimeString()} • IP:${
     item.ip
-  } • Initiator:${item.initiator}</div>  `;
+  } • Initiator:${item.initiator}</div>`;
   return el;
 }
 
@@ -177,3 +185,12 @@ browser.runtime.onMessage.addListener((msg, sender) => {
 });
 
 loadHistory();
+
+const settings = document.getElementById("settings");
+const optionsUrl = browser.runtime.getURL("pages/options.html");
+
+settings.addEventListener("click", () => {
+  browser.tabs.update({
+    url: browser.runtime.getURL("pages/options.html"),
+  });
+});

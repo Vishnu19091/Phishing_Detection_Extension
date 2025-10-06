@@ -4,12 +4,18 @@
   "description": "Anti-Phishing extension's UI.",
   "main": "tailwind.config.js",
   "scripts": {
-    "build": "tailwindcss -i ./styles/pop_up_inp.css -o ./styles/pop_up_out.css -w"
+    "build": "tailwindcss -i ./styles/pop_up_inp.css -o ./styles/pop_up_out.css -w",
+    "tail:page":"tailwindcss -i ./pages/inp.css -o ./pages/out.css -w",
+    "ext:run":"web-ext run",
+    "lint:ext":"web-ext lint"
   },
   "author": "Vishnu sah VT",
   "license": "ISC",
   "Socials": {
     "GitHub": "https://github.com/Vishnu19091",
     "LinkedIn": "http://www.linkedin.com/in/vishnuvt1183"
+  },
+  "devDependencies": {
+    "web-ext": "^8.10.0"
   }
 }

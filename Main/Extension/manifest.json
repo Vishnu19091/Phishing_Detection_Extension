@@ -17,6 +17,7 @@
     "permissions": [
       "activeTab",
       "tabs",
+      "notifications",
       "storage",
       "webRequest",
       "webRequestBlocking",
@@ -37,8 +38,14 @@
     "web_accessible_resources": [
       "icons/icon48.png",
       "icons/icon128.png",
-      "blocked.html"
+      "blocked.html",
+      "pages/options.html"
     ],
+    "options_ui": {
+      "page": "pages/options.html",
+      "browser_style": true,
+      "open_in_tab": true
+    },
     "browser_specific_settings": {
       "gecko": {
         "id": "anti-phishing@gmail.com"

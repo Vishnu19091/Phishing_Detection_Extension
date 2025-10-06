@@ -20,7 +20,7 @@ app.use(express.json());
 // CORS: allow extension origin(s) during dev + local UI
 app.use(
   cors({
-    origin: ["*", "moz-extension://809fd8dc-b002-463f-879a-c98067f0379d"],
+    origin: ["*"],
   })
 );
 

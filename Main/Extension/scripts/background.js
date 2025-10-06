@@ -1,6 +1,5 @@
 "use strict";
 import { TabChange } from "./rules/tab_rules.js";
-import { getIPAddresses } from "./rules/url_rules.js";
 
 /* 
 In this file you have to write the logic that communicates
@@ -42,7 +41,7 @@ export async function isPhish(url) {
   if (!url) return null;
 
   try {
-    const res = await fetch("http://127.0.0.1:4000/check", {
+    const res = await fetch("http://localhost:4000/check", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url }),
@@ -58,6 +57,7 @@ export async function isPhish(url) {
   return;
 }
 
+// Stores the data as {"URL":"Status"}
 let cache = {};
 
 /** Updates Cache for tab
@@ -78,25 +78,27 @@ async function updateCacheForTab(tabId, changeInfo, tab) {
 }
 
 // message listener to send status to pop_up html
-browser.runtime.onMessage.addListener((message, sender, sendReponse) => {
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "GET_STATUS") {
     const host = message.hostname;
 
-    // Add extension to avoid status conflict
+    // Add extension ID to avoid status conflict
     const status = cache[host] || "unknown";
 
-    sendReponse({ status });
+    // console.log(host);
+
+    sendResponse({ status });
   }
 
   return true;
 });
 
 // fired when tab is switched
-// browser.tabs.onActivated.addListener((activeInfo) => {
-//   browser.tabs
-//     .get(activeInfo.tabId)
-//     .then((tab) => updateCacheForTab(activeInfo.tabId, {}, tab));
-// });
+browser.tabs.onActivated.addListener((activeInfo) => {
+  browser.tabs
+    .get(activeInfo.tabId)
+    .then((tab) => updateCacheForTab(activeInfo.tabId, {}, tab));
+});
 
 // fires when url changes
 browser.tabs.onUpdated.addListener(updateCacheForTab);
@@ -108,7 +110,9 @@ function blockRequest(requestDetails) {
   // then do actions based on the status
 
   const url = requestDetails.url;
-  const host = new URL(url).hostname;
+  const host = new URL(url);
+  // const host = new URLSearchParams(window.location.search);
+  // console.log(url);
 
   // Fix when the extension detects the phishing url it captures
   // extension id as its hostname
@@ -116,9 +120,6 @@ function blockRequest(requestDetails) {
     const redirectURL = browser.runtime.getURL(
       `blocked.html?site=${requestDetails.url}`
     );
-
-    // console.log(`Redirecting to ${redirectURL}`);
-    console.log(`Current request to \'${url}\' is blocked`);
 
     // blocks loading the phish url and loads the blocked html page
     browser.tabs.update(requestDetails.tabId, { url: redirectURL });
@@ -245,6 +246,39 @@ browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 1. Check for IP addresses in a URL, if so then
   send it to pop_up and display it in the pop_up
   window.
-
-2. Check URL contains valid Domain name.
 */
+
+// <--------- Block Custom domains --------->
+const KEY_NAME = "blocked_domains";
+let blockedDomains = [];
+
+// Load initially
+browser.storage.local.get(KEY_NAME).then((result) => {
+  blockedDomains = result[KEY_NAME] || [];
+  // console.log("Loaded blocked domains:", blockedDomains);
+});
+
+// Watch for any updates to storage
+browser.storage.onChanged.addListener((changes, area) => {
+  if (area === "local" && changes[KEY_NAME]) {
+    blockedDomains = changes[KEY_NAME].newValue || [];
+    // console.log("Updated blocked domains:", blockedDomains);
+  }
+});
+
+// a function to block custom domains from the extension storage
+function blckReq(requestDetails) {
+  if (blockedDomains.some((domain) => requestDetails.url.startsWith(domain))) {
+    console.log("Blocking:", requestDetails.url);
+    return { cancel: true };
+  }
+
+  return {}; // allow
+}
+
+// listener function to block custom domains
+browser.webRequest.onBeforeRequest.addListener(
+  blckReq,
+  { urls: ["<all_urls>"] },
+  ["blocking"]
+);
