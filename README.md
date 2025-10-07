@@ -20,9 +20,8 @@ This work presents a **real-time phishing detection system** that uses rule-base
 
 
 ### Demo v1.1.0
-<video width="auto" height="auto" controls>
-  <source src="./Main/assets/Demo_Anti_Phishing.mp4" type="video/mp4">
-</video> 
+
+https://github.com/user-attachments/assets/c8396764-5757-4e8f-bbe3-2df44fbd0adf
 
 <br/>
 
@@ -48,3 +47,4 @@ This work presents a **real-time phishing detection system** that uses rule-base
 #### Server-side
 
 - NodeJS
+
