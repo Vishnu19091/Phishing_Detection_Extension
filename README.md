@@ -12,11 +12,17 @@ This work presents a **real-time phishing detection system** that uses rule-base
 
 <br/>
 
-![ScreenShot-2](Presentation/Screenshot_1.png)
+![Network Logger](./Main/assets/Network_Logger.png)
 
 <br/>
 
-![ScreenShot-3](Presentation/Screenshot_3.png)
+![Pop-Up-Window](./Main/assets/Pop-up-window.png)
+
+
+### Demo v1.1.0
+<video width="auto" height="auto" controls>
+  <source src="./Main/assets/Demo_Anti_Phishing.mp4" type="video/mp4">
+</video> 
 
 <br/>
 
