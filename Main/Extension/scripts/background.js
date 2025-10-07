@@ -1,38 +1,16 @@
 "use strict";
 import { TabChange } from "./rules/tab_rules.js";
 
-/* 
-In this file you have to write the logic that communicates
-to nodejs server and that server communicates to the google safe browsing api
-
-it simply forwards the response of the GSB API, because to secure API_KEY
-
-
-- **Length** → URLs longer than 100–150 chars are suspicious. ✅ done
-
-- **Special Characters** → `@`, `-`, `=`, `?`, multiple `//`. ✅ done
-
-- **IP Address in URL** → `http://192.168.0.1/...` instead of domain name.✅ done
-
-- **Too Many Subdomains** → `login.secure.bank.fake.com`.
-
-// these two things will be handled by GSB API
-- **Misspelled Brand Names** → e.g., `paypa1.com`, `g00gle.net`. ✅ done
-
-- **Top-Level Domain Check** → Free TLDs like `.tk`, `.ml`, `.ga`, `.cf`, `.gq` are often used in phishing.✅ done
-*/
-
-/*
-blocks specified url
-
-TODO: send current url to gsb API and
-if not malicious then allow loading
-the request else don't load it.
-*/
-
 /** Makes a request to a nodejs server
 
  * to fetch the result a webRequest
+
+ * Sends current url to gsb API and 
+ 
+ * if not malicious then allow loading
+ 
+ * the request else don't load it.
+ 
  * @param {*} url 
 
  * @returns Safe / Danger
@@ -41,7 +19,7 @@ export async function isPhish(url) {
   if (!url) return null;
 
   try {
-    const res = await fetch("http://localhost:4000/check", {
+    const res = await fetch("https://anti-phish-proxy.onrender.com/check", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url }),
@@ -110,19 +88,23 @@ function blockRequest(requestDetails) {
   // then do actions based on the status
 
   const url = requestDetails.url;
-  const host = new URL(url);
+
+  // don't remove the hostname property
+  const host = new URL(url).hostname;
   // const host = new URLSearchParams(window.location.search);
   // console.log(url);
 
   // Fix when the extension detects the phishing url it captures
   // extension id as its hostname
-  if (cache[host] === "danger") {
-    const redirectURL = browser.runtime.getURL(
-      `blocked.html?site=${requestDetails.url}`
-    );
+  const redirectURL = browser.runtime.getURL(
+    `pages/blocked.html?site=${requestDetails.url}`
+  );
 
+  if (cache[host] === "danger") {
+    // console.log(`Detected Phishing URL ${redirectURL}`);
     // blocks loading the phish url and loads the blocked html page
     browser.tabs.update(requestDetails.tabId, { url: redirectURL });
+
     return { cancel: true };
   }
 
@@ -137,7 +119,7 @@ blocks the request before requesting to endpoint
 browser.webRequest.onBeforeRequest.addListener(
   blockRequest,
 
-  /* Manual Testing */
+  /* Test function */
   // function (details) {
   //   console.log(
   //     "This is message is from before request function & Requested URL:",
@@ -241,12 +223,6 @@ browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     return true; // will respond asynchronously
   }
 });
-
-/* TODOS -->
-1. Check for IP addresses in a URL, if so then
-  send it to pop_up and display it in the pop_up
-  window.
-*/
 
 // <--------- Block Custom domains --------->
 const KEY_NAME = "blocked_domains";

@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Anti-Phishing",
     "version": "1.1.0",
-    "description": "Anti-Phishing extension to detect phishing and alert users.",
+    "description": "Anti-Phishing extension detects phishing and alert users.",
     "icons": {
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
@@ -21,8 +21,7 @@
       "storage",
       "webRequest",
       "webRequestBlocking",
-      "<all_urls>",
-      "http://localhost:4000/"
+      "<all_urls>"
     ],
     "background": {
       "type": "module",
@@ -38,11 +37,12 @@
     "web_accessible_resources": [
       "icons/icon48.png",
       "icons/icon128.png",
-      "blocked.html",
-      "pages/options.html"
+      "pages/blocked.html",
+      "pages/block_domain.html",
+      "pages/about.html"
     ],
     "options_ui": {
-      "page": "pages/options.html",
+      "page": "pages/block_domain.html",
       "browser_style": true,
       "open_in_tab": true
     },
