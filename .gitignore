@@ -1,6 +1,10 @@
 .env
-Main/UI/node_modules/
-Main/scripts/oauth_details.json
-Extension.crx
-Extension.pem
 git-push.zsh
+Dockerfile
+node_modules
+
+about_versioning.md
+basics.txt
+GSB.txt
+Todos.txt
+release
