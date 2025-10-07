@@ -17,13 +17,6 @@ html {
 /* pop_up_out.css */
 
 body {
-  background: #000;
-  color: white;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem; /* gap-10 */
-  padding: 1.25rem; /* p-5 */
   font-family: Arial, sans-serif;
 }
 
