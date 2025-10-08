@@ -18,6 +18,9 @@ This work presents a **real-time phishing detection system** that uses rule-base
 
 ![Pop-Up-Window](./Main/assets/Pop-up-window.png)
 
+<br/>
+
+![Blocked_Site](./Main/assets/Blocked-site.png)
 
 ### Demo v1.1.0
 
