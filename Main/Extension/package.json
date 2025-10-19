@@ -1,11 +1,11 @@
 {
   "name": "anti-phishing",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Anti-Phishing extension's UI. This extension detects phishing and alert users.",
   "main": "tailwind.config.js",
   "scripts": {
     "build": "tailwindcss -i ./styles/pop_up_inp.css -o ./styles/pop_up_out.css -w",
-    "tail:page":"tailwindcss -i ./pages/inp.css -o ./pages/out.css -w",
+    "tail:page":"tailwindcss -i ./pages/styles/inp.css -o ./pages/styles/out.css -w",
     "ext:run":"web-ext run",
     "lint:ext":"web-ext lint"
   },
