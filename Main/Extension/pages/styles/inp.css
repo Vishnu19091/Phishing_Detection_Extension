@@ -35,6 +35,12 @@ code {
   border-radius: 10px;
 }
 
+#feature {
+  background: #373737;
+  border: none;
+  font-weight: bolder;
+}
+
 ::selection {
   color: red;
   background: rgba(38, 38, 38, 0.7);

@@ -72,24 +72,12 @@
   position: sticky;
 }
 
-.left-1 {
-  left: 0.25rem;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
 
-.left-\[\] {
-  left: ;
-}
-
-.left-\[5\] {
-  left: 5;
-}
-
-.left-\[50\] {
-  left: 50;
+.left-1 {
+  left: 0.25rem;
 }
 
 .left-\[50\%\] {
@@ -119,16 +107,16 @@
   margin-left: 5rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
 
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
 }
 
 .block {
@@ -206,36 +194,6 @@
 
 .grow {
   flex-grow: 1;
-}
-
-.translate-x-0 {
-  --tw-translate-x: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[\] {
-  --tw-translate-x: ;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[50\] {
-  --tw-translate-x: 50;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[50\$\%\] {
-  --tw-translate-x: 50$%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[50\$\] {
-  --tw-translate-x: 50$;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[50\%\] {
-  --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-x-\[50\%\] {
@@ -340,11 +298,6 @@
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
-.bg-\[\#0f0f0f\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 15 15 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#1e1e1e\] {
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 30 / var(--tw-bg-opacity, 1));
@@ -378,10 +331,6 @@
 
 .p-3 {
   padding: 0.75rem;
-}
-
-.p-6 {
-  padding: 1.5rem;
 }
 
 .p-8 {
@@ -432,9 +381,18 @@
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+
+.text-\[2rem\] {
+  font-size: 2rem;
 }
 
 .text-lg {
@@ -452,22 +410,12 @@
   line-height: 1.75rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-\[2rem\] {
-  font-size: 2rem;
-}
-
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
-}
-
 .font-bold {
   font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }
 
 .font-light {
@@ -476,14 +424,6 @@
 
 .font-semibold {
   font-weight: 600;
-}
-
-.font-extralight {
-  font-weight: 200;
-}
-
-.font-extrabold {
-  font-weight: 800;
 }
 
 .uppercase {
@@ -521,6 +461,11 @@
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
@@ -529,19 +474,6 @@
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-\[4xl\] {
-  color: 4xl;
-}
-
-.text-\[2re\] {
-  color: 2re;
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -556,36 +488,8 @@
   text-underline-offset: 2px;
 }
 
-.underline-offset-8 {
-  text-underline-offset: 8px;
-}
-
-.underline-offset-\[8\] {
-  text-underline-offset: 8;
-}
-
-.underline-offset-\[1\] {
-  text-underline-offset: 1;
-}
-
-.underline-offset-\[10px\] {
-  text-underline-offset: 10px;
-}
-
 .underline-offset-\[12px\] {
   text-underline-offset: 12px;
-}
-
-.underline-offset-\[\] {
-  text-underline-offset: ;
-}
-
-.underline-offset-\[12p\] {
-  text-underline-offset: 12p;
-}
-
-.underline-offset-\[12pz\] {
-  text-underline-offset: 12pz;
 }
 
 .opacity-0 {
@@ -1226,6 +1130,12 @@ code {
   padding: 5px;
   border: white 1px solid;
   border-radius: 10px;
+}
+
+#feature {
+  background: #373737;
+  border: none;
+  font-weight: bolder;
 }
 
 ::-moz-selection {

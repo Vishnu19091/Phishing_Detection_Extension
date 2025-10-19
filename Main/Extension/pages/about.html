@@ -31,17 +31,62 @@
         </article>
       </section>
 
-      <!-- APPROACH USED -->
+      <!-- Features -->
       <section>
+        <article class="flex flex-col gap-8">
+          <h3 class="text-6xl font-bold underline underline-offset-[12px]">
+            Current Features
+          </h3>
+          <ul class="list-disc my-5 ml-20 flex flex-col gap-6">
+            <li>
+              <code id="feature">Real-Time Request Interception</code> - The
+              extension uses the webRequest and webRequestBlocking APIs to
+              monitor every outgoing request from the browser.
+            </li>
+
+            <li>
+              <code id="feature">Custom Domain Blocking by User</code> - Users
+              can manually block requests to specific domains in the “Manage
+              Blocked Domains” page.
+            </li>
+
+            <li>
+              Integration with
+              <code id="feature"> Google Safe Browsing (GSB) API </code> - For
+              extra security protection that Google has latest blacklisted
+              Phishing URLs
+            </li>
+
+            <li>
+              <code id="feature">Network Request Logging</code> - The popup
+              displays the recent 200 network activities, helping users analyze
+              browsing behavior and what resources are requested & downloaded.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- APPROACH USED -->
+      <!-- <section>
         <article class="flex flex-col gap-8">
           <h3 class="text-6xl font-bold underline underline-offset-[12px]">
             Approach used to detect phishing attack
           </h3>
           <p class="text-[2rem] font-light">
-            Uses rule-based approach to detect phishing attacks.
+            Uses rule-based approach to detect phishing attacks. This extension
+            keeps monitoring the web requests made from your browser and checks
+            the webRequest with certain condition like
+
+            <span>
+              <ul class="list-disc ml-20 flex flex-col gap-6">
+                <li>Containing IP address</li>
+                <li>Too many special characters</li>
+                <li>Too many sub-domains</li>
+              </ul>
+            </span>
           </p>
         </article>
-      </section>
+      </section> -->
 
       <!-- PERMISSIONS USED -->
       <section>
@@ -94,7 +139,5 @@
         <span class="font-extrabold text-red-500">v1.1.1 </span>
       </p>
     </main>
-
-    <div id="footer"></div>
   </body>
 </html>
