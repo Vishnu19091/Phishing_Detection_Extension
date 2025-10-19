@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Anti-Phishing",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Anti-Phishing extension detects phishing and alert users.",
     "icons": {
       "48": "icons/icon48.png",
