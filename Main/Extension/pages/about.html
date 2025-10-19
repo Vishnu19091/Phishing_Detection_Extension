@@ -4,45 +4,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Anti-Phishing</title>
-    <link rel="stylesheet" href="./inp.css" />
-    <link rel="stylesheet" href="./out.css" />
-  </head>
-  <body class="bg-[#0f0f0f] text-white flex flex-col items-center p-6 gap-4">
-    <h1>About Anti-Phishing</h1>
-    <div class="absolute left-1">
-      <div class="flex flex-row gap-4 items-center">
-        <img src="../icons/icon128.png" width="50" height="50" alt="logo" />
-        <h1 class="text-4xl text-red-600 hover:underline underline-offset-2">
-          Anti-Phishing
-        </h1>
-      </div>
-      <a class="text-2xl hover:text-red-600" href="./block_domain.html"
-        >Block a Domain</a
-      >
-    </div>
 
-    <main>
+    <link rel="stylesheet" href="./styles/inp.css" />
+    <link rel="stylesheet" href="./styles/out.css" />
+
+    <script src="./scripts/layout.js" defer></script>
+    <script src="./scripts/pages.js" defer></script>
+  </head>
+  <body>
+    <div id="sidebar"></div>
+    <br />
+    <main class="w-[60%] mx-auto flex flex-col gap-5">
+      <!-- ABOUT EXTENSION -->
       <section>
-        <article>
-          <h3>Title</h3>
-          <p>About this project</p>
+        <article class="flex flex-col gap-8">
+          <h3 class="text-6xl font-bold underline underline-offset-[12px]">
+            About the Extension
+          </h3>
+          <p class="text-[2rem] font-light">
+            The Anti-Phishing Browser Extension is a real-time security tool
+            designed to detect and block malicious or suspicious URLs before
+            they can harm users. It leverages both rule-based detection and
+            Google Safe Browsing (GSB) API integration to provide an extra layer
+            of protection against phishing, malware, and unsafe domains.
+          </p>
         </article>
       </section>
 
+      <!-- APPROACH USED -->
+      <section>
+        <article class="flex flex-col gap-8">
+          <h3 class="text-6xl font-bold underline underline-offset-[12px]">
+            Approach used to detect phishing attack
+          </h3>
+          <p class="text-[2rem] font-light">
+            Uses rule-based approach to detect phishing attacks.
+          </p>
+        </article>
+      </section>
+
+      <!-- PERMISSIONS USED -->
+      <section>
+        <article class="flex flex-col gap-8">
+          <h3 class="text-6xl font-bold underline underline-offset-[12px]">
+            Permissions used
+          </h3>
+
+          <ul class="list-disc my-5 ml-20 flex flex-col gap-6">
+            <li>
+              <code>webRequest</code> and <code>webRequestBlocking</code> - To
+              intercept & analyze outgoing requests
+            </li>
+
+            <li>
+              <code>storage</code> - To maintain user-defined blocklists and
+              network history.
+            </li>
+
+            <li>
+              <code>tabs</code> - To track the currently active site and update
+              its safety status.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- REPOSITORY LINK -->
       <section>
         <div class="flex flex-row items-center w-fit">
+          <h4 class="text-5xl font-bold">Repository</h4>
           <a
-            title="Repository"
+            title="Anti-Phishing Repository"
             href="https://github.com/Vishnu19091/Phishing_Detection_Extension"
             class="w-fit"
           >
-            <img src="../icons/git.svg" alt="github" width="60" height="60" />
+            <img
+              src="../icons/git.svg"
+              alt="github"
+              width="50"
+              height="50"
+              class="ml-3 hover:border border-white rounded"
+            />
           </a>
         </div>
-        <article>
-          <p>Version 1.1.0</p>
-        </article>
       </section>
+
+      <p class="font-light">
+        Current Version
+        <span class="font-extrabold text-red-500">v1.1.1 </span>
+      </p>
     </main>
+
+    <div id="footer"></div>
   </body>
 </html>
