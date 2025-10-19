@@ -103,6 +103,10 @@
   margin-bottom: 1.25rem;
 }
 
+.ml-16 {
+  margin-left: 4rem;
+}
+
 .ml-20 {
   margin-left: 5rem;
 }
@@ -111,8 +115,16 @@
   margin-left: 0.75rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .mt-5 {
@@ -171,6 +183,10 @@
   width: 60%;
 }
 
+.w-\[65\%\] {
+  width: 65%;
+}
+
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -211,6 +227,10 @@
 
 .resize {
   resize: both;
+}
+
+.list-decimal {
+  list-style-type: decimal;
 }
 
 .list-disc {
@@ -400,11 +420,6 @@
   line-height: 1.75rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -446,9 +461,18 @@
   color: #edffffda;
 }
 
+.text-\[\] {
+  color: ;
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-400 {
@@ -484,8 +508,8 @@
   text-decoration-line: overline;
 }
 
-.underline-offset-2 {
-  text-underline-offset: 2px;
+.underline-offset-4 {
+  text-underline-offset: 4px;
 }
 
 .underline-offset-\[12px\] {
@@ -1165,8 +1189,4 @@ code {
 .hover\:text-red-600:hover {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
-}
-
-.hover\:underline:hover {
-  text-decoration-line: underline;
 }
