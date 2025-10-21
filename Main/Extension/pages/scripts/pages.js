@@ -1,10 +1,3 @@
-/*
-<---------- TODOS ---------->
-1. Block Custom domain
-
-2. List the blocked domains in a table
-*/
-
 const KEY_NAME = "blocked_domains";
 const domainInput = document.getElementById("domainInput");
 const addBtn = document.getElementById("addBtn");
@@ -32,7 +25,7 @@ function renderDomains(domains) {
 
     // This element displays the blocked domains
     li.innerHTML = `
-      <span class='text-2xl'>${domain}*</span>
+      <span class='text-2xl'>${domain}</span>
       <button data-index="${index}"
         class="removeBtn bg-gray-700 hover:bg-red-600 px-3 py-1 rounded-md text-white">
         Remove
@@ -55,9 +48,23 @@ function renderDomains(domains) {
   });
 }
 
-// Add new domain
+// Extracts Domain name from a URL
+function ExtractDomainName(url) {
+  const urlObject = new URL(url);
+  // console.log(urlObject);
+
+  if (urlObject.protocol !== "moz-extension:") {
+    return urlObject.hostname;
+  } else {
+    alert("Invalid data received");
+  }
+}
+
+// Store blocked domain in storage
 addBtn.addEventListener("click", async () => {
-  const newDomain = domainInput.value.trim();
+  const url = domainInput.value.trim();
+
+  const newDomain = ExtractDomainName(url);
   if (!newDomain) return;
 
   const result = await browser.storage.local.get(KEY_NAME);

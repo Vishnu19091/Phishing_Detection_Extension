@@ -237,17 +237,39 @@ browser.storage.local.get(KEY_NAME).then((result) => {
 // Watch for any updates to storage
 browser.storage.onChanged.addListener((changes, area) => {
   if (area === "local" && changes[KEY_NAME]) {
-    blockedDomains = changes[KEY_NAME].newValue || [];
+    blockedDomains = normalizeDomains(changes[KEY_NAME].newValue || []);
     // console.log("Updated blocked domains:", blockedDomains);
   }
 });
 
+/**
+ * To clean & normalize domains to hostnames
+
+ * that is any requests like for example
+
+ * https://www.google.com -> google.com
+
+ * @returns domains
+ */
+function normalizeDomains(domains) {
+  return domains
+    .map((d) => {
+      try {
+        console.log(new URL(d).hostname);
+        return new URL(d).hostname;
+      } catch {
+        return d.replace(/^https?:\/\//, "").split("/")[0];
+      }
+    })
+    .filter(Boolean);
+}
+
 // a function to block custom domains from the extension storage
 function blckReq(requestDetails) {
-  if (blockedDomains.some((domain) => requestDetails.url.startsWith(domain))) {
-    console.log("Blocking:", requestDetails.url);
-    return { cancel: true };
-  }
+  const url = requestDetails.url;
+  const domain = new URL(url).hostname;
+
+  if (blockedDomains.includes(domain)) return { cancel: true };
 
   return {}; // allow
 }
