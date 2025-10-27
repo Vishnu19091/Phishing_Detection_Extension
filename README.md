@@ -59,6 +59,10 @@ https://github.com/user-attachments/assets/c8396764-5757-4e8f-bbe3-2df44fbd0adf
 
 - Browser’s Local Storage (for user preferences, logs, and blocked domains)
 
+## 📊 Repository activity
+
+![Alt](https://repobeats.axiom.co/api/embed/464793fc85f1042405e512780667d0ecf8af54f9.svg "Repobeats analytics image")
+
 ## Contributor
 
 [<img src="https://wsrv.nl/?url=github.com/Vishnu19091.png?w=64&h=64&mask=circle&fit=cover&maxage=1w" width="32" height="32" alt="the_one" />](https://github.com/Vishnu19091)
