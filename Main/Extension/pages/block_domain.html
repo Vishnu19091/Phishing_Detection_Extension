@@ -14,25 +14,29 @@
   <body class="flex flex-col items-center">
     <div id="sidebar"></div>
 
-    <!-- Add new domain -->
-    <div class="flex gap-2 w-[50rem] mt-20">
-      <input
-        type="text"
-        id="domainInput"
-        placeholder="Enter URL (e.g., https://example.com/)"
-        class="flex-1 p-2 rounded-md text-black"
-      />
-      <button
-        id="addBtn"
-        class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md font-bold text-2xl"
-      >
-        Block
-      </button>
-    </div>
+    <div class="w-fit xl:mt-20 xl:ml-0 lg:mt-[10rem] lg:ml-[15rem]">
+      <!-- Add new domain -->
+      <div class="flex gap-2 w-[50rem]">
+        <input
+          type="text"
+          id="domainInput"
+          placeholder="Enter URL (e.g., https://example.com/)"
+          class="flex-1 p-2 rounded-md text-black"
+        />
+        <button
+          id="addBtn"
+          class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md font-bold text-2xl"
+        >
+          Block
+        </button>
+      </div>
 
-    <!-- Domain list -->
-    <h1 class="text-4xl font-semibold my-4">🔒 Blocked Domains</h1>
-    <ul id="domainList" class="w-full max-w-md space-y-2"></ul>
+      <!-- Domain list -->
+      <h1 class="text-4xl text-center font-semibold my-4">
+        🔒 Blocked Domains
+      </h1>
+      <ul id="domainList" class="w-full max-w-md mx-auto space-y-2"></ul>
+    </div>
 
     <div id="footer"></div>
   </body>
