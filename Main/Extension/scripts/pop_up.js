@@ -30,9 +30,16 @@ nlog_btn.addEventListener("click", () => {
 function updateStatus() {
   browser.tabs.query({ active: true, lastFocusedWindow: true }).then((tabs) => {
     if (!tabs.length) return;
-    const hostname = new URL(tabs[0].url).hostname;
 
-    // console.log(hostname);
+    let hostname;
+
+    if (new URL(tabs[0].url).href.includes("https")) {
+      hostname = new URL(tabs[0].url).hostname;
+    } else {
+      hostname = "UNKNOWN";
+    }
+
+    // console.log(new URL(tabs[0].url).href);
 
     browser.runtime
       .sendMessage({ type: "GET_STATUS", hostname })
@@ -40,7 +47,7 @@ function updateStatus() {
         const statusEl = document.getElementById("url-status");
         let resStatus = response.status;
 
-        statusEl.textContent = `Current site is: ${resStatus}`;
+        statusEl.textContent = `Domain '${hostname}' is ${resStatus}`;
 
         if (resStatus === "unknown") {
           statusEl.style.color = "purple";
