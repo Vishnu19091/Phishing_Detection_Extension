@@ -23,20 +23,57 @@
         <h1 class="text-4xl font-semibold text-[#edffffda]">Anti-Phishing</h1>
       </div>
 
-      <!-- Pages Link -->
-      <div class="justify-end flex flex-row gap-3">
-        <p
-          id="block-domain"
-          class="text-white text-3xl cursor-pointer hover:text-red-600"
+      <!-- Menu -->
+      <div class="relative justify-end gap-3">
+        <button id="modal-btn" class="focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 50 50"
+          >
+            <path
+              fill="#ffffff"
+              d="M0 7.5v5h50v-5zM0 22.5v5h50v-5zM0 37.5v5h50v-5z"
+            />
+          </svg>
+        </button>
+
+        <!-- Fullscreen Modal -->
+        <div
+          id="menu-modal"
+          class="hidden fixed inset-0 bg-black/60 z-50 backdrop-blur-sm flex-col justify-center items-center text-center transition-all duration-300"
         >
-          Block a Domain
-        </p>
-        <p
-          id="about"
-          class="text-white text-3xl cursor-pointer hover:text-red-600"
-        >
-          About
-        </p>
+          <button
+            id="close-modal"
+            class="absolute top-6 right-6 text-white text-5xl hover:text-red-600 transition-all"
+          >
+            &times;
+          </button>
+
+          <h2 class="text-4xl font-bold text-white my-12 tracking-wide">
+            Menu
+          </h2>
+
+          <p
+            id="block-domain"
+            class="text-white text-3xl mb-6 cursor-pointer hover:text-red-500 transition-all"
+          >
+            Block a Domain
+          </p>
+          <p
+            id="about"
+            class="text-white text-3xl mb-6 cursor-pointer hover:text-red-500 transition-all"
+          >
+            About
+          </p>
+          <p
+            id="test"
+            class="text-white text-3xl cursor-pointer hover:text-red-500 transition-all"
+          >
+            Test Extension
+          </p>
+        </div>
       </div>
     </header>
 
