@@ -115,7 +115,32 @@ browser.runtime.onMessage.addListener((msg, sender) => {
 
 loadHistory();
 
-// Open Pages
+// <---------- Menu Button modal ---------->
+let modal = document.getElementById("menu-modal");
+let btn = document.getElementById("modal-btn");
+let closeBtn = document.getElementById("close-modal");
+
+// Open modal
+btn.addEventListener("click", () => {
+  modal.classList.add("show");
+  modal.classList.remove("hidden");
+});
+
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("show");
+  setTimeout(() => modal.classList.add("hidden"), 200);
+});
+
+// Close when clicking outside modal content
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("show");
+    setTimeout(() => modal.classList.add("hidden"), 200);
+  }
+});
+
+// <---------- Extension Pages ---------->
 const blockDomain = document.getElementById("block-domain");
 blockDomain.addEventListener("click", () => {
   browser.tabs.update({
@@ -127,5 +152,12 @@ const about = document.getElementById("about");
 about.addEventListener("click", () => {
   browser.tabs.update({
     url: browser.runtime.getURL("pages/about.html"),
+  });
+});
+
+const test = document.getElementById("test");
+test.addEventListener("click", () => {
+  browser.tabs.update({
+    url: browser.runtime.getURL("pages/test.html"),
   });
 });

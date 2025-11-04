@@ -21,11 +21,11 @@ function renderDomains(domains) {
   domains.forEach((domain, index) => {
     const li = document.createElement("li");
     li.className =
-      "flex justify-between items-center bg-[#1e1e1e] p-3 rounded-md text-lg";
+      "flex justify-between items-center bg-[#1e1e1e] p-3 rounded-md";
 
     // This element displays the blocked domains
     li.innerHTML = `
-      <span class='text-2xl'>${domain}</span>
+      <span class='text-3xl'>${domain}</span>
       <button data-index="${index}"
         class="removeBtn bg-gray-700 hover:bg-red-600 px-3 py-1 rounded-md text-white">
         Remove
