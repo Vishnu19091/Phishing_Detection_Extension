@@ -1,6 +1,6 @@
 {
   "name": "anti-phish-server",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "backend server of Anti-Phishing extension",
   "main": "server.js",
   "scripts": {
