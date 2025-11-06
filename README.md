@@ -1,39 +1,19 @@
-<h2 align="center">
+<div align="center">
+<h2>
 Phishing Detection Extension
 </h2>
 
+<a href="https://addons.mozilla.org/en-US/firefox/addon/anti-phishing-extension/">
+<button style="background-color: #ff6200; color: white; padding: 6px; border: none; border-radius: 5px; cursor: pointer;">
+Firefox Add-on Link
+</button>
+</a>
+</div>
+
 <h2>About</h2>
 <p>
-    This is a browser extension-based project that detects phishing websites in real-time and alerts the user. Uses rule-based approach to identify phishing.This work presents a **real-time phishing detection system** that uses rule-based approach to effectively identify and prevent phishing attacks, spam, and defaced websites.
+    This is a browser extension-based project that detects phishing websites in real-time and alerts the user. Uses rule-based approach to effectively identify and prevent phishing attacks, spam, and defaced websites.
 </p>
-
-<h3 align="center">Updating the readme</h3>
-
-<!-- ## Extension ScreenShots
-
-![Network Logger](./Main/assets/Network_Logger.png)
-
-<br/>
-
-![Block a Domain](./Main/assets/Blocked_Domain_Page.png)
-
-<br/>
-
-![Pop-Up-Window](./Main/assets/Pop-up-window.png)
-
-<br/>
-
-![Blocked_Site](./Main/assets/Blocked-site.png)
-
-<br/>
-
-![Test_Page](./Main/assets/Test_page.png)
-
-### Demo Video
-
-https://github.com/user-attachments/assets/c8396764-5757-4e8f-bbe3-2df44fbd0adf
-
-<br/>
 
 ### 💫 Features of the system
 
@@ -60,7 +40,35 @@ https://github.com/user-attachments/assets/c8396764-5757-4e8f-bbe3-2df44fbd0adf
 
 #### Storage
 
-- Browser’s Local Storage (for user preferences, logs, and blocked domains) -->
+- Browser’s Local Storage (for user preferences, logs, and blocked domains)
+
+<details>
+  <summary><h3>Extension ScreenShots & Demo</h3></summary>
+  
+  ![Network Logger](./Main/assets/Network_Logger.png)
+  
+  <br/>
+  
+  ![Block a Domain](./Main/assets/Blocked_Domain_Page.png)
+  
+  <br/>
+  
+  ![Pop-Up-Window](./Main/assets/Pop-up-window.png)
+  
+  <br/>
+  
+  ![Blocked_Site](./Main/assets/Blocked-site.png)
+  
+  <br/>
+  
+  ![Test_Page](./Main/assets/Test_page.png)
+  
+  ### Demo Video
+  
+  https://github.com/user-attachments/assets/c8396764-5757-4e8f-bbe3-2df44fbd0adf
+  
+  <br/>
+</details>
 
 ## 📊 Repository activity
 
