@@ -1,12 +1,15 @@
-# Phishing Detection Extension v1.1.1
+<h2 align="center">
+Phishing Detection Extension
+</h2>
 
-#### This is a browser extension-based project that detects phishing websites in real-time and alerts the user. Uses rule-based approach to identify phishing.
+<h2>About</h2>
+<p>
+    This is a browser extension-based project that detects phishing websites in real-time and alerts the user. Uses rule-based approach to identify phishing.This work presents a **real-time phishing detection system** that uses rule-based approach to effectively identify and prevent phishing attacks, spam, and defaced websites.
+</p>
 
-## About
+<h3 align="center">Updating the readme</h3>
 
-This work presents a **real-time phishing detection system** that uses rule-based approach to effectively identify and prevent phishing attacks, spam, and defaced websites.
-
-## Extension ScreenShots
+<!-- ## Extension ScreenShots
 
 ![Network Logger](./Main/assets/Network_Logger.png)
 
@@ -57,12 +60,8 @@ https://github.com/user-attachments/assets/c8396764-5757-4e8f-bbe3-2df44fbd0adf
 
 #### Storage
 
-- Browser’s Local Storage (for user preferences, logs, and blocked domains)
+- Browser’s Local Storage (for user preferences, logs, and blocked domains) -->
 
 ## 📊 Repository activity
 
 ![Alt](https://repobeats.axiom.co/api/embed/464793fc85f1042405e512780667d0ecf8af54f9.svg "Repobeats analytics image")
-
-## Contributor
-
-[<img src="https://wsrv.nl/?url=github.com/Vishnu19091.png?w=64&h=64&mask=circle&fit=cover&maxage=1w" width="32" height="32" alt="the_one" />](https://github.com/Vishnu19091)
