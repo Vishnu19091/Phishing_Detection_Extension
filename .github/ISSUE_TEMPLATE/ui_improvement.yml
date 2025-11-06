@@ -1,0 +1,27 @@
+name: 🎨 UI Improvement
+description: Suggest enhancements or visual improvements to the user interface.
+title: "[UI] <short summary>"
+labels: ["enhancement", "UI"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the Anti-Phishing extension!  
+        Please describe the UI improvement or visual enhancement you'd like to see.
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: 💭 Current Behavior
+      description: Describe what the current UI looks like or how it behaves.
+      placeholder: Current layout, styles, or interactions...
+  - type: textarea
+    id: improvement_details
+    attributes:
+      label: 🚀 Proposed Improvement
+      description: What do you want to improve or change? Be specific if possible.
+      placeholder: Add spacing to..., change colors to..., make responsive, etc.
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: 📎 Additional Context or Screenshots
+      description: Add screenshots, mockups, or references that help visualize your idea.

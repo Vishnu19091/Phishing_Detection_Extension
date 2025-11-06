@@ -1,5 +1,5 @@
 ---
-name: 🐛 Bug Report
+name: 🐞 Bug Report
 about: Report an issue to help improve the Anti-Phishing Extension
 title: "[BUG] "
 labels: ["bug"]
