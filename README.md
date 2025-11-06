@@ -4,10 +4,11 @@ Phishing Detection Extension
 </h2>
 
 <a href="https://addons.mozilla.org/en-US/firefox/addon/anti-phishing-extension/">
-<button style="background-color: #ff6200; color: white; padding: 6px; border: none; border-radius: 5px; cursor: pointer;">
-Firefox Add-on Link
-</button>
+
+<img width="154" height="33" alt="image" src="https://github.com/user-attachments/assets/34bba5e7-aaef-4ebc-ac11-ccefe841ce96" />
+
 </a>
+
 </div>
 
 <h2>About</h2>
