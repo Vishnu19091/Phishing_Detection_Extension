@@ -1,4 +1,10 @@
-## 🎨 UI Improvement / Enhancement Request
+---
+name: 🎨 UI Improvement / Enhancement Request
+about: Suggest a new idea or enhancement for the Anti-Phishing Extension UI, whether pop-up window or pages
+title: "[UI Improvement]"
+labels: ""
+assignees: ""
+---
 
 ### 🧾 Description
 
