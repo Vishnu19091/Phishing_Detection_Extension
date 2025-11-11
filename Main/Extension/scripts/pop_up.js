@@ -25,8 +25,6 @@ nlog_btn.addEventListener("click", () => {
 });
 
 // <-------- URL STATUS -------->
-// <-------- FIX -------->
-// captures the extensions address as its hostname fix
 function updateStatus() {
   browser.tabs.query({ active: true, lastFocusedWindow: true }).then((tabs) => {
     if (!tabs.length) return;
@@ -167,4 +165,48 @@ test.addEventListener("click", () => {
   browser.tabs.update({
     url: browser.runtime.getURL("pages/test.html"),
   });
+});
+
+/* <---------- Presence of IP indicator block ---------->*/
+
+/**
+ * Determines whether IPv4/IPv6
+
+ * is present inside a URL of current user tab
+
+ * @param {*} url
+
+ * @returns ip, ipState, length
+ */
+function getIPAddresses(url) {
+  let ipState = false;
+  const combinedIpRegex =
+    /(\b25[0-5]|\b2[0-4][0-9]|\b1[0-9]{2}|\b[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\b|(([0-9a-fA-F]{1,4}:){7}([0-9a-fA-F]{1,4})|([0-9a-fA-F]{1,4}:){1,7}:([0-9a-fA-F]{1,4}:){0,6}([0-9a-fA-F]{1,4})|([0-9a-fA-F]{1,4}:){1,6}(:[0-9a-fA-F]{1,4}){1,7})/g;
+
+  const ip = url.match(combinedIpRegex);
+
+  const length = ip.length;
+
+  ipState = length ? true : false;
+
+  return { ip, ipState, length };
+}
+
+const ipblock = document.getElementById("ip-block");
+const ipcount = document.getElementById("ip-count");
+const ipaddress = document.getElementById("ip-addr");
+
+browser.tabs.query({ active: true }).then((tabs) => {
+  let url;
+  url = new URL(tabs[0].url).href;
+
+  let ipaddr = getIPAddresses(url);
+
+  if (ipaddr.ipState) {
+    ipblock.classList.remove("hidden");
+    ipaddress.textContent = ipaddr.ip;
+    ipcount.textContent = ipaddr.length;
+  } else {
+    ipblock.classList.add("hidden");
+  }
 });

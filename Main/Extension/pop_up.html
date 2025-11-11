@@ -84,6 +84,23 @@
       <p id="url-status">Loading...</p>
     </div>
 
+    <!-- Indicator for presence of IP in URL 
+    Display only if the IP is present 
+    -->
+    <div
+      id="ip-block"
+      class="border border-red-600 rounded-[0.5rem] p-4 text-3xl w-fit mx-auto hidden"
+    >
+      <p>
+        IP found in current tab URL and count is "<span
+          id="ip-count"
+          class="text-green-600"
+        ></span
+        >" IP &rarr;
+        <span id="ip-addr" class="text-violet-600"></span>
+      </p>
+    </div>
+
     <!-- WebRequests Logs -->
     <div class="network-log">
       <h3 id="nlog-btn" title="Shows Recent 200 requests of your browser">
