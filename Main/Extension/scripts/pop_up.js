@@ -167,7 +167,7 @@ test.addEventListener("click", () => {
   });
 });
 
-/* <---------- IP block ---------->*/
+/* <---------- Presence of IP indicator block ---------->*/
 
 /**
  * Determines whether IPv4/IPv6
