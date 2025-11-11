@@ -343,8 +343,37 @@
   border-radius: 0.375rem;
 }
 
+.rounded-\[\] {
+  border-radius: ;
+}
+
+.rounded-\[0\] {
+  border-radius: 0;
+}
+
+.rounded-\[0\.\] {
+  border-radius: 0.;
+}
+
+.rounded-\[0\.5\] {
+  border-radius: 0.5;
+}
+
+.rounded-\[0\.5re\] {
+  border-radius: 0.5re;
+}
+
+.rounded-\[0\.5rem\] {
+  border-radius: 0.5rem;
+}
+
 .border {
   border-width: 1px;
+}
+
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(220 38 38 / var(--tw-border-opacity, 1));
 }
 
 .border-white {
@@ -393,6 +422,10 @@
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-3 {
@@ -453,6 +486,10 @@
   font-size: 2rem;
 }
 
+.text-\[4rem\] {
+  font-size: 4rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -461,10 +498,6 @@
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[4rem\] {
-  font-size: 4rem;
 }
 
 .font-bold {
@@ -542,16 +575,14 @@
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.text-\[6xl\] {
-  color: 6xl;
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity, 1));
 }
 
-.text-\[4\] {
-  color: 4;
-}
-
-.text-\[4re\] {
-  color: 4re;
+.text-violet-600 {
+  --tw-text-opacity: 1;
+  color: rgb(124 58 237 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -1203,6 +1234,7 @@ html {
 
 body {
   background: #000;
+  color: #fff;
   width: 70rem;
   height: -moz-fit-content;
   height: fit-content;
