@@ -5,9 +5,10 @@
   "main": "tailwind.config.js",
   "scripts": {
     "build": "tailwindcss -i ./styles/pop_up_inp.css -o ./styles/pop_up_out.css -w",
-    "tail:page":"tailwindcss -i ./pages/styles/inp.css -o ./pages/styles/out.css -w",
-    "ext:run":"web-ext run",
-    "lint:ext":"web-ext lint"
+    "tail:page": "tailwindcss -i ./pages/styles/inp.css -o ./pages/styles/out.css -w",
+    "ext:run": "web-ext run",
+    "lint:ext": "web-ext lint",
+    "test":"jest"
   },
   "author": "Vishnu sah VT",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "LinkedIn": "http://www.linkedin.com/in/vishnuvt1183"
   },
   "devDependencies": {
+    "jest": "^30.2.0",
     "web-ext": "^8.10.0"
   }
 }
