@@ -45,3 +45,62 @@ code {
   color: red;
   background: rgba(38, 38, 38, 0.7);
 }
+
+/* Network Logs */
+.network-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item {
+  padding: 1px;
+  border-bottom: 2px solid #eee;
+}
+
+.item .url {
+  color: #fff;
+  word-break: break-all;
+  margin: 8px 0px 4px 0px;
+  font-size: 1.8rem;
+}
+
+.item .meta {
+  color: #666;
+  font-size: 1.6rem;
+  margin: 4px 0px 8px 0px;
+  overflow-y: auto;
+}
+
+.list {
+  background: #111;
+  padding: 0.75rem;
+  border: 1px solid white;
+  border-radius: 0.8rem;
+  /* max-height: 300px; */
+  overflow-y: auto;
+  font-size: 0.9rem;
+  transition: all 300ms ease-in-out;
+}
+
+#nlog-btn {
+  transition: all 150ms ease-in-out;
+}
+
+#nlog-btn:hover {
+  color: lightgreen;
+}
+
+.network-log h3 {
+  color: darkolivegreen;
+  font-size: 2rem;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+.list p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: whitesmoke;
+}
