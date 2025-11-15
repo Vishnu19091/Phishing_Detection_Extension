@@ -64,7 +64,7 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-// <---------- Extension Pages ---------->
+// <---------- Extension Pages Navigation Links ---------->
 const blockDomain = document.getElementById("block-domain");
 blockDomain.addEventListener("click", () => {
   browser.tabs.update({
@@ -83,6 +83,13 @@ const test = document.getElementById("test");
 test.addEventListener("click", () => {
   browser.tabs.update({
     url: browser.runtime.getURL("pages/test.html"),
+  });
+});
+
+const dashboard = document.getElementById("dashboard");
+dashboard.addEventListener("click", () => {
+  browser.tabs.update({
+    url: browser.runtime.getURL("pages/dashboard.html"),
   });
 });
 

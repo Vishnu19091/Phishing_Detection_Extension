@@ -215,10 +215,6 @@
   margin-bottom: 1.25rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .ml-16 {
   margin-left: 4rem;
 }
@@ -366,21 +362,13 @@
   height: 0.5rem;
 }
 
-.h-\[25rem\] {
-  height: 25rem;
+.h-\[23rem\] {
+  height: 23rem;
 }
 
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.h-\[24rem\] {
-  height: 24rem;
-}
-
-.h-\[23rem\] {
-  height: 23rem;
 }
 
 .max-h-0 {
@@ -401,6 +389,10 @@
 
 .w-\[65\%\] {
   width: 65%;
+}
+
+.w-\[80rem\] {
+  width: 80rem;
 }
 
 .w-\[this-is\\\\\] {
@@ -989,6 +981,10 @@
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-7 {
+  gap: 1.75rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
