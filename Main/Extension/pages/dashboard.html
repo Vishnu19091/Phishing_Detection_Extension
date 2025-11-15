@@ -10,10 +10,23 @@
 
     <script src="./scripts/pages.js" defer></script>
     <script src="./scripts/layout.js" defer></script>
-    <script src="./scripts/dashboard.js"></script>
+    <script src="./scripts/dashboard.js" defer></script>
   </head>
   <body class="flex flex-col items-center">
     <div id="sidebar"></div>
+
+
+    <!-- WebRequests Logs -->
+    <div class="network-log w-[80rem] mx-auto">
+      <h3 id="nlog-btn" title="Shows Recent 200 requests of your browser">
+        Monitor Network Requests
+      </h3>
+
+      <div
+        id="list"
+        class="list transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0"
+      ></div>
+    </div>
 
     <!-- Dashboard Content goes here -->
     <div id="footer"></div>
