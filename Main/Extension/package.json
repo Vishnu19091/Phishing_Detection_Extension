@@ -9,7 +9,7 @@
     "tail:page": "tailwindcss -i ./pages/styles/inp.css -o ./pages/styles/out.css -w",
     "ext:run": "web-ext run",
     "lint:ext": "web-ext lint",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --config jest.config.mjs"
   },
   "author": "Vishnu sah VT",
   "license": "ISC",
