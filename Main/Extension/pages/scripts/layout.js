@@ -20,7 +20,9 @@ sidebarContainer.innerHTML = `<header class="absolute left-1">
     >
     <a class="text-4xl hover:text-red-600 w-fit" href="/pages/about.html">About</a>
 
-    <a title="Report bug in GitHub Issues" class="text-4xl mt-14 p-3.5 bg-transparent hover:bg-[#eb4034] border border-red-600 hover:border-transparent text-red-300 hover:text-white w-fit rounded-lg duration-300 transition-all" href="https://github.com/Vishnu19091/Phishing_Detection_Extension/issues/new?template=bug_report.md">Report Bug</a>
+    <span class="text-2xl text-red-300 font-bold underline underline-offset-4">v1.1.2</span>
+
+    <a title="Report bug in GitHub Issues" class="text-4xl p-3.5 bg-transparent hover:bg-[#eb4034] border border-red-600 hover:border-transparent text-red-300 hover:text-white w-fit rounded-lg duration-300 transition-all" href="https://github.com/Vishnu19091/Phishing_Detection_Extension/issues/new?template=bug_report.md">Report Bug</a>
     </div>
 </header>`;
 
