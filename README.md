@@ -46,15 +46,16 @@ Phishing Detection Extension
 <details>
   <summary><h3>Extension ScreenShots & Demo</h3></summary>
   
-  ![Network Logger](./Main/assets/Network_Logger.png)
+  ![Pop-Up-Window](./Main/assets/Pop-up-window.png)
   
+  <br/>
+  
+  ![Pop-Up-Window-with-Menu](./Main/assets/Pop-up-window-with-menu.png)
+
   <br/>
   
   ![Block a Domain](./Main/assets/Blocked_Domain_Page.png)
   
-  <br/>
-  
-  ![Pop-Up-Window](./Main/assets/Pop-up-window.png)
   
   <br/>
   
