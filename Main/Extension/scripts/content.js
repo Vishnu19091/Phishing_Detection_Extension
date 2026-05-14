@@ -1,23 +1,58 @@
 // <------- display year in footer span ------->
+// Guard footer (only exists on extension pages)
 const footer = document.getElementById("footer");
+if (footer) {
+  footer.textContent = new Date().getFullYear();
+}
 
-const now = new Date();
-const year = now.getFullYear();
+// Extract and log all HTTP links
+function extractLinks() {
+  const links = [...document.querySelectorAll("a[href]")]
+    .map((a) => a.href)
+    .filter((href) => href.startsWith("http"));
 
-footer.textContent = year;
+  // Get current tab ID then save under that key
+  browser.runtime
+    .sendMessage({
+      type: "SAVE_LINKS",
+      payload: {
+        count: links.length,
+        links: links,
+        url: window.location.href,
+      },
+    })
+    .catch(() => {});
 
-// window.addEventListener("message", function (event) {
-//   if (event.source !== this.window) return;
+  browser.runtime
+    .sendMessage({
+      type: "LINKS_FOUND",
+      count: links.length,
+      links: links,
+      url: window.location.href,
+    })
+    .catch(() => {});
 
-//   if (event.data.type && event.data.type === "AUTH_TOKEN") {
-//     const token = event.data.token;
-//     const user_profile = event.data.profile;
+  return links;
+}
 
-//     // Store it in chrome.storage.local for later use
-//     if (token) {
-//       chrome.storage.local.set({ auth_token: token });
-//       chrome.storage.local.set({ profile: user_profile });
-//       console.log("Details Stored in extension Successfully", event.data);
-//     }
-//   }
-// });
+// Initial extraction
+extractLinks();
+
+// Re-extract on background ping (page reload / navigation)
+browser.runtime.onMessage.addListener((msg) => {
+  if (msg.type === "PAGE_LOADED") {
+    extractLinks();
+  }
+});
+
+// Re-extract when DOM changes (SPAs)
+let debounceTimer;
+const observer = new MutationObserver(() => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(extractLinks, 500);
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});

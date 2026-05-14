@@ -31,7 +31,8 @@
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["scripts/content.js"]
+        "js": ["scripts/content.js"],
+        "run_at": "document_idle"
       }
     ],
     "web_accessible_resources": [
@@ -48,7 +49,7 @@
     },
     "browser_specific_settings": {
       "gecko": {
-        "id": "anti-phishing@gmail.com"
+        "id": "anti.phishing.2025@gmail.com"
       }
     }
   }

@@ -2,11 +2,20 @@ const KEY_NAME = "blocked_domains";
 const domainInput = document.getElementById("domainInput");
 const addBtn = document.getElementById("addBtn");
 const domainList = document.getElementById("domainList");
+const statsDomains = document.getElementById("domain_stats");
 
 // Load and render existing domains
 async function loadDomains() {
   const result = await browser.storage.local.get(KEY_NAME);
   const domains = result[KEY_NAME] || [];
+  // console.log(result, domains);
+
+  if (!domains.length && statsDomains.classList.contains("hidden")) {
+    statsDomains.classList.remove("hidden");
+  } else {
+    statsDomains.classList.add("hidden");
+  }
+
   renderDomains(domains);
 }
 
@@ -17,20 +26,26 @@ async function saveDomains(domains) {
 
 // Render domains as list
 function renderDomains(domains) {
-  domainList.innerHTML = "";
+  domainList.textContent = "";
   domains.forEach((domain, index) => {
     const li = document.createElement("li");
     li.className =
       "flex justify-between items-center bg-[#1e1e1e] p-3 rounded-md";
 
     // This element displays the blocked domains
-    li.innerHTML = `
-      <span class='text-3xl'>${domain}</span>
-      <button data-index="${index}"
-        class="removeBtn bg-gray-700 hover:bg-red-600 px-3 py-1 rounded-md text-white">
-        Remove
-      </button>
-    `;
+
+    const span = document.createElement("span");
+    span.className = "text-3xl";
+    span.textContent = domain;
+
+    const btn = document.createElement("button");
+    btn.className =
+      "removeBtn bg-gray-700 hover:bg-red-600 px-3 py-1 rounded-md text-white duration-300 ease-in-out";
+    btn.dataset.index = index;
+    btn.textContent = "Remove";
+
+    li.appendChild(span);
+    li.appendChild(btn);
 
     domainList.appendChild(li);
   });

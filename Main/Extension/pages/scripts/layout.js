@@ -2,6 +2,7 @@
 
 const sidebarContainer = document.getElementById("sidebar");
 const footerContainer = document.getElementById("footer");
+const year = new Date().getFullYear();
 
 sidebarContainer.innerHTML = `<header class="absolute left-1">
     <div class="flex flex-row gap-4 items-center">
@@ -28,6 +29,6 @@ sidebarContainer.innerHTML = `<header class="absolute left-1">
 
 footerContainer.innerHTML = `
 <footer class="absolute bottom-0 left-[50%] -translate-x-[50%] py-4 text-gray-400 text-xl">
-  © 2025 Anti-Phishing Extension
+  © ${year} Anti-Phishing Extension
 </footer>
 `;

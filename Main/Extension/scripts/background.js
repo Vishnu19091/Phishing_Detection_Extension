@@ -17,11 +17,17 @@ import { TabChange } from "./rules/tab_rules.js";
  */
 export async function isPhish(url) {
   if (!url) return null;
+  const proxy_url = "https://anti-phish-proxy.onrender.com/check";
+  // const proxy_url = "http://localhost:3030/";
 
   try {
-    const res = await fetch("https://anti-phish-proxy.onrender.com/check", {
+    const res = await fetch(proxy_url, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        // TODO
+        "Content-Type": "application/json",
+        "x-api-key": superSecret,
+      },
       body: JSON.stringify({ url }),
     });
 
@@ -97,7 +103,7 @@ function blockRequest(requestDetails) {
   // Fix when the extension detects the phishing url it captures
   // extension id as its hostname
   const redirectURL = browser.runtime.getURL(
-    `pages/blocked.html?site=${requestDetails.url}`
+    `pages/blocked.html?site=${requestDetails.url}`,
   );
 
   if (cache[host] === "danger") {
@@ -127,7 +133,7 @@ browser.webRequest.onBeforeRequest.addListener(
   //   );
   // },
   { urls: ["<all_urls>"] }, // Listen for all URLs
-  ["blocking"] // Required to modify or cancel requests
+  ["blocking"], // Required to modify or cancel requests
 );
 
 // Detects new tab
@@ -153,9 +159,8 @@ const STORAGE_KEY = "network_history";
  */
 async function appendRequest(record) {
   try {
-    const { [STORAGE_KEY]: existing } = await browser.storage.local.get(
-      STORAGE_KEY
-    );
+    const { [STORAGE_KEY]: existing } =
+      await browser.storage.local.get(STORAGE_KEY);
 
     const arr = Array.isArray(existing) ? existing : [];
 
@@ -204,7 +209,7 @@ browser.webRequest.onCompleted.addListener(
       console.error("webRequest handler error:", e);
     }
   },
-  { urls: ["<all_urls>"] }
+  { urls: ["<all_urls>"] },
   // no extraInfoSpec needed for onCompleted; include["responseHeaders"] if you want headers
 );
 
@@ -278,5 +283,25 @@ function blckReq(requestDetails) {
 browser.webRequest.onBeforeRequest.addListener(
   blckReq,
   { urls: ["<all_urls>"] },
-  ["blocking"]
+  ["blocking"],
 );
+
+// ping content script on navigation
+browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  if (changeInfo.status === "complete" && tab.url?.startsWith("http")) {
+    browser.tabs.sendMessage(tabId, { type: "PAGE_LOADED" }).catch(() => {
+      // tab not ready yet, ignore
+    });
+  }
+});
+
+browser.runtime.onMessage.addListener((msg, sender) => {
+  if (msg.type === "SAVE_LINKS") {
+    const tabId = sender.tab.id; // actual tab ID from sender
+    browser.storage.local.set({
+      [`page_links_${tabId}`]: msg.payload,
+    });
+  }
+});
+
+const superSecret = `W+yqkrH1AXjeMqK32ElTvR3JmuMUrJdigP0eQYlGlh5B4L8Zr/mAE6NbNhDOyHAh2tx9vawyT5XSaqAVzwjznNnMUAEqaf5gKO3GfZE0BZfLdlJgZSc5xaoX+smW4v4vkMmRlYMzg51u4bzCyjb41vgkM6cAsElKAAwHHe0zYrlucr+LCmW9EFUgDLKlMfejDLKmpLcJj9tlo11ZWpndzWtu02xhH2P7Nt5E7kj+3qK6LUOvs/JasVJOeajiI5pmE/h3sDyU/+I4CrHkOYU0JTB9vpfRRahUC+Bug17lcX/sLqmEkckxNVg0YjSkU81otiyp9+6ucGdv/pyxVdnUwHeZ2eA1u79f03ezpAQKjWa4wvDbf+4OySnBsmoEqvOzZ+doqtsW6X5Px9lp0fU9h/Qdd5j4brnyExzH3hsTXKAjiFgNkTGAB8RKgvjk57tZUOHcbJYFp17iTYSfrbxrgybE/YShM06pD19h1YhsOlECYgrDYpP+rShkfOSC8yqxgg5lRRIt5YBjyjGx0HrM71RrMbOCSoo+kvj+HhKbSemU8w/pw13Zgr5aPNi6w2fQaXUEWj4oz9aVGIhKIq4VaQOLjuzSKeJYKvOkGlVjkfModeyf/uVyCnROIFV6xqkRn7QnXT0GeIZSkhRKGrdFiARglSgsd+XzG7XxfrXHEbA=`;

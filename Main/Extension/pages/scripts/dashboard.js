@@ -29,21 +29,24 @@ function renderItem(item) {
   const el = document.createElement("div");
   el.className = "item";
 
-  // This only displays the webRequests, so don't worry about the XSS
-  el.innerHTML = `<div class="url">${item.url}</div>
-  <div class="meta">[${item.type}] ${item.method} ${
-    item.statusCode || ""
-  } • ${new Date(item.timeStamp).toLocaleTimeString()} • IP:${
-    item.ip
-  } • Initiator:${item.initiator}</div>`;
+  const urlDiv = document.createElement("div");
+  urlDiv.className = "url";
+  urlDiv.textContent = item.url;
+
+  const metaDiv = document.createElement("div");
+  metaDiv.className = "meta";
+  metaDiv.textContent = `[${item.type}] ${item.method} ${item.statusCode || ""} • ${new Date(item.timeStamp).toLocaleTimeString()} • IP:${item.ip} • Initiator:${item.initiator}`;
+
+  el.appendChild(urlDiv);
+  el.appendChild(metaDiv);
+
   return el;
 }
 
 // load stored history and render
 async function loadHistory() {
-  const { [STORAGE_KEY]: history } = await browser.storage.local.get(
-    STORAGE_KEY
-  );
+  const { [STORAGE_KEY]: history } =
+    await browser.storage.local.get(STORAGE_KEY);
   listEl.innerHTML = "";
   const arr = Array.isArray(history) ? history : [];
   for (const item of arr) {
