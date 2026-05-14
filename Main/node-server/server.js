@@ -10,7 +10,7 @@ const API_KEY = process.env.GSB_API_KEY;
 
 if (!API_KEY) {
   console.warn(
-    "Warning: GSB_API_KEY not set in environment. Set GSB_API_KEY in .env"
+    "Warning: GSB_API_KEY not set in environment. Set GSB_API_KEY in .env",
   );
 }
 
@@ -21,8 +21,21 @@ app.use(express.json());
 app.use(
   cors({
     origin: ["*"],
-  })
+  }),
 );
+
+// accepts all request only with secrect api key in headers
+app.use((req, res, next) => {
+  const apiKey = req.headers["x-api-key"];
+
+  // console.log("Received key:", JSON.stringify(req.headers["x-api-key"]));
+
+  if (apiKey !== process.env.EXTENSION_SECRET) {
+    return res.status(403).json({ error: "Forbidden" });
+  }
+
+  next();
+});
 
 // rate limit
 app.use(
@@ -31,7 +44,7 @@ app.use(
     max: parseInt(process.env.RATE_LIMIT_MAX || "60", 10),
     standardHeaders: true,
     legacyHeaders: false,
-  })
+  }),
 );
 
 // Health check
