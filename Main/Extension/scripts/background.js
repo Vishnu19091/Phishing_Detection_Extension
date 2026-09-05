@@ -18,7 +18,7 @@ import { TabChange } from "./rules/tab_rules.js";
 export async function isPhish(url) {
   if (!url) return null;
   const proxy_url = "https://anti-phish-proxy.onrender.com/check";
-  // const proxy_url = "http://localhost:3030/";
+  // const proxy_url = "http://localhost:3030/check";
 
   try {
     const res = await fetch(proxy_url, {
@@ -26,7 +26,6 @@ export async function isPhish(url) {
       headers: {
         // TODO
         "Content-Type": "application/json",
-        "x-api-key": superSecret,
       },
       body: JSON.stringify({ url }),
     });
@@ -303,5 +302,3 @@ browser.runtime.onMessage.addListener((msg, sender) => {
     });
   }
 });
-
-const superSecret = `W+yqkrH1AXjeMqK32ElTvR3JmuMUrJdigP0eQYlGlh5B4L8Zr/mAE6NbNhDOyHAh2tx9vawyT5XSaqAVzwjznNnMUAEqaf5gKO3GfZE0BZfLdlJgZSc5xaoX+smW4v4vkMmRlYMzg51u4bzCyjb41vgkM6cAsElKAAwHHe0zYrlucr+LCmW9EFUgDLKlMfejDLKmpLcJj9tlo11ZWpndzWtu02xhH2P7Nt5E7kj+3qK6LUOvs/JasVJOeajiI5pmE/h3sDyU/+I4CrHkOYU0JTB9vpfRRahUC+Bug17lcX/sLqmEkckxNVg0YjSkU81otiyp9+6ucGdv/pyxVdnUwHeZ2eA1u79f03ezpAQKjWa4wvDbf+4OySnBsmoEqvOzZ+doqtsW6X5Px9lp0fU9h/Qdd5j4brnyExzH3hsTXKAjiFgNkTGAB8RKgvjk57tZUOHcbJYFp17iTYSfrbxrgybE/YShM06pD19h1YhsOlECYgrDYpP+rShkfOSC8yqxgg5lRRIt5YBjyjGx0HrM71RrMbOCSoo+kvj+HhKbSemU8w/pw13Zgr5aPNi6w2fQaXUEWj4oz9aVGIhKIq4VaQOLjuzSKeJYKvOkGlVjkfModeyf/uVyCnROIFV6xqkRn7QnXT0GeIZSkhRKGrdFiARglSgsd+XzG7XxfrXHEbA=`;

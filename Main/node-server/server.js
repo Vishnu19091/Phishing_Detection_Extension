@@ -1,5 +1,5 @@
 // server.js
-require("dotenv").config(); // npm i dotenv
+require("dotenv").config();
 const express = require("express");
 const rateLimit = require("express-rate-limit");
 const cors = require("cors");
@@ -24,14 +24,25 @@ app.use(
   }),
 );
 
-// accepts all request only with secrect api key in headers
+// accepts all request only from specific origins in headers
+const ALLOWED_ORIGINS = [
+  "moz-extension://", // Firefox
+];
+
 app.use((req, res, next) => {
-  const apiKey = req.headers["x-api-key"];
+  const origin = req.headers["origin"] || req.headers["referer"] || "";
+  const allowed = ALLOWED_ORIGINS.some((o) => origin.startsWith(o));
 
-  // console.log("Received key:", JSON.stringify(req.headers["x-api-key"]));
+  // console.log(
+  //   "Extension usage from origin: ",
+  //   JSON.stringify(req.headers["origin"]),
+  // );
 
-  if (apiKey !== process.env.EXTENSION_SECRET) {
-    return res.status(403).json({ error: "Forbidden" });
+  if (!allowed) {
+    return res.status(403).json({
+      errorMessage:
+        "Forbidden(usage is only for mozilla browser's extension/add-ons)",
+    });
   }
 
   next();

@@ -1,8 +1,6 @@
 .env
 git-push.zsh
-Dockerfile
 node_modules
-
 about_versioning.md
 basics.txt
 GSB.txt

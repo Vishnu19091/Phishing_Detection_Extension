@@ -1,7 +1,7 @@
 {
   "name": "anti-phish-server",
-  "version": "1.1.2",
-  "description": "backend server of Anti-Phishing extension",
+  "version": "1.1.3",
+  "description": "backend proxy server of Anti-Phishing extension",
   "main": "server.js",
   "scripts": {
     "dev": "node --watch server.js",
@@ -16,6 +16,7 @@
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "express-rate-limit": "^8.1.0",
+    "mysql2": "^3.22.3",
     "node-fetch": "^3.3.2"
   }
 }
